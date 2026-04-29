@@ -560,6 +560,180 @@ input:focus,select:focus,textarea:focus{
   .footer p{font-size:9.5px}
 }
 
+
+
+/* =========================================================
+   MOBILE FINAL POLISH - closest to reference mobile layout
+   ========================================================= */
+@media (max-width:768px){
+  html,body{width:100%;overflow-x:hidden;}
+  body{
+    padding-top:92px;
+    font-size:11.5px;
+    line-height:1.55;
+    background:#fff;
+    color:#1f3347;
+  }
+
+  /* fixed top bar like reference */
+  .header{
+    height:92px;
+    background:#fff;
+    box-shadow:0 2px 10px rgba(0,0,0,.12);
+  }
+  .header-inner{
+    width:100%;
+    height:100%;
+    padding:0 8px;
+    gap:8px;
+    justify-content:flex-start;
+  }
+  .header img{
+    height:36px;
+    max-width:92px;
+    object-fit:contain;
+  }
+  .header-title{
+    font-size:12px;
+    font-weight:700;
+    color:#26394d;
+    line-height:1.15;
+    white-space:normal;
+  }
+
+  /* hero: taller, image-focused, less crowded */
+  .hero{
+    min-height:500px;
+    height:calc(100vh - 92px);
+    max-height:590px;
+    background-position:center top;
+    align-items:center;
+  }
+  .hero::before{
+    background:rgba(0,0,0,.34);
+    backdrop-filter:none;
+  }
+  .hero-content{
+    width:100%;
+    padding:0 18px;
+    transform:translateY(58px);
+  }
+  .hero h1{
+    font-size:17px;
+    line-height:1.2;
+    margin:0 0 10px;
+    letter-spacing:.2px;
+    text-shadow:0 2px 5px rgba(0,0,0,.6);
+  }
+  .hero-subtitle{
+    font-size:11.5px;
+    line-height:1.4;
+    margin:0 auto 16px;
+    max-width:310px;
+  }
+  .hero-box{
+    width:88%;
+    padding:11px 13px;
+    border-radius:4px;
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(3px);
+  }
+  .hero-point{
+    font-size:11px;
+    gap:9px;
+    margin:5px 0;
+    line-height:1.25;
+  }
+  .hero-point i{
+    width:16px;
+    height:16px;
+    min-width:16px;
+    font-size:9px;
+  }
+
+  /* compact section rhythm */
+  .section{padding:30px 9px;}
+  .section.soft{background:#f5f5f5;}
+  .container{width:100%;max-width:100%;}
+  .title{
+    font-size:17px;
+    line-height:1.25;
+    margin:0 0 20px;
+  }
+  .title::after{
+    width:56px;
+    height:2px;
+    margin-top:10px;
+  }
+  .panel,.benefit-list,.app-panel{
+    padding:14px 12px;
+    border-radius:4px;
+    box-shadow:0 4px 14px rgba(0,0,0,.07);
+  }
+  .about h2{font-size:14px;margin-bottom:12px;}
+  .about p{font-size:10.8px;line-height:1.65;margin:8px 0;}
+  .age-badge{font-size:11px;padding:8px 10px;margin:12px 0;}
+  .warning{padding:12px 12px;margin-top:14px;font-size:10.8px;border-left-width:3px;}
+
+  /* benefits smaller like reference */
+  .benefit-item{grid-template-columns:24px 1fr;padding:11px 0;gap:8px;}
+  .benefit-item i{font-size:14px;margin-top:2px;}
+  .benefit-item h3{font-size:10.8px;line-height:1.35;margin:0 0 3px;}
+  .benefit-item p{font-size:10.5px;line-height:1.45;margin:0;}
+  .repay p,.repay em{font-size:11px;line-height:1.55;}
+
+  /* application form */
+  .app-panel h3{font-size:12px;line-height:1.45;margin-bottom:18px;}
+  .eligibility-title{font-size:14px;margin:18px 0 8px;}
+  .eligibility li{font-size:10.7px;line-height:1.35;padding:10px 0;grid-template-columns:24px 1fr;gap:8px;}
+  .eligibility i{font-size:13px;}
+  .form-title{font-size:13px;margin:20px 0 12px;}
+  label{font-size:11px;margin-top:12px;margin-bottom:6px;}
+  input,select,textarea{font-size:11px;padding:9px 10px;border-radius:3px;}
+  textarea{min-height:76px;}
+  .phone-row{grid-template-columns:44px 1fr;gap:6px;}
+  .prefix{font-size:11px;border-radius:3px;}
+  .help{font-size:9.6px;line-height:1.4;}
+  .submit-btn{font-size:12px;padding:11px;border-radius:3px;margin-top:14px;}
+
+  /* feedback: two-column cards, compact */
+  .feedback-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+  .feedback-card{padding:8px;border-radius:4px;box-shadow:0 4px 12px rgba(0,0,0,.10);}
+  .feedback-card img{height:116px;border-radius:3px;object-fit:cover;}
+  .feedback-card p{font-size:9.8px;line-height:1.42;margin:8px 0;}
+  .feedback-card strong{font-size:9.8px;}
+  .slider-dots{margin-top:12px;}
+  .dot{width:8px;height:8px;}
+  .whatsapp-note{margin-top:22px;padding:20px 8px;border-radius:4px;background:#fff;}
+  .whatsapp-note i{font-size:31px;}
+  .whatsapp-note p,.whatsapp-note a{font-size:10.5px;}
+
+  /* map & footer */
+  .map-box{height:214px;border-radius:4px;}
+  .footer{padding:28px 10px 12px;}
+  .footer-inner{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}
+  .footer h3{font-size:11px;margin:0 0 12px;}
+  .footer p{font-size:8.8px;line-height:1.55;margin:7px 0;}
+  .footer .line{grid-template-columns:12px 1fr;gap:5px;align-items:start;}
+  .footer i{font-size:9px;margin-top:2px;}
+  .copyright{font-size:8px;margin-top:18px;padding-top:10px;}
+
+  /* side floating buttons */
+  .float-buttons{right:8px;bottom:10px;gap:7px;}
+  .float-buttons a{width:35px;height:35px;font-size:14px;box-shadow:0 5px 14px rgba(0,0,0,.18);}
+}
+
+@media (max-width:380px){
+  .header img{height:32px;max-width:82px;}
+  .header-title{font-size:11px;}
+  .hero{min-height:470px;}
+  .hero-content{transform:translateY(48px);}
+  .feedback-card img{height:102px;}
+  .footer-inner{gap:8px;}
+  .footer h3{font-size:10px;}
+  .footer p{font-size:8px;}
+}
+
 </style>
 </head>
 
