@@ -2,39 +2,143 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>MEWAH SAUJANA ENTERPRISE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enterprise Landing Page</title>
+
 <style>
-body { font-family: Arial; margin:0; background:#f5f5f5; }
-.header { background:#0f172a; color:white; padding:60px 20px; text-align:center; }
-.btn { background:#25D366; color:white; padding:15px 25px; display:inline-block; margin-top:20px; border-radius:8px; text-decoration:none; }
-.section { padding:40px 20px; text-align:center; }
-.card { display:inline-block; background:white; padding:20px; margin:10px; border-radius:10px; width:250px; }
-.footer { background:#111; color:white; text-align:center; padding:20px; }
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#0b1220;
+  color:white;
+}
+
+/* HERO */
+.hero {
+  text-align:center;
+  padding:90px 20px;
+  background: radial-gradient(circle at top, #1e3a8a, #0b1220);
+}
+
+.hero h1 {
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.hero p {
+  opacity:0.8;
+  font-size:18px;
+}
+
+.btn {
+  display:inline-block;
+  margin-top:25px;
+  padding:15px 28px;
+  background:#25D366;
+  color:white;
+  border-radius:10px;
+  font-weight:bold;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.btn:hover {
+  transform:scale(1.05);
+}
+
+/* SECTION */
+.section {
+  padding:60px 20px;
+  text-align:center;
+}
+
+.title {
+  font-size:28px;
+  margin-bottom:20px;
+  color:#60a5fa;
+}
+
+/* CARDS */
+.grid {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:15px;
+}
+
+.card {
+  background:#111827;
+  padding:20px;
+  border-radius:12px;
+  width:240px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+  transition:0.3s;
+}
+
+.card:hover {
+  transform:translateY(-5px);
+  background:#1f2937;
+}
+
+/* CTA BAR */
+.cta {
+  background:#111827;
+  text-align:center;
+  padding:50px 20px;
+}
+
+.footer {
+  text-align:center;
+  padding:20px;
+  font-size:13px;
+  opacity:0.6;
+}
 </style>
 </head>
 
 <body>
 
-<div class="header">
+<!-- HERO -->
+<div class="hero">
   <h1>MEWAH SAUJANA ENTERPRISE</h1>
-  <p>Reliable Services You Can Trust</p>
+  <p>Fast • Trusted • Professional Service Provider</p>
 
-  <a class="btn" href="https://wa.me/60123456789">Chat on WhatsApp</a>
+  <a class="btn" href="https://wa.me/60103328822">
+    Chat on WhatsApp
+  </a>
 </div>
 
+<!-- SERVICES -->
 <div class="section">
-  <h2>Our Services</h2>
+  <div class="title">Our Services</div>
 
-  <div class="card">Cleaning Service</div>
-  <div class="card">Renovation</div>
-  <div class="card">Maintenance</div>
+  <div class="grid">
+    <div class="card">Cleaning Service</div>
+    <div class="card">Renovation Work</div>
+    <div class="card">Maintenance</div>
+    <div class="card">Supply Service</div>
+  </div>
 </div>
 
+<!-- WHY US -->
 <div class="section">
-  <h2>Why Choose Us</h2>
-  <p>✔ Fast Service<br>✔ Affordable Price<br>✔ Trusted Team</p>
+  <div class="title">Why Choose Us</div>
+
+  <p>
+    ✔ Fast Response<br>
+    ✔ Affordable Pricing<br>
+    ✔ Trusted Team<br>
+    ✔ Quality Guaranteed
+  </p>
 </div>
 
+<!-- CTA -->
+<div class="cta">
+  <h2>Need Service? Contact Us Now</h2>
+  <a class="btn" href="https://wa.me/60103328822">Get Quote on WhatsApp</a>
+</div>
+
+<!-- FOOTER -->
 <div class="footer">
   © 2026 MEWAH SAUJANA ENTERPRISE
 </div>
