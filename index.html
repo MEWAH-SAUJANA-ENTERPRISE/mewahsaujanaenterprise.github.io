@@ -3,92 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MILANO ENTERPRISE</title>
+<title>MEWAH SAUJANA ENTERPRISE</title>
 
 <style>
-body {
+body{
   margin:0;
-  font-family: Arial, sans-serif;
+  font-family:Arial, sans-serif;
   background:#f4f6f8;
   color:#111;
 }
 
-/* HEADER */
-.header {
-  background:#0f172a;
-  color:white;
-  text-align:center;
-  padding:70px 20px;
+/* ================= HERO ================= */
+.hero{
+  background:url("bg.jpg") center/cover no-repeat;
+  height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
 }
 
-.header h1 {
-  font-size:34px;
+.hero::before{
+  content:"";
+  position:absolute;
+  top:0;left:0;right:0;bottom:0;
+  background:rgba(0,0,0,0.65);
+}
+
+.hero-content{
+  position:relative;
+  text-align:center;
+  color:white;
+  max-width:800px;
+  padding:20px;
+}
+
+.logo{
+  width:90px;
   margin-bottom:10px;
 }
 
-.tagline {
-  font-size:16px;
-  opacity:0.8;
+.hero h1{
+  font-size:32px;
+  margin:10px 0;
 }
 
-.badges {
-  margin-top:20px;
+.hero p{
+  margin:8px 0;
+  opacity:0.9;
 }
 
-.badge {
+.badges span{
   display:inline-block;
   background:#22c55e;
-  padding:8px 12px;
+  padding:6px 12px;
   margin:5px;
   border-radius:20px;
   font-size:12px;
 }
 
-/* SECTION */
-.section {
-  padding:50px 20px;
+/* ================= SECTION ================= */
+.section{
+  padding:60px 20px;
   max-width:1000px;
   margin:auto;
 }
 
-.title {
+.title{
   font-size:24px;
   margin-bottom:20px;
+  text-align:center;
 }
 
-/* CARDS */
-.grid {
+/* ================= CARDS ================= */
+.grid{
   display:flex;
   flex-wrap:wrap;
   gap:15px;
   justify-content:center;
 }
 
-.card {
+.card{
   background:white;
-  padding:20px;
-  border-radius:10px;
+  padding:18px;
   width:260px;
+  border-radius:10px;
   box-shadow:0 5px 15px rgba(0,0,0,0.08);
 }
 
-/* FORM */
-form {
+/* ================= FORM ================= */
+form{
   background:white;
   padding:20px;
   border-radius:10px;
 }
 
-input, select, textarea {
+input,select,textarea{
   width:100%;
   padding:10px;
-  margin-top:8px;
-  margin-bottom:15px;
+  margin:8px 0 14px;
   border:1px solid #ddd;
   border-radius:6px;
 }
 
-button {
+button{
   width:100%;
   padding:14px;
   background:#22c55e;
@@ -99,16 +117,16 @@ button {
   cursor:pointer;
 }
 
-/* TESTIMONIAL */
-.testimonial {
+/* ================= TESTIMONIAL ================= */
+.testimonial{
   background:white;
   padding:15px;
   margin:10px 0;
   border-left:4px solid #22c55e;
 }
 
-/* FOOTER */
-.footer {
+/* ================= FOOTER ================= */
+.footer{
   background:#111;
   color:white;
   text-align:center;
@@ -120,93 +138,113 @@ button {
 
 <body>
 
-<!-- HERO -->
-<div class="header">
-  <h1>MILANO ENTERPRISE SDN BHD</h1>
-  <p class="tagline">Professional Financial Consultation Services</p>
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <div class="hero-content">
 
-  <div class="badges">
-    <div class="badge">No Advance Payment</div>
-    <div class="badge">No Monthly Burden</div>
-    <div class="badge">Fast Approval</div>
+    <img src="logo.png" class="logo">
+
+    <h1>MEWAH SAUJANA ENTERPRISE</h1>
+
+    <p>PROFESSIONAL FINANCIAL CONSULTATION</p>
+
+    <p>We Offer Settlement Services Using Your EPF Contributions</p>
+
+    <div class="badges">
+      <span>No Advance Payment</span>
+      <span>No Monthly Commitment Burden</span>
+    </div>
+
   </div>
 </div>
 
-<!-- ABOUT -->
+<!-- ================= ABOUT ================= -->
 <div class="section">
   <div class="title">About Us</div>
+
   <p>
-    Licensed financial service provider offering assistance for eligible applicants.
-    We provide structured consultation and financial facilitation services.
+  MEWAH SAUJANA ENTERPRISE (SA0170975-P) ALSO KNOWN AS MQIRAD IS A LICENSED COMMUNITY CREDIT MONEY LENDING COMPANY REGISTERED UNDER THE MONEY LENDING ACT 1951.
+  </p>
+
+  <p>
+  WE PROVIDE SPECIAL FINANCING FACILITIES FOR AGES "53,54,55" & "58,59,60" WHO NEED IMMEDIATE CASH. APPLICATIONS CAN BE MADE ONLINE.
+  </p>
+
+  <p><b>⚠ IS MEWAH SAUJANA RELATED TO EPF?</b><br>
+  NO. WE ARE NOT A REPRESENTATIVE OR AGENT OF EPF.
   </p>
 </div>
 
-<!-- BENEFITS -->
+<!-- ================= BENEFITS ================= -->
 <div class="section">
-  <div class="title">Benefits</div>
+  <div class="title">EPF Loan Benefits</div>
 
   <div class="grid">
-    <div class="card">No Monthly Payment (Up to 24 months)</div>
-    <div class="card">No Hidden Charges</div>
+    <div class="card">No Monthly Payment up to 24 months</div>
+    <div class="card">No Advance Payment / Hidden Charges</div>
     <div class="card">Legal Agreement Provided</div>
-    <div class="card">Data Protection Guaranteed</div>
-    <div class="card">High Approval Rate</div>
+    <div class="card">Data Fully Protected</div>
+    <div class="card">99.9% Approval Rate</div>
   </div>
 </div>
 
-<!-- FORM -->
+<!-- ================= REPAYMENT ================= -->
+<div class="section">
+  <div class="title">Repayment Method</div>
+  <p>
+    Repayment is made when customer has received EPF withdrawal.<br><br>
+    Repayment amount is based on the original agreement signed by both parties.
+  </p>
+</div>
+
+<!-- ================= APPLICATION ================= -->
 <div class="section">
   <div class="title">Online Application</div>
 
   <form>
-    <label>Name</label>
-    <input type="text" placeholder="Enter full name">
-
-    <label>Phone</label>
-    <input type="text" placeholder="01122334455">
-
-    <label>State</label>
+    <input placeholder="Full Name">
+    <input placeholder="Phone Number">
+    
     <select>
-      <option>Select state</option>
+      <option>Select State</option>
       <option>Selangor</option>
       <option>Penang</option>
       <option>Johor</option>
     </select>
 
-    <label>EPF Amount (RM)</label>
-    <input type="number" placeholder="35000">
-
-    <label>Notes</label>
-    <textarea placeholder="Optional"></textarea>
+    <input placeholder="Date of Birth">
+    <input placeholder="EPF Savings Amount (RM)">
+    <textarea placeholder="Additional Notes"></textarea>
 
     <button type="button">Submit Application</button>
   </form>
 </div>
 
-<!-- TESTIMONIAL -->
+<!-- ================= TESTIMONIALS ================= -->
 <div class="section">
-  <div class="title">Customer Testimonials</div>
+  <div class="title">Customer Feedback</div>
 
-  <div class="testimonial">Fast approval and very helpful service. - Mr Ahmad</div>
-  <div class="testimonial">No advance payment required. Very convenient. - Ms Siti</div>
-  <div class="testimonial">Process was smooth and fast. - Mr Lim</div>
+  <div class="testimonial">Very satisfied with service. - Mr Ahmad</div>
+  <div class="testimonial">Fast process and helpful staff. - Ms Siti</div>
+  <div class="testimonial">Approved even with blacklist. - Mr Raju</div>
+  <div class="testimonial">Funds received quickly. - Mr Lim</div>
 </div>
 
-<!-- CONTACT -->
+<!-- ================= LOCATION ================= -->
 <div class="section">
-  <div class="title">Contact</div>
+  <div class="title">Our Location</div>
 
-  <p>📍 Rawang, Selangor</p>
-  <p>📞 +6010-658 3343</p>
-  <p>✉️ email@example.com</p>
+  <p><b>MEWAH SAUJANA ENTERPRISE (SA0170975-P)</b></p>
+  <p>21B, Jalan Bandar Rawang 2, 48000 Rawang, Selangor</p>
+  <p>📞 +6010-3328822</p>
+  <p>📧 xxx@gmail.com</p>
 
-  <a href="https://wa.me/60106583343">
-    <button>Contact on WhatsApp</button>
-  </a>
+  <p>Mon-Fri: 9:30 AM - 5:30 PM</p>
 </div>
 
+<!-- ================= FOOTER ================= -->
 <div class="footer">
-  © 2026 MILANO ENTERPRISE (Replica Layout Demo)
+  © 2026 MEWAH SAUJANA ENTERPRISE. All Rights Reserved.
 </div>
 
 </body>
