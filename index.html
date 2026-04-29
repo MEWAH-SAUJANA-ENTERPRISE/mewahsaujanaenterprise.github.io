@@ -480,6 +480,31 @@ input:focus,select:focus,textarea:focus{
 .float-call{background:#43b649}
 .float-lang{background:#263b4e}
 
+
+
+/* ================= CUSTOM DATE PICKER ================= */
+.date-wrap{position:relative;width:100%;}
+.date-wrap input{padding-right:48px;cursor:pointer;background:#fff;}
+.calendar-btn{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:34px;height:34px;border:0;background:transparent;color:#333;font-size:18px;cursor:pointer;}
+.date-picker{position:absolute;left:0;top:calc(100% + 8px);width:292px;background:#fff;border:1px solid #ddd;border-radius:2px;box-shadow:0 10px 30px rgba(0,0,0,.15);z-index:2000;padding:14px;display:none;color:#111;}
+.date-picker.show{display:block;}
+.dp-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;font-weight:700;color:#111;}
+.dp-header button{border:0;background:#fff;font-size:22px;line-height:1;cursor:pointer;padding:4px 8px;color:#111;}
+.dp-month{border:0;background:#fff;font-weight:700;font-size:15px;color:#111;cursor:pointer;}
+.dp-week,.dp-grid{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;gap:2px;}
+.dp-week span{font-size:13px;color:#111;padding:6px 0;}
+.dp-day{height:34px;border:0;background:#fff;cursor:pointer;font-size:14px;color:#111;border-radius:2px;}
+.dp-day:hover{background:#eaf4ff;}.dp-day.muted{color:#777;}.dp-day.selected{outline:2px solid #111;font-weight:700;background:#eee;}
+.dp-footer{display:flex;justify-content:space-between;margin-top:12px;}.dp-footer button{border:0;background:#fff;color:#006fe6;font-size:14px;cursor:pointer;padding:6px 4px;}
+@media(max-width:520px){.date-picker{width:270px;left:0;}.dp-day{height:31px;font-size:13px;}}
+
+/* ================= THEME MENU / DARK MODE ================= */
+.float-buttons button.float-moon,.float-buttons button.float-lang{border:0;cursor:pointer;width:58px;height:58px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 10px 26px rgba(0,0,0,.18);}
+.theme-menu{position:absolute;right:72px;bottom:175px;width:175px;background:#fff;border:1px solid #ddd;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.18);display:none;z-index:1002;color:#333;}
+.theme-menu.show{display:block;}.theme-menu button{width:100%;border:0;background:#fff;display:grid;grid-template-columns:45px 1fr;align-items:center;gap:10px;padding:16px 14px;font-size:26px;color:#333;border-bottom:1px solid #ddd;cursor:pointer;text-align:left;}.theme-menu button:last-child{border-bottom:0;}.theme-menu button:hover,.theme-menu button.active{background:#3498db;color:#fff;}.theme-menu i{font-size:20px;text-align:center;}.theme-menu span{line-height:1.25;}
+body.dark-mode{background:#121a22;color:#eaf1f7;}body.dark-mode .header,body.dark-mode .panel,body.dark-mode .benefit-list,body.dark-mode .app-panel,body.dark-mode .feedback-card,body.dark-mode .whatsapp-note{background:#1d2935;color:#eaf1f7;border-color:#33475a;}body.dark-mode .section.soft{background:#151f29;}body.dark-mode p,body.dark-mode .help,body.dark-mode .submit-note{color:#d3d9df;}body.dark-mode input,body.dark-mode select,body.dark-mode textarea{background:#111b24;color:#fff;border-color:#43566a;}body.dark-mode .date-picker,body.dark-mode .dp-header button,body.dark-mode .dp-month,body.dark-mode .dp-day,body.dark-mode .dp-footer button,body.dark-mode .theme-menu,body.dark-mode .theme-menu button{background:#1d2935;color:#fff;border-color:#43566a;}
+@media(max-width:900px){.float-buttons button.float-moon,.float-buttons button.float-lang{width:50px;height:50px;font-size:20px;}.theme-menu{right:62px;bottom:152px;width:165px;}.theme-menu button{font-size:22px;padding:14px 12px;}}
+
 /* ================= RESPONSIVE ================= */
 @media(max-width:900px){
   body{padding-top:76px}
@@ -859,7 +884,11 @@ input:focus,select:focus,textarea:focus{
         </div>
         <div class="form-group">
           <label>Date Of Birth:</label>
-          <input type="text" id="dob" placeholder="28/04/1966">
+          <div class="date-wrap">
+            <input type="text" id="dob" placeholder="28/04/1966" readonly onclick="toggleDatePicker()">
+            <button type="button" class="calendar-btn" onclick="toggleDatePicker()" aria-label="Open calendar"><i class="fa-regular fa-calendar-days"></i></button>
+            <div class="date-picker" id="datePicker"></div>
+          </div>
         </div>
         <div class="form-group">
           <label>EPF Savings Amount (RM):</label>
@@ -941,13 +970,43 @@ input:focus,select:focus,textarea:focus{
 
 <!-- ================= FLOATING BUTTONS ================= -->
 <div class="float-buttons">
-  <a href="#" class="float-moon" title="Night Mode"><i class="fa-solid fa-moon"></i></a>
+  <button type="button" class="float-moon" title="Theme" onclick="toggleThemeMenu()"><i class="fa-solid fa-moon"></i></button>
+  <div class="theme-menu" id="themeMenu">
+    <button type="button" onclick="setTheme('light')"><i class="fa-solid fa-sun"></i><span>Light<br>Mode</span></button>
+    <button type="button" onclick="setTheme('dark')"><i class="fa-solid fa-moon"></i><span>Dark<br>Mode</span></button>
+    <button type="button" onclick="setTheme('auto')"><i class="fa-solid fa-circle-half-stroke"></i><span>Auto<br>(System)</span></button>
+  </div>
   <a href="https://wa.me/60103328822" class="float-wa" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
   <a href="tel:+60103328822" class="float-call" title="Call"><i class="fa-solid fa-phone"></i></a>
-  <a href="#" class="float-lang" title="Language"><i class="fa-solid fa-globe"></i></a>
+  <button type="button" class="float-lang" title="Language coming soon" onclick="alert('Language function hold first. We will add it later.')"><i class="fa-solid fa-globe"></i></button>
 </div>
 
 <script>
+let currentMonth = 3;
+let currentYear = 1966;
+const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+function pad(n){ return String(n).padStart(2,'0'); }
+function formatDate(d,m,y){ return `${pad(d)}/${pad(m+1)}/${y}`; }
+function toggleDatePicker(){ const picker=document.getElementById('datePicker'); picker.classList.toggle('show'); renderDatePicker(); }
+function renderDatePicker(){
+  const picker=document.getElementById('datePicker'); const selected=document.getElementById('dob').value;
+  const first=new Date(currentYear,currentMonth,1); const startDay=first.getDay(); const daysInMonth=new Date(currentYear,currentMonth+1,0).getDate(); const prevDays=new Date(currentYear,currentMonth,0).getDate();
+  let html=`<div class="dp-header"><button type="button" onclick="changeMonth(-1)">↑</button><button type="button" class="dp-month" onclick="changeYear()">${monthNames[currentMonth]}, ${currentYear}</button><button type="button" onclick="changeMonth(1)">↓</button></div>`;
+  html += `<div class="dp-week"><span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span></div><div class="dp-grid">`;
+  for(let i=0;i<42;i++){ let day, muted=false, m=currentMonth, y=currentYear; if(i<startDay){day=prevDays-startDay+i+1; muted=true; m=currentMonth-1; if(m<0){m=11;y--;}} else if(i>=startDay+daysInMonth){day=i-startDay-daysInMonth+1; muted=true; m=currentMonth+1; if(m>11){m=0;y++;}} else{day=i-startDay+1;} const val=formatDate(day,m,y); html += `<button type="button" class="dp-day ${muted?'muted':''} ${selected===val?'selected':''}" onclick="selectDate(${day},${m},${y})">${day}</button>`; }
+  html += `</div><div class="dp-footer"><button type="button" onclick="clearDate()">Clear</button><button type="button" onclick="selectToday()">Today</button></div>`; picker.innerHTML=html;
+}
+function changeMonth(step){ currentMonth += step; if(currentMonth<0){currentMonth=11;currentYear--;} if(currentMonth>11){currentMonth=0;currentYear++;} renderDatePicker(); }
+function changeYear(){ const y=prompt('Enter year', currentYear); if(y && /^\d{4}$/.test(y)){ currentYear=Number(y); renderDatePicker(); } }
+function selectDate(d,m,y){ document.getElementById('dob').value=formatDate(d,m,y); currentMonth=m; currentYear=y; document.getElementById('datePicker').classList.remove('show'); }
+function clearDate(){ document.getElementById('dob').value=''; document.getElementById('datePicker').classList.remove('show'); }
+function selectToday(){ const t=new Date(); selectDate(t.getDate(),t.getMonth(),t.getFullYear()); }
+document.addEventListener('click', function(e){ const dp=document.getElementById('datePicker'); const wrap=document.querySelector('.date-wrap'); const tm=document.getElementById('themeMenu'); if(wrap && !wrap.contains(e.target)) dp.classList.remove('show'); if(tm && !e.target.closest('.float-buttons')) tm.classList.remove('show'); });
+function toggleThemeMenu(){ document.getElementById('themeMenu').classList.toggle('show'); }
+function applyAutoTheme(){ const saved=localStorage.getItem('theme') || 'light'; const dark=saved==='dark' || (saved==='auto' && window.matchMedia('(prefers-color-scheme: dark)').matches); document.body.classList.toggle('dark-mode', dark); }
+function setTheme(mode){ localStorage.setItem('theme', mode); applyAutoTheme(); document.getElementById('themeMenu').classList.remove('show'); }
+applyAutoTheme();
+
 function sendWhatsApp(){
   const name = document.getElementById('name').value.trim();
   const phone = document.getElementById('phone').value.trim();
