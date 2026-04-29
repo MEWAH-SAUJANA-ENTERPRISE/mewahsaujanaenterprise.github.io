@@ -1229,6 +1229,30 @@ body.dark-mode .prefix{
   .header-title{font-size:14px !important; line-height:1.15 !important;}
 }
 
+
+/* ===== MOBILE FLOAT ICON FINAL FIX ===== */
+@media (max-width:768px){
+  .float-buttons{right:10px !important;bottom:14px !important;gap:9px !important;z-index:3000 !important;}
+  .float-buttons a,.float-buttons button.float-moon,.float-buttons button.float-lang{
+    width:48px !important;height:48px !important;min-width:48px !important;min-height:48px !important;
+    padding:0 !important;border-radius:50% !important;display:flex !important;align-items:center !important;justify-content:center !important;
+    line-height:1 !important;box-shadow:0 8px 20px rgba(0,0,0,.22) !important;
+  }
+  .float-buttons i{font-size:22px !important;line-height:1 !important;display:block !important;}
+  .float-wa i{font-size:24px !important;}
+  .float-call i{font-size:22px !important;}
+  .float-lang i{font-size:23px !important;}
+  .float-moon{background:#3498db !important;}
+  .float-wa{background:#22d061 !important;}
+  .float-call{background:#43b649 !important;}
+  .float-lang{background:#263b4e !important;color:#fff !important;}
+}
+@media (max-width:380px){
+  .float-buttons a,.float-buttons button.float-moon,.float-buttons button.float-lang{width:44px !important;height:44px !important;min-width:44px !important;min-height:44px !important;}
+  .float-buttons i{font-size:20px !important;}
+  .float-wa i{font-size:22px !important;}
+}
+
 </style>
 </head>
 
