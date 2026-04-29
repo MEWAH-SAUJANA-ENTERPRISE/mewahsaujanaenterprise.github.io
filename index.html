@@ -759,6 +759,80 @@ body.dark-mode{background:#121a22;color:#eaf1f7;}body.dark-mode .header,body.dar
   .footer p{font-size:8px;}
 }
 
+
+
+/* ===== STABLE FIXES: native date + readable dark mode ===== */
+.native-date-wrap{position:relative;}
+.native-date-wrap input[type="date"]{
+  width:100%;
+  box-sizing:border-box;
+  min-height:46px;
+  font-family:inherit;
+  font-size:14px;
+  color:#1f2937;
+  background:#fff;
+  border:1px solid #d8dde3;
+  border-radius:7px;
+  padding:10px 14px;
+  color-scheme:light;
+}
+.native-date-wrap input[type="date"]::-webkit-calendar-picker-indicator{
+  cursor:pointer;
+  opacity:.85;
+}
+body.dark-mode{background:#101820;color:#f3f6f9;}
+body.dark-mode .section,
+body.dark-mode .section.soft,
+body.dark-mode .panel,
+body.dark-mode .benefit-list,
+body.dark-mode .repay-box,
+body.dark-mode .app-panel,
+body.dark-mode .feedback-card,
+body.dark-mode .whatsapp-note{
+  background:#172432!important;
+  color:#f3f6f9!important;
+  border-color:#3b5268!important;
+}
+body.dark-mode .title,
+body.dark-mode .section-title,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode label,
+body.dark-mode .form-title,
+body.dark-mode .app-panel strong,
+body.dark-mode .benefit-list strong,
+body.dark-mode .footer h3,
+body.dark-mode .footer p,
+body.dark-mode .feedback-card b,
+body.dark-mode .feedback-card p,
+body.dark-mode .feedback-card em,
+body.dark-mode .eligibility li,
+body.dark-mode .repay-box p{
+  color:#f8fafc!important;
+}
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode .help,
+body.dark-mode .submit-note,
+body.dark-mode .muted{color:#d7e0ea!important;}
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea,
+body.dark-mode .prefix{
+  background:#0f1b25!important;
+  color:#fff!important;
+  border-color:#4c6379!important;
+}
+body.dark-mode input::placeholder, body.dark-mode textarea::placeholder{color:#aebdca!important;}
+body.dark-mode input[type="date"]{color-scheme:dark;}
+body.dark-mode .theme-menu, body.dark-mode .theme-menu button{background:#1c2a38!important;color:#fff!important;border-color:#43566a!important;}
+body.dark-mode .theme-menu button.active, body.dark-mode .theme-menu button:hover{background:#3498db!important;color:#fff!important;}
+@media(max-width:520px){
+  .native-date-wrap input[type="date"]{font-size:13px;min-height:42px;padding:9px 11px;}
+}
+
 </style>
 </head>
 
@@ -884,10 +958,8 @@ body.dark-mode{background:#121a22;color:#eaf1f7;}body.dark-mode .header,body.dar
         </div>
         <div class="form-group">
           <label>Date Of Birth:</label>
-          <div class="date-wrap">
-            <input type="text" id="dob" placeholder="28/04/1966" readonly onclick="toggleDatePicker()">
-            <button type="button" class="calendar-btn" onclick="toggleDatePicker()" aria-label="Open calendar"><i class="fa-regular fa-calendar-days"></i></button>
-            <div class="date-picker" id="datePicker"></div>
+          <div class="date-wrap native-date-wrap">
+            <input type="date" id="dob" value="1966-04-28" min="1900-01-01" max="2026-12-31">
           </div>
         </div>
         <div class="form-group">
@@ -982,26 +1054,17 @@ body.dark-mode{background:#121a22;color:#eaf1f7;}body.dark-mode .header,body.dar
 </div>
 
 <script>
-let currentMonth = 3;
-let currentYear = 1966;
-const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-function pad(n){ return String(n).padStart(2,'0'); }
-function formatDate(d,m,y){ return `${pad(d)}/${pad(m+1)}/${y}`; }
-function toggleDatePicker(){ const picker=document.getElementById('datePicker'); picker.classList.toggle('show'); renderDatePicker(); }
-function renderDatePicker(){
-  const picker=document.getElementById('datePicker'); const selected=document.getElementById('dob').value;
-  const first=new Date(currentYear,currentMonth,1); const startDay=first.getDay(); const daysInMonth=new Date(currentYear,currentMonth+1,0).getDate(); const prevDays=new Date(currentYear,currentMonth,0).getDate();
-  let html=`<div class="dp-header"><button type="button" onclick="changeMonth(-1)">↑</button><button type="button" class="dp-month" onclick="changeYear()">${monthNames[currentMonth]}, ${currentYear}</button><button type="button" onclick="changeMonth(1)">↓</button></div>`;
-  html += `<div class="dp-week"><span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span></div><div class="dp-grid">`;
-  for(let i=0;i<42;i++){ let day, muted=false, m=currentMonth, y=currentYear; if(i<startDay){day=prevDays-startDay+i+1; muted=true; m=currentMonth-1; if(m<0){m=11;y--;}} else if(i>=startDay+daysInMonth){day=i-startDay-daysInMonth+1; muted=true; m=currentMonth+1; if(m>11){m=0;y++;}} else{day=i-startDay+1;} const val=formatDate(day,m,y); html += `<button type="button" class="dp-day ${muted?'muted':''} ${selected===val?'selected':''}" onclick="selectDate(${day},${m},${y})">${day}</button>`; }
-  html += `</div><div class="dp-footer"><button type="button" onclick="clearDate()">Clear</button><button type="button" onclick="selectToday()">Today</button></div>`; picker.innerHTML=html;
+// Native date input is used here because it is stable on mobile and desktop browsers.
+function formatDOBForWhatsApp(value){
+  if(!value) return '';
+  const parts = value.split('-');
+  if(parts.length !== 3) return value;
+  return `${parts[2]}/${parts[1]}/${parts[0]}`;
 }
-function changeMonth(step){ currentMonth += step; if(currentMonth<0){currentMonth=11;currentYear--;} if(currentMonth>11){currentMonth=0;currentYear++;} renderDatePicker(); }
-function changeYear(){ const y=prompt('Enter year', currentYear); if(y && /^\d{4}$/.test(y)){ currentYear=Number(y); renderDatePicker(); } }
-function selectDate(d,m,y){ document.getElementById('dob').value=formatDate(d,m,y); currentMonth=m; currentYear=y; document.getElementById('datePicker').classList.remove('show'); }
-function clearDate(){ document.getElementById('dob').value=''; document.getElementById('datePicker').classList.remove('show'); }
-function selectToday(){ const t=new Date(); selectDate(t.getDate(),t.getMonth(),t.getFullYear()); }
-document.addEventListener('click', function(e){ const dp=document.getElementById('datePicker'); const wrap=document.querySelector('.date-wrap'); const tm=document.getElementById('themeMenu'); if(wrap && !wrap.contains(e.target)) dp.classList.remove('show'); if(tm && !e.target.closest('.float-buttons')) tm.classList.remove('show'); });
+document.addEventListener('click', function(e){
+  const tm=document.getElementById('themeMenu');
+  if(tm && !e.target.closest('.float-buttons')) tm.classList.remove('show');
+});
 function toggleThemeMenu(){ document.getElementById('themeMenu').classList.toggle('show'); }
 function applyAutoTheme(){ const saved=localStorage.getItem('theme') || 'light'; const dark=saved==='dark' || (saved==='auto' && window.matchMedia('(prefers-color-scheme: dark)').matches); document.body.classList.toggle('dark-mode', dark); }
 function setTheme(mode){ localStorage.setItem('theme', mode); applyAutoTheme(); document.getElementById('themeMenu').classList.remove('show'); }
@@ -1011,7 +1074,7 @@ function sendWhatsApp(){
   const name = document.getElementById('name').value.trim();
   const phone = document.getElementById('phone').value.trim();
   const state = document.getElementById('state').value;
-  const dob = document.getElementById('dob').value.trim();
+  const dob = formatDOBForWhatsApp(document.getElementById('dob').value.trim());
   const epf = document.getElementById('epf').value.trim();
   const notes = document.getElementById('notes').value.trim();
 
