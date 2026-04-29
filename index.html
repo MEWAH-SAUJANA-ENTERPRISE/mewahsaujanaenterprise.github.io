@@ -1111,6 +1111,56 @@ body.dark-mode .prefix{
   border-color:#4a4a4a !important;
 }
 
+
+/* ===== FINAL HEADER SYNC WITH MILANO DESKTOP ===== */
+@media (min-width:769px){
+  body{
+    padding-top:180px !important;
+  }
+  .header{
+    height:180px !important;
+    background:#fff !important;
+    box-shadow:0 2px 12px rgba(0,0,0,.08) !important;
+  }
+  body.dark-mode .header{
+    background:#1f1f1f !important;
+    box-shadow:none !important;
+  }
+  .header-inner{
+    width:min(1200px, calc(100% - 52px)) !important;
+    height:100%;
+    margin:0 auto !important;
+    display:flex !important;
+    align-items:center !important;
+    gap:22px !important;
+    justify-content:flex-start !important;
+  }
+  .header img{
+    height:72px !important;
+    width:auto !important;
+    max-width:170px !important;
+    object-fit:contain !important;
+    display:block;
+  }
+  .header-title{
+    font-size:25px !important;
+    line-height:1.1 !important;
+    font-weight:800 !important;
+    color:#26394d !important;
+    white-space:nowrap !important;
+    letter-spacing:-.2px;
+  }
+  body.dark-mode .header-title{
+    color:#f2f2f2 !important;
+  }
+}
+
+/* Keep mobile header compact */
+@media (max-width:768px){
+  body{padding-top:92px !important;}
+  .header{height:92px !important;}
+}
+
 </style>
 </head>
 
