@@ -4,29 +4,732 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>MEWAH SAUJANA ENTERPRISE</title>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 <style>
-:root{--blue:#3498db;--navy:#22394f;--dark:#1d3145;--light:#f7f7f7;--border:#d9d9d9;--green:#25d366;}
-*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#fff;color:#0f2235;font-size:17px;line-height:1.55}.topbar{height:140px;background:#fff;display:flex;align-items:center;padding:0 10%;box-shadow:0 2px 14px rgba(0,0,0,.08);position:relative;z-index:5}.brand{display:flex;align-items:center;gap:24px}.brand img{width:140px;max-height:80px;object-fit:contain}.brand-title{font-size:30px;font-weight:800;color:#24384e}.hero{min-height:470px;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('bg.jpg') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:60px 20px}.hero-inner{width:min(1100px,92%)}.hero h1{margin:0;text-transform:uppercase;font-size:46px;letter-spacing:1px;font-weight:900;text-shadow:0 3px 7px rgba(0,0,0,.65)}.hero h1 span{color:var(--blue)}.hero p{font-size:25px;margin:22px 0 50px;text-shadow:0 2px 5px rgba(0,0,0,.75)}.hero-badges{max-width:900px;margin:auto;border:1px solid rgba(255,255,255,.35);border-radius:7px;background:rgba(255,255,255,.18);backdrop-filter:blur(4px);padding:24px 36px;text-align:left}.hero-badges div{font-size:24px;font-weight:800;margin:10px 0}.hero-badges i{color:#35b956;margin-right:22px}.section{padding:54px 20px}.container{width:min(1500px,88%);margin:auto}.section-title{text-align:center;font-size:34px;line-height:1.2;margin:0 0 42px;font-weight:900;color:#1f3952}.section-title:after{content:"";display:block;width:125px;height:4px;background:var(--blue);margin:18px auto 0}.box{background:#fff;border:1px solid var(--border);border-radius:8px;box-shadow:0 12px 30px rgba(0,0,0,.07);padding:34px}.about h2{font-size:28px;margin:0 0 20px;color:#1f3952}.about p{text-transform:uppercase;font-size:20px}.age-pill{display:inline-block;background:#e7f4ff;padding:14px 22px;border-radius:5px;font-size:20px;font-weight:700;margin:16px 0}.warning{background:#fff7dc;border-left:5px solid #ffbf00;margin-top:36px;padding:25px 30px}.warning h3{margin:0 0 4px;font-size:24px}.benefits .box{padding:22px 32px}.benefit{display:grid;grid-template-columns:38px 1fr;gap:10px;border-bottom:1px solid #ddd;padding:18px 0}.benefit:last-child{border-bottom:0}.benefit i{color:var(--blue);font-size:23px;margin-top:7px}.benefit b{font-size:21px;text-transform:uppercase}.benefit p{margin:2px 0 0;font-size:20px}.red{color:#ff3b30}.repay .box p{font-size:20px}.repay em{display:block;margin-top:26px}.application .box{padding:32px}.application h3{font-size:25px;text-transform:uppercase}.eligibility{margin:28px 0 44px}.eligibility-row{display:grid;grid-template-columns:34px 1fr;gap:12px;border-bottom:1px solid #ddd;padding:15px 0;font-weight:800;text-transform:uppercase}.eligibility-row i{color:var(--blue);font-size:24px}.form-title{text-align:center;font-size:25px;font-weight:900;margin:0 0 26px}.field{margin-bottom:26px}.field label{display:block;font-weight:800;text-transform:uppercase;margin-bottom:10px;font-size:20px}.phone{display:flex;gap:12px}.prefix{width:80px;border:1px solid #ddd;border-radius:5px;padding:14px;text-align:center;font-weight:800;background:#fff}input,select,textarea{width:100%;font-size:19px;padding:14px 18px;border:1px solid #ccc;border-radius:5px;background:#fff}textarea{height:110px;resize:vertical}.hint{color:#777;font-size:15px;margin-top:6px}.btn{width:100%;border:0;border-radius:5px;background:var(--blue);color:#fff;font-size:23px;font-weight:900;padding:18px 20px;cursor:pointer}.btn:hover{filter:brightness(.95)}.feedback{background:#f5f5f5}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}.testimonial{background:#fff;border:1px solid #ddd;border-radius:7px;box-shadow:0 10px 25px rgba(0,0,0,.09);padding:28px;text-align:center}.testimonial-img{height:170px;border-radius:5px;background:#eee url('testimonial.jpg') center/cover no-repeat;margin-bottom:18px}.testimonial em{font-size:18px}.testimonial b{display:block;margin-top:22px;font-size:19px}.wa-link{text-align:center;margin-top:40px}.wa-link i{font-size:52px;color:var(--green);display:block;margin-bottom:12px}.location-card{height:340px;border-radius:7px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.12);border:1px solid #ddd;background:#e9eef3;display:flex;align-items:center;justify-content:center;text-align:center;color:#4b5563}.footer{background:#263b4d;color:#fff;padding:50px 10% 26px}.footer-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:50px}.footer h3{font-size:24px;margin:0 0 20px}.footer p{margin:11px 0}.footer i{width:28px}.copyright{text-align:center;margin-top:38px;padding-top:24px;border-top:1px solid rgba(255,255,255,.15);color:#bfc9d4}.float{position:fixed;right:28px;top:50%;transform:translateY(-50%);z-index:20;display:flex;flex-direction:column;gap:18px}.float a{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;text-decoration:none;font-size:30px;box-shadow:0 12px 28px rgba(0,0,0,.2)}.moon{background:var(--blue)}.whatsapp{background:#1ed760}.call{background:#43b64a}.web{background:#24384e}@media(max-width:900px){.topbar{height:auto;padding:20px}.brand-title{font-size:22px}.hero h1{font-size:34px}.hero p{font-size:20px}.cards,.footer-grid{grid-template-columns:1fr}.float{right:12px}.float a{width:54px;height:54px;font-size:23px}.container{width:94%}.hero-badges div{font-size:19px}}
+:root{
+  --blue:#3498db;
+  --dark:#24384a;
+  --text:#1f3347;
+  --muted:#666;
+  --soft:#f7f7f7;
+  --border:#ddd;
+  --green:#22c55e;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  padding-top:86px;
+  font-family:"Segoe UI", Arial, sans-serif;
+  background:#fff;
+  color:var(--text);
+  font-size:14px;
+  line-height:1.55;
+}
+
+/* ================= FIXED HEADER ================= */
+.header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:86px;
+  background:#fff;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  box-shadow:0 2px 12px rgba(0,0,0,.08);
+}
+.header-inner{
+  width:min(1200px, calc(100% - 40px));
+  margin:auto;
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+.header img{
+  height:56px;
+  width:auto;
+  object-fit:contain;
+}
+.header-title{
+  font-size:20px;
+  font-weight:700;
+  color:#26394d;
+  white-space:nowrap;
+}
+
+/* ================= HERO ================= */
+.hero{
+  min-height:440px;
+  background:url("bg.jpg") center/cover no-repeat;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.43);
+  backdrop-filter:blur(1px);
+}
+.hero-content{
+  position:relative;
+  width:min(980px, calc(100% - 36px));
+  margin:auto;
+  color:#fff;
+  padding:32px 0;
+}
+.hero h1{
+  margin:0 0 22px;
+  font-size:36px;
+  line-height:1.15;
+  font-weight:800;
+  letter-spacing:.4px;
+  color:#fff;
+  text-shadow:0 3px 6px rgba(0,0,0,.45);
+}
+.hero h1 span{color:var(--blue)}
+.hero-subtitle{
+  font-size:18px;
+  font-weight:500;
+  margin:0 0 36px;
+  text-shadow:0 2px 4px rgba(0,0,0,.5);
+}
+.hero-box{
+  width:min(760px, 100%);
+  margin:auto;
+  text-align:left;
+  padding:22px 30px;
+  border:1px solid rgba(255,255,255,.45);
+  border-radius:6px;
+  background:rgba(255,255,255,.16);
+  backdrop-filter:blur(4px);
+  box-shadow:0 10px 35px rgba(0,0,0,.18);
+}
+.hero-point{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  color:#fff;
+  font-size:18px;
+  font-weight:700;
+  margin:12px 0;
+}
+.hero-point i{
+  background:#43b94e;
+  color:#fff;
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:12px;
+}
+
+/* ================= COMMON ================= */
+.section{
+  padding:48px 20px;
+}
+.section.soft{background:#f4f4f4}
+.container{
+  width:min(1200px, 100%);
+  margin:auto;
+}
+.title{
+  text-align:center;
+  font-size:26px;
+  line-height:1.2;
+  margin:0 0 36px;
+  color:#20374d;
+  font-weight:800;
+  position:relative;
+}
+.title::after{
+  content:"";
+  display:block;
+  width:92px;
+  height:3px;
+  background:var(--blue);
+  margin:16px auto 0;
+}
+.panel{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:7px;
+  padding:28px 28px;
+  box-shadow:0 8px 26px rgba(0,0,0,.06);
+}
+
+/* ================= ABOUT ================= */
+.about h2{
+  margin:0 0 18px;
+  font-size:22px;
+  font-weight:800;
+}
+.about p{
+  margin:10px 0;
+  font-size:16px;
+  color:#111827;
+  text-transform:uppercase;
+}
+.age-badge{
+  display:inline-block;
+  margin:20px 0;
+  background:#e5f3ff;
+  color:#1f3347;
+  padding:14px 18px;
+  border-radius:4px;
+  font-size:15px;
+  font-weight:700;
+}
+.warning{
+  margin-top:26px;
+  background:#fff8df;
+  border-left:4px solid #f8c300;
+  padding:24px 26px;
+  color:#111827;
+}
+.warning strong{font-size:18px}
+.warning i{color:#ff9800;margin-right:12px}
+
+/* ================= BENEFITS ================= */
+.benefit-list{
+  background:#f7f7f7;
+  border:1px solid #ddd;
+  border-radius:7px;
+  padding:26px 30px;
+  box-shadow:0 8px 26px rgba(0,0,0,.06);
+}
+.benefit-item{
+  display:grid;
+  grid-template-columns:28px 1fr;
+  gap:16px;
+  padding:17px 0;
+  border-bottom:1px solid #d9d9d9;
+}
+.benefit-item:last-child{border-bottom:0}
+.benefit-item i{
+  color:var(--blue);
+  font-size:18px;
+  margin-top:4px;
+}
+.benefit-item h3{
+  margin:0 0 4px;
+  font-size:16px;
+  color:#1f2937;
+  font-weight:800;
+  text-transform:uppercase;
+}
+.benefit-item p{
+  margin:0;
+  color:#111827;
+  font-size:15px;
+}
+.red{color:#ff3b30}
+
+/* ================= REPAYMENT ================= */
+.repayment p{
+  margin:0 0 22px;
+  font-size:16px;
+  color:#111827;
+}
+.repayment em{font-size:16px;color:#1f2937}
+
+/* ================= APPLICATION ================= */
+.app-panel{
+  background:#f7f7f7;
+  border:1px solid #ddd;
+  border-radius:7px;
+  padding:30px;
+  box-shadow:0 8px 26px rgba(0,0,0,.06);
+}
+.app-panel h3{
+  margin:0 0 28px;
+  font-size:19px;
+  color:#1f2937;
+  font-weight:800;
+  text-transform:uppercase;
+}
+.eligibility-title{
+  font-size:22px;
+  font-weight:800;
+  margin:0 0 24px;
+}
+.eligibility{
+  margin:0 0 34px;
+  padding:0;
+  list-style:none;
+}
+.eligibility li{
+  display:grid;
+  grid-template-columns:28px 1fr;
+  align-items:center;
+  gap:14px;
+  padding:14px 0;
+  border-bottom:1px solid #ddd;
+  font-weight:800;
+  color:#1f2937;
+  text-transform:uppercase;
+  font-size:15px;
+}
+.eligibility i{color:var(--blue);font-size:18px}
+.form-title{
+  text-align:center;
+  font-size:18px;
+  font-weight:800;
+  margin:34px 0 26px;
+}
+.form-group{margin-bottom:22px}
+label{
+  display:block;
+  margin-bottom:9px;
+  font-size:15px;
+  color:#152b40;
+  font-weight:600;
+  text-transform:uppercase;
+}
+input,select,textarea{
+  width:100%;
+  height:46px;
+  padding:10px 14px;
+  border:1px solid #d5d5d5;
+  border-radius:5px;
+  background:#fff;
+  font-size:14px;
+  color:#111827;
+  font-family:inherit;
+  outline:none;
+}
+textarea{height:90px;resize:vertical}
+input:focus,select:focus,textarea:focus{
+  border-color:#3399ff;
+  box-shadow:0 0 0 2px rgba(51,153,255,.12);
+}
+.phone-row{
+  display:grid;
+  grid-template-columns:62px 1fr;
+  gap:10px;
+}
+.prefix{
+  height:46px;
+  border:1px solid #d5d5d5;
+  border-radius:5px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+  font-weight:700;
+  color:#152b40;
+}
+.help{
+  display:block;
+  margin-top:7px;
+  color:#777;
+  font-size:12px;
+}
+.submit-btn{
+  width:100%;
+  border:0;
+  border-radius:5px;
+  height:52px;
+  background:#3498db;
+  color:#fff;
+  font-size:17px;
+  font-weight:800;
+  cursor:pointer;
+  text-transform:uppercase;
+}
+.submit-btn:hover{background:#258ad0}
+.submit-note{
+  text-align:center;
+  margin:14px 0 0;
+  color:#777;
+  font-size:13px;
+}
+
+/* ================= FEEDBACK ================= */
+.feedback-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+.feedback-card{
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:7px;
+  padding:22px;
+  text-align:center;
+  box-shadow:0 8px 24px rgba(0,0,0,.08);
+}
+.feedback-card img{
+  width:100%;
+  height:170px;
+  object-fit:cover;
+  border-radius:4px;
+  border:1px solid #ddd;
+}
+.feedback-card p{
+  font-size:15px;
+  color:#111827;
+  margin:18px 0;
+  font-style:italic;
+}
+.feedback-card strong{font-size:15px}
+.whatsapp-note{
+  margin-top:28px;
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:6px;
+  padding:28px;
+  text-align:center;
+}
+.whatsapp-note i{
+  color:#25d366;
+  font-size:46px;
+}
+.whatsapp-note a{
+  display:inline-block;
+  margin-top:12px;
+  color:#1d4ed8;
+  font-size:15px;
+}
+
+/* ================= LOCATION ================= */
+.map-box{
+  width:100%;
+  height:280px;
+  border:0;
+  border-radius:6px;
+  box-shadow:0 8px 24px rgba(0,0,0,.12);
+}
+
+/* ================= FOOTER ================= */
+.footer{
+  background:#263b4e;
+  color:#fff;
+  padding:48px 20px 24px;
+}
+.footer-inner{
+  width:min(1120px, 100%);
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.2fr 1.2fr 1fr;
+  gap:70px;
+}
+.footer h3{
+  margin:0 0 24px;
+  font-size:20px;
+  color:#fff;
+  font-weight:800;
+}
+.footer p{
+  margin:13px 0;
+  color:#fff;
+  font-size:15px;
+}
+.footer .line{
+  display:grid;
+  grid-template-columns:24px 1fr;
+  gap:14px;
+  align-items:start;
+}
+.footer i{color:#fff;margin-top:4px}
+.copyright{
+  width:min(1120px, 100%);
+  margin:36px auto 0;
+  padding-top:24px;
+  border-top:1px solid rgba(255,255,255,.14);
+  text-align:center;
+  color:rgba(255,255,255,.75);
+  font-size:13px;
+}
+
+/* ================= FLOATING BUTTONS ================= */
+.float-buttons{
+  position:fixed;
+  right:24px;
+  bottom:34px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  z-index:1001;
+}
+.float-buttons a{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  color:#fff;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  box-shadow:0 10px 26px rgba(0,0,0,.18);
+}
+.float-moon{background:#3498db}
+.float-wa{background:#22d061}
+.float-call{background:#43b649}
+.float-lang{background:#263b4e}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+  body{padding-top:76px}
+  .header{height:76px}
+  .header-inner{width:calc(100% - 24px)}
+  .header img{height:46px}
+  .header-title{font-size:17px}
+  .hero{min-height:420px}
+  .hero h1{font-size:28px}
+  .hero-subtitle{font-size:15px}
+  .hero-point{font-size:15px}
+  .feedback-grid{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr;gap:24px}
+  .float-buttons{right:14px;bottom:20px}
+  .float-buttons a{width:50px;height:50px;font-size:20px}
+}
+@media(max-width:520px){
+  body{font-size:13px}
+  .header-title{font-size:15px}
+  .hero h1{font-size:24px}
+  .title{font-size:22px}
+  .panel,.benefit-list,.app-panel{padding:22px 16px}
+  .phone-row{grid-template-columns:58px 1fr}
+}
 </style>
 </head>
+
 <body>
-<header class="topbar"><div class="brand"><img src="logo.png" alt="MEWAH SAUJANA logo"><div class="brand-title">MEWAH SAUJANA Enterprise</div></div></header>
-<section class="hero"><div class="hero-inner"><h1>Professional Financial <span>Consultation</span></h1><p>We Offer Settlement Services Using Your EPF Contributions</p><div class="hero-badges"><div><i class="fa-solid fa-circle-check"></i>No Advance Payment</div><div><i class="fa-solid fa-circle-check"></i>No Monthly Commitment Burden</div></div></div></section>
-<div class="float"><a class="moon" href="#"><i class="fa-solid fa-moon"></i></a><a class="whatsapp" href="https://wa.me/60103328822"><i class="fa-brands fa-whatsapp"></i></a><a class="call" href="tel:+60103328822"><i class="fa-solid fa-phone"></i></a><a class="web" href="#"><i class="fa-solid fa-globe"></i></a></div>
-<section class="section about"><div class="container"><h2 class="section-title">About Us</h2><div class="box"><h2>MEWAH SAUJANA ENTERPRISE (SA0170975-P)</h2><p>Also known as <b>MQIRAD</b> is a licensed community credit money lending company registered under the Money Lending Act 1951.</p><p>We provide special financing facilities for ages</p><div class="age-pill">"53,54,55" &amp; "58,59,60"</div><p>who need immediate cash. Applications can be made <b>online</b>.</p></div><div class="warning"><h3><i class="fa-solid fa-triangle-exclamation" style="color:#ff9900"></i> &nbsp;IS MEWAH SAUJANA RELATED TO EPF?</h3><p><b>NO.</b> MEWAH SAUJANA IS NOT A REPRESENTATIVE OR AGENT OF EPF</p></div></div></section>
-<section class="section benefits"><div class="container"><h2 class="section-title">EPF Loan Benefits</h2><div class="box"><div class="benefit"><i class="fa-solid fa-calendar-check"></i><div><b>No Monthly Payments For Up To 24 Months</b><p>Moratorium period without monthly payments for your convenience</p></div></div><div class="benefit"><i class="fa-solid fa-money-bill-wave"></i><div><b>No Advance Payment / No Hidden Charges</b><p>All charges are transparent and no advance payment required</p></div></div><div class="benefit"><i class="fa-solid fa-file-contract"></i><div><b>Have Clear And Legal Agreement Letter</b><p>Legally binding agreement documents</p></div></div><div class="benefit"><i class="fa-solid fa-shield-halved"></i><div><b>All Your Personal Data Is Securely Protected</b><p>Your privacy and data security is our priority</p></div></div><div class="benefit"><i class="fa-solid fa-chart-line"></i><div><b>Approval Rate <span class="red">99.9% Approved</span></b><p>Almost all applications approved with easy conditions</p></div></div></div></div></section>
-<section class="section repay"><div class="container"><h2 class="section-title">Repayment Method</h2><div class="box"><p>Repayment is made when customer has received EPF withdrawal.</p><p><em>Repayment amount is the same as the original agreement made when loan was agreed by both parties.</em></p></div></div></section>
-<section class="section application"><div class="container"><h2 class="section-title">Online Application</h2><div class="box"><h3>Simple Documents, Immediate Approval, Fast Process, And Easy</h3><h2>Application Eligibility:</h2><div class="eligibility"><div class="eligibility-row"><i class="fa-solid fa-user-check"></i><span>Eligible to apply for ages 53,54,55 &amp; 58,59,60</span></div><div class="eligibility-row"><i class="fa-solid fa-piggy-bank"></i><span>Have EPF Account 1 or EMAS account savings (minimum savings RM30K)</span></div><div class="eligibility-row"><i class="fa-solid fa-list"></i><span>Blacklist / CTOS / Bankruptcy / AKPK eligible</span></div><div class="eligibility-row"><i class="fa-solid fa-briefcase"></i><span>Working / Not Working eligible</span></div><div class="eligibility-row"><i class="fa-solid fa-location-dot"></i><span>Throughout Peninsular Malaysia (Except Sabah, Sarawak)</span></div></div><p class="form-title">Loan Application Form</p><form id="loanForm"><div class="field"><label>Name:</label><input name="name" placeholder="Enter your full name"></div><div class="field"><label>Phone Number:</label><div class="phone"><div class="prefix">+6</div><input name="phone" placeholder="01122339988"></div><div class="hint"><i class="fa-solid fa-circle-info"></i> Only enter phone number without +6 (example 01122339988)</div></div><div class="field"><label>State:</label><select name="state"><option>Please select state</option><option>Selangor</option><option>Kuala Lumpur</option><option>Penang</option><option>Johor</option><option>Perak</option><option>Negeri Sembilan</option><option>Melaka</option><option>Pahang</option><option>Kedah</option><option>Kelantan</option><option>Terengganu</option><option>Perlis</option></select></div><div class="field"><label>Date of Birth:</label><input name="dob" placeholder="28/04/1966"></div><div class="field"><label>EPF Savings Amount (RM):</label><input name="epf" placeholder="Example: 35000"><div class="hint">* Minimum savings RM30,000 required</div></div><div class="field"><label>Additional Notes (Optional):</label><textarea name="notes" placeholder="Please specify any special requirements or additional inquiries"></textarea></div><button class="btn" type="button" onclick="sendWhatsApp()"><i class="fa-solid fa-paper-plane"></i> SUBMIT APPLICATION</button><div class="hint" style="text-align:center;margin-top:12px">* Data will be saved to our system and sent to WhatsApp</div></form></div></div></section>
-<section class="section feedback"><div class="container"><h2 class="section-title">Customer Feedback</h2><div class="cards"><div class="testimonial"><div class="testimonial-img"></div><em>"Can apply even if not working. This is very helpful for people like me."</em><b>- Ms. Rosnah, 54 years old</b></div><div class="testimonial"><div class="testimonial-img"></div><em>"Simple and uncomplicated loan process. Staff very friendly and helpful."</em><b>- Mr. Tan, 59 years old</b></div><div class="testimonial"><div class="testimonial-img"></div><em>"No hidden charges as promised. Honest and transparent company."</em><b>- Ms. Fatimah, 55 years old</b></div></div><div class="wa-link"><i class="fa-brands fa-whatsapp"></i><p>We attach customer testimonials in WhatsApp</p><a href="https://wa.me/60103328822">View Testimonials on WhatsApp</a></div></div></section>
-<section class="section"><div class="container"><h2 class="section-title">Our Location</h2><div class="location-card"><div><b>Google Map / Location Embed</b><br>Replace this box with your iframe map code.</div></div></div></section>
-<footer class="footer"><div class="footer-grid"><div><h3>MEWAH SAUJANA</h3><p>MEWAH SAUJANA ENTERPRISE (SA0170975-P)</p><p>Licensed Community Credit Money Lender</p><p>Registered under Money Lending Act 1951</p></div><div><h3>Contact Us</h3><p><i class="fa-solid fa-location-dot"></i>21B, Jalan Bandar Rawang 2, 48000 Rawang, Selangor</p><p><i class="fa-solid fa-phone"></i>+6010-332 8822</p><p><i class="fa-solid fa-envelope"></i>xxx@gmail.com</p></div><div><h3>Operating Hours</h3><p>Monday - Friday: 9:30 AM - 5:30 PM</p><p>Saturday: 9:30 AM - 2:00 PM</p><p>Sunday &amp; Public Holidays: Closed</p></div></div><div class="copyright">© 2026 MEWAH SAUJANA ENTERPRISE. All Rights Reserved.</div></footer>
+
+<!-- ================= FIXED HEADER ================= -->
+<header class="header">
+  <div class="header-inner">
+    <img src="logo.png" alt="MEWAH SAUJANA ENTERPRISE Logo" />
+    <div class="header-title">MEWAH SAUJANA ENTERPRISE</div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>PROFESSIONAL FINANCIAL <span>CONSULTATION</span></h1>
+    <p class="hero-subtitle">We Offer Settlement Services Using Your EPF Contributions</p>
+
+    <div class="hero-box">
+      <div class="hero-point"><i class="fa-solid fa-check"></i> No Advance Payment</div>
+      <div class="hero-point"><i class="fa-solid fa-check"></i> No Monthly Commitment Burden</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section about">
+  <div class="container">
+    <h2 class="title">About Us</h2>
+    <div class="panel">
+      <h2>MEWAH SAUJANA ENTERPRISE (SA0170975-P)</h2>
+      <p>Also known as <b>MQIRAD</b> is a licensed community credit money lending company registered under the Money Lending Act 1951.</p>
+      <p>We provide special financing facilities for ages</p>
+      <div class="age-badge">"53,54,55" &amp; "58,59,60"</div>
+      <p>Who need immediate cash. Applications can be made <b>online</b>.</p>
+    </div>
+
+    <div class="warning">
+      <strong><i class="fa-solid fa-triangle-exclamation"></i> IS MEWAH SAUJANA RELATED TO EPF?</strong><br>
+      <b>NO.</b> MEWAH SAUJANA IS NOT A REPRESENTATIVE OR AGENT OF EPF
+    </div>
+  </div>
+</section>
+
+<!-- ================= BENEFITS ================= -->
+<section class="section">
+  <div class="container">
+    <h2 class="title">EPF Loan Benefits</h2>
+    <div class="benefit-list">
+      <div class="benefit-item">
+        <i class="fa-solid fa-calendar-check"></i>
+        <div><h3>No Monthly Payments For Up To 24 Months</h3><p>Moratorium period without monthly payments for your convenience</p></div>
+      </div>
+      <div class="benefit-item">
+        <i class="fa-solid fa-money-bill-wave"></i>
+        <div><h3>No Advance Payment / No Hidden Charges</h3><p>All charges are transparent and no advance payment required</p></div>
+      </div>
+      <div class="benefit-item">
+        <i class="fa-solid fa-file-contract"></i>
+        <div><h3>Have Clear And Legal Agreement Letter</h3><p>Legally binding agreement documents</p></div>
+      </div>
+      <div class="benefit-item">
+        <i class="fa-solid fa-shield-halved"></i>
+        <div><h3>All Your Personal Data Is Securely Protected</h3><p>Your privacy and data security is our priority</p></div>
+      </div>
+      <div class="benefit-item">
+        <i class="fa-solid fa-chart-line"></i>
+        <div><h3>Approval Rate <span class="red">99.9% Approved</span></h3><p>Almost all applications approved with easy conditions</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REPAYMENT ================= -->
+<section class="section repayment">
+  <div class="container">
+    <h2 class="title">Repayment Method</h2>
+    <div class="panel">
+      <p>Repayment is made when customer has received EPF withdrawal.</p>
+      <em>Repayment amount is the same as the original agreement made when loan was agreed by both parties.</em>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ONLINE APPLICATION ================= -->
+<section class="section">
+  <div class="container">
+    <h2 class="title">Online Application</h2>
+    <div class="app-panel">
+      <h3>Simple Documents, Immediate Approval, Fast Process, And Easy</h3>
+      <div class="eligibility-title">Application Eligibility:</div>
+      <ul class="eligibility">
+        <li><i class="fa-solid fa-user-check"></i> Eligible To Apply For Ages 53,54,55 &amp; 58,59,60</li>
+        <li><i class="fa-solid fa-piggy-bank"></i> Have EPF Account 1 Or EMAS Account Savings (Minimum Savings RM30K)</li>
+        <li><i class="fa-solid fa-list-check"></i> Blacklist / CTOS / Bankruptcy / AKPK Eligible</li>
+        <li><i class="fa-solid fa-briefcase"></i> Working / Not Working Eligible</li>
+        <li><i class="fa-solid fa-location-dot"></i> Throughout Peninsular Malaysia (Except Sabah, Sarawak)</li>
+      </ul>
+
+      <div class="form-title">Loan Application Form</div>
+      <form id="loanForm">
+        <div class="form-group">
+          <label>Name:</label>
+          <input type="text" id="name" placeholder="Enter your full name">
+        </div>
+        <div class="form-group">
+          <label>Phone Number:</label>
+          <div class="phone-row">
+            <div class="prefix">+6</div>
+            <input type="tel" id="phone" placeholder="01122339988">
+          </div>
+          <span class="help"><i class="fa-solid fa-circle-info"></i> Only enter phone number without +6 (example 01122339988)</span>
+        </div>
+        <div class="form-group">
+          <label>State:</label>
+          <select id="state">
+            <option value="">Please select state</option>
+            <option>Selangor</option><option>Kuala Lumpur</option><option>Johor</option><option>Penang</option>
+            <option>Perak</option><option>Kedah</option><option>Kelantan</option><option>Terengganu</option>
+            <option>Pahang</option><option>Negeri Sembilan</option><option>Melaka</option><option>Perlis</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Date Of Birth:</label>
+          <input type="text" id="dob" placeholder="28/04/1966">
+        </div>
+        <div class="form-group">
+          <label>EPF Savings Amount (RM):</label>
+          <input type="number" id="epf" placeholder="Example: 35000">
+          <span class="help">* Minimum savings RM30,000 required</span>
+        </div>
+        <div class="form-group">
+          <label>Additional Notes (Optional):</label>
+          <textarea id="notes" placeholder="Please specify any special requirements or additional inquiries"></textarea>
+        </div>
+        <button type="button" class="submit-btn" onclick="sendWhatsApp()"><i class="fa-solid fa-paper-plane"></i> Submit Application</button>
+        <p class="submit-note">* Data will be saved to our system and sent to WhatsApp</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CUSTOMER FEEDBACK ================= -->
+<section class="section soft">
+  <div class="container">
+    <h2 class="title">Customer Feedback</h2>
+    <div class="feedback-grid">
+      <div class="feedback-card">
+        <img src="testimonial1.jpg" alt="Customer feedback">
+        <p>"Can apply even if not working. This is very helpful for people like me."</p>
+        <strong>- Ms. Rosnah, 54 years old</strong>
+      </div>
+      <div class="feedback-card">
+        <img src="testimonial2.jpg" alt="Customer feedback">
+        <p>"Simple and uncomplicated loan process. Staff very friendly and helpful."</p>
+        <strong>- Mr. Tan, 59 years old</strong>
+      </div>
+      <div class="feedback-card">
+        <img src="testimonial3.jpg" alt="Customer feedback">
+        <p>"No hidden charges as promised. Honest and transparent company."</p>
+        <strong>- Ms. Fatimah, 55 years old</strong>
+      </div>
+    </div>
+    <div class="whatsapp-note">
+      <i class="fa-brands fa-whatsapp"></i>
+      <p>We attach customer testimonials in WhatsApp</p>
+      <a href="#"><i class="fa-brands fa-whatsapp"></i> View Testimonials on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LOCATION ================= -->
+<section class="section">
+  <div class="container">
+    <h2 class="title">Our Location</h2>
+    <iframe class="map-box" src="https://www.google.com/maps?q=Rawang%20Selangor&output=embed" loading="lazy"></iframe>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <h3>MEWAH</h3>
+      <p>MEWAH SAUJANA ENTERPRISE (SA0170975-P)</p>
+      <p>Licensed Community Credit Money Lender</p>
+      <p>Registered under Money Lending Act 1951</p>
+    </div>
+    <div>
+      <h3>Contact Us</h3>
+      <p class="line"><i class="fa-solid fa-location-dot"></i><span>21B, Jalan Bandar Rawang 2, 48000 Rawang, Selangor</span></p>
+      <p class="line"><i class="fa-solid fa-phone"></i><span>+6010-332 8822</span></p>
+      <p class="line"><i class="fa-solid fa-envelope"></i><span>yourcompany@gmail.com</span></p>
+    </div>
+    <div>
+      <h3>Operating Hours</h3>
+      <p>Monday - Friday: 9:30 AM - 5:30 PM</p>
+      <p>Saturday: 9:30 AM - 2:00 PM</p>
+      <p>Sunday &amp; Public Holidays: Closed</p>
+    </div>
+  </div>
+  <div class="copyright">© 2026 MEWAH SAUJANA ENTERPRISE. All Rights Reserved.</div>
+</footer>
+
+<!-- ================= FLOATING BUTTONS ================= -->
+<div class="float-buttons">
+  <a href="#" class="float-moon" title="Night Mode"><i class="fa-solid fa-moon"></i></a>
+  <a href="https://wa.me/60103328822" class="float-wa" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  <a href="tel:+60103328822" class="float-call" title="Call"><i class="fa-solid fa-phone"></i></a>
+  <a href="#" class="float-lang" title="Language"><i class="fa-solid fa-globe"></i></a>
+</div>
+
 <script>
 function sendWhatsApp(){
-  const f=document.getElementById('loanForm');
-  const msg=`Loan Application%0AName: ${encodeURIComponent(f.name.value)}%0APhone: +6${encodeURIComponent(f.phone.value)}%0AState: ${encodeURIComponent(f.state.value)}%0ADOB: ${encodeURIComponent(f.dob.value)}%0AEPF Savings: RM${encodeURIComponent(f.epf.value)}%0ANotes: ${encodeURIComponent(f.notes.value)}`;
-  window.open('https://wa.me/60103328822?text='+msg,'_blank');
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const state = document.getElementById('state').value;
+  const dob = document.getElementById('dob').value.trim();
+  const epf = document.getElementById('epf').value.trim();
+  const notes = document.getElementById('notes').value.trim();
+
+  const msg = `Loan Application%0A%0AName: ${name}%0APhone: +6${phone}%0AState: ${state}%0ADate of Birth: ${dob}%0AEPF Savings: RM${epf}%0ANotes: ${notes}`;
+  window.open(`https://wa.me/60103328822?text=${msg}`, '_blank');
 }
 </script>
+
 </body>
 </html>
