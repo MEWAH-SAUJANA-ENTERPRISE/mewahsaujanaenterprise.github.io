@@ -834,20 +834,132 @@ body.dark-mode .theme-menu button.active, body.dark-mode .theme-menu button:hove
 }
 
 
-/* FINAL DARK MODE READABILITY FIX */
-body.dark-mode{background:#101820!important;color:#f8fafc!important;}
-body.dark-mode .header,body.dark-mode .section,body.dark-mode .section.soft,body.dark-mode .panel,body.dark-mode .benefit-list,body.dark-mode .app-panel,body.dark-mode .feedback-card,body.dark-mode .whatsapp-note,body.dark-mode .warning,body.dark-mode .age-badge{background:#172432!important;color:#f8fafc!important;border-color:#3b5268!important;}
-body.dark-mode .header-title,body.dark-mode .title,body.dark-mode .about h2,body.dark-mode .about p,body.dark-mode .about b,body.dark-mode .benefit-item h3,body.dark-mode .benefit-item p,body.dark-mode .repayment p,body.dark-mode .repayment em,body.dark-mode .app-panel h3,body.dark-mode .eligibility-title,body.dark-mode .eligibility li,body.dark-mode .form-title,body.dark-mode label,body.dark-mode .feedback-card p,body.dark-mode .feedback-card strong,body.dark-mode .whatsapp-note p,body.dark-mode .footer h3,body.dark-mode .footer p,body.dark-mode .copyright{color:#f8fafc!important;}
-body.dark-mode .help,body.dark-mode .submit-note{color:#cbd5e1!important;}
-body.dark-mode input,body.dark-mode select,body.dark-mode textarea,body.dark-mode .prefix{background:#0f1b25!important;color:#fff!important;border-color:#4c6379!important;}
-body.dark-mode input::placeholder,body.dark-mode textarea::placeholder{color:#b6c3cf!important;}
-body.dark-mode .benefit-item,body.dark-mode .eligibility li{border-bottom-color:#3b5268!important;}
-body.dark-mode .warning{border-left-color:#f8c300!important;}
-body.dark-mode .warning i,body.dark-mode .warning strong,body.dark-mode .warning b{color:#ffcc33!important;}
-body.dark-mode .age-badge{background:#20364a!important;}
-body.dark-mode .red{color:#ff6b6b!important;}
-body.dark-mode a{color:#7cc4ff!important;}
-body.dark-mode input[type="date"]{color-scheme:dark!important;}
+
+/* =========================================================
+   DARK MODE V2 - closer to Milano reference
+   Put this at the very end of <style>
+   ========================================================= */
+body.dark-mode{
+  background:#111111!important;
+  color:#f5f5f5!important;
+}
+body.dark-mode .header{
+  background:#1f1f1f!important;
+  box-shadow:0 2px 14px rgba(0,0,0,.35)!important;
+}
+body.dark-mode .header-title{
+  color:#f5f5f5!important;
+}
+body.dark-mode .section,
+body.dark-mode .section.soft{
+  background:#111111!important;
+}
+body.dark-mode .title,
+body.dark-mode .section-title,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4{
+  color:#f5f5f5!important;
+  text-shadow:none!important;
+}
+body.dark-mode .title::after{
+  background:#3498db!important;
+}
+body.dark-mode .panel,
+body.dark-mode .benefit-list,
+body.dark-mode .app-panel,
+body.dark-mode .feedback-card,
+body.dark-mode .whatsapp-note{
+  background:#1f1f1f!important;
+  border-color:#444!important;
+  color:#f5f5f5!important;
+  box-shadow:none!important;
+}
+body.dark-mode .about p,
+body.dark-mode .repayment p,
+body.dark-mode .repayment em,
+body.dark-mode .benefit-item p,
+body.dark-mode .feedback-card p,
+body.dark-mode .feedback-card strong,
+body.dark-mode .eligibility li,
+body.dark-mode label,
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode span,
+body.dark-mode b,
+body.dark-mode strong,
+body.dark-mode em{
+  color:#f5f5f5!important;
+}
+body.dark-mode .benefit-item,
+body.dark-mode .eligibility li{
+  border-bottom-color:#555!important;
+}
+body.dark-mode .age-badge{
+  background:#0d57bb!important;
+  color:#fff!important;
+}
+body.dark-mode .warning{
+  background:#3b3100!important;
+  border-left-color:#ffc107!important;
+  color:#fff!important;
+}
+body.dark-mode .warning strong,
+body.dark-mode .warning b,
+body.dark-mode .warning i{
+  color:#ffd43b!important;
+}
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea,
+body.dark-mode .prefix{
+  background:#151515!important;
+  color:#fff!important;
+  border-color:#555!important;
+}
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder{
+  color:#bdbdbd!important;
+}
+body.dark-mode .help,
+body.dark-mode .submit-note{
+  color:#cfcfcf!important;
+}
+body.dark-mode .theme-menu{
+  background:#1f1f1f!important;
+  border-color:#444!important;
+}
+body.dark-mode .theme-menu button{
+  background:#1f1f1f!important;
+  color:#f5f5f5!important;
+  border-color:#444!important;
+}
+body.dark-mode .theme-menu button.active,
+body.dark-mode .theme-menu button:hover{
+  background:#64b5f6!important;
+  color:#fff!important;
+}
+body.dark-mode .float-lang{
+  background:#f1f5f9!important;
+  color:#111!important;
+}
+body.dark-mode .footer{
+  background:#263b4e!important;
+}
+
+@media(max-width:768px){
+  body.dark-mode{background:#111!important;}
+  body.dark-mode .header{background:#1f1f1f!important;}
+  body.dark-mode .panel,
+  body.dark-mode .benefit-list,
+  body.dark-mode .app-panel,
+  body.dark-mode .feedback-card,
+  body.dark-mode .whatsapp-note{
+    background:#1f1f1f!important;
+    border-color:#444!important;
+  }
+}
 
 </style>
 </head>
