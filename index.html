@@ -961,6 +961,156 @@ body.dark-mode .footer{
   }
 }
 
+
+
+/* =========================================================
+   DESKTOP / TABLET MILANO MATCH PATCH
+   This fixes the big visual difference when browser width is around 800px.
+   ========================================================= */
+@media (min-width:769px){
+  body{
+    padding-top:150px !important;
+    font-size:14px;
+  }
+  .header{
+    height:150px !important;
+    background:#fff;
+  }
+  .header-inner{
+    width:min(1240px, calc(100% - 110px)) !important;
+    padding:0 !important;
+    gap:26px !important;
+    justify-content:flex-start !important;
+  }
+  .header img{
+    height:78px !important;
+    max-width:230px !important;
+  }
+  .header-title{
+    font-size:25px !important;
+    font-weight:800 !important;
+    color:#26394d !important;
+    white-space:nowrap !important;
+  }
+
+  .hero{
+    min-height:575px !important;
+    height:575px !important;
+    background-position:center center !important;
+  }
+  .hero::before{
+    background:rgba(0,0,0,.43) !important;
+    backdrop-filter:none !important;
+  }
+  .hero-content{
+    width:min(980px, calc(100% - 80px)) !important;
+    transform:none !important;
+    padding:0 !important;
+  }
+  .hero h1{
+    font-size:42px !important;
+    line-height:1.12 !important;
+    margin:0 0 22px !important;
+    white-space:nowrap;
+  }
+  .hero-subtitle{
+    font-size:18px !important;
+    margin:0 0 34px !important;
+    max-width:none !important;
+  }
+  .hero-box{
+    width:min(760px, 100%) !important;
+    padding:22px 30px !important;
+    border-radius:6px !important;
+  }
+  .hero-point{
+    font-size:17px !important;
+    margin:12px 0 !important;
+    gap:16px !important;
+  }
+  .hero-point i{
+    width:22px !important;
+    height:22px !important;
+    min-width:22px !important;
+    font-size:12px !important;
+  }
+
+  .section{
+    padding:58px 20px !important;
+  }
+  .container{
+    width:min(1200px, calc(100% - 40px)) !important;
+  }
+  .title{
+    font-size:28px !important;
+    margin-bottom:36px !important;
+  }
+  .title::after{
+    width:92px !important;
+    height:3px !important;
+    margin-top:16px !important;
+  }
+  .panel,.benefit-list,.app-panel{
+    padding:30px 30px !important;
+    border-radius:7px !important;
+  }
+  .feedback-grid{
+    grid-template-columns:repeat(3,1fr) !important;
+  }
+  .footer-inner{
+    grid-template-columns:1.2fr 1.2fr 1fr !important;
+    gap:70px !important;
+  }
+  .float-buttons a,
+  .float-buttons button.float-moon,
+  .float-buttons button.float-lang{
+    width:58px !important;
+    height:58px !important;
+    font-size:24px !important;
+  }
+}
+
+/* Make dark mode closer to Milano black/grey instead of blue-black */
+body.dark-mode{
+  background:#101010 !important;
+  color:#f5f5f5 !important;
+}
+body.dark-mode .header{
+  background:#1f1f1f !important;
+  box-shadow:0 2px 12px rgba(0,0,0,.4) !important;
+}
+body.dark-mode .header-title{color:#ffffff !important;}
+body.dark-mode .section,
+body.dark-mode .section.soft{
+  background:#111111 !important;
+}
+body.dark-mode .panel,
+body.dark-mode .benefit-list,
+body.dark-mode .app-panel,
+body.dark-mode .feedback-card,
+body.dark-mode .whatsapp-note{
+  background:#1f1f1f !important;
+  border-color:#3b3b3b !important;
+  color:#ffffff !important;
+}
+body.dark-mode .warning{
+  background:#3a3100 !important;
+  border-left-color:#ffc400 !important;
+  color:#ffffff !important;
+}
+body.dark-mode .age-badge{
+  background:#1654b8 !important;
+  color:#ffffff !important;
+}
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea,
+body.dark-mode .prefix{
+  background:#141414 !important;
+  color:#ffffff !important;
+  border-color:#4a4a4a !important;
+}
+
 </style>
 </head>
 
