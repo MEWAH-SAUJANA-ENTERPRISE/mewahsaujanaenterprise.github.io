@@ -1253,6 +1253,135 @@ body.dark-mode .prefix{
   .float-wa i{font-size:22px !important;}
 }
 
+
+
+/* ===== CUSTOMER FEEDBACK CAROUSEL FINAL ===== */
+.feedback-section{position:relative;}
+.feedback-carousel{
+  position:relative;
+  width:100%;
+  overflow:visible;
+}
+.feedback-slide{
+  display:none;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:28px;
+  align-items:stretch;
+}
+.feedback-slide.active{display:grid;}
+.feedback-carousel .feedback-card{
+  min-height:360px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items:center;
+}
+.feedback-carousel .feedback-card img{
+  width:100%;
+  height:170px;
+  object-fit:cover;
+  object-position:center;
+}
+.feedback-carousel .feedback-card p{
+  font-size:16px;
+  line-height:1.55;
+}
+.feedback-carousel .feedback-card strong{
+  margin-top:auto;
+  font-size:16px;
+}
+.feedback-arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:46px;
+  height:46px;
+  border:0;
+  border-radius:50%;
+  background:rgba(0,0,0,.55);
+  color:#fff;
+  font-size:22px;
+  cursor:pointer;
+  z-index:5;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.feedback-prev{left:-18px;}
+.feedback-next{right:-18px;}
+.feedback-arrow:hover{background:rgba(0,0,0,.78);}
+.feedback-dots{
+  display:flex;
+  justify-content:center;
+  gap:9px;
+  margin:20px 0 0;
+}
+.feedback-dot{
+  width:10px;
+  height:10px;
+  border:0;
+  border-radius:50%;
+  background:#d5d5d5;
+  cursor:pointer;
+  padding:0;
+}
+.feedback-dot.active{background:#3498db;}
+.feedback-info-card{
+  justify-content:center!important;
+  padding:42px 28px!important;
+}
+.feedback-info-card h3{
+  margin:18px 0 12px;
+  font-size:20px;
+  color:#1f2937;
+}
+.feedback-info-card a{
+  color:#1d4ed8;
+  font-size:15px;
+}
+.feedback-big-icon{
+  font-size:50px;
+  color:#64b5f6;
+}
+.feedback-star-icon{
+  font-size:58px;
+  color:#ffd400;
+}
+.approval-text{
+  color:#ff7b55!important;
+  font-size:24px!important;
+  margin-top:18px!important;
+}
+body.dark-mode .feedback-info-card h3,
+body.dark-mode .feedback-info-card a{color:#f5f5f5!important;}
+body.dark-mode .feedback-big-icon{color:#64b5f6!important;}
+body.dark-mode .feedback-star-icon{color:#ffd400!important;}
+body.dark-mode .approval-text{color:#ff8a65!important;}
+body.dark-mode .feedback-dot{background:#4a4a4a;}
+body.dark-mode .feedback-dot.active{background:#64b5f6;}
+
+@media(max-width:768px){
+  .feedback-slide{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+  .feedback-carousel .feedback-card{min-height:245px;}
+  .feedback-carousel .feedback-card img{height:116px;}
+  .feedback-carousel .feedback-card p{font-size:10px;line-height:1.45;}
+  .feedback-carousel .feedback-card strong{font-size:10px;}
+  .feedback-info-card{padding:24px 10px!important;}
+  .feedback-info-card h3{font-size:13px;margin:10px 0 8px;}
+  .feedback-info-card a{font-size:10px;}
+  .feedback-big-icon{font-size:32px;}
+  .feedback-star-icon{font-size:36px;}
+  .approval-text{font-size:15px!important;}
+  .feedback-arrow{width:34px;height:34px;font-size:16px;}
+  .feedback-prev{left:-6px;}
+  .feedback-next{right:-6px;}
+}
+@media(max-width:420px){
+  .feedback-slide{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .feedback-carousel .feedback-card{min-height:230px;}
+  .feedback-carousel .feedback-card img{height:98px;}
+}
+
 </style>
 </head>
 
@@ -1399,30 +1528,86 @@ body.dark-mode .prefix{
 </section>
 
 <!-- ================= CUSTOMER FEEDBACK ================= -->
-<section class="section soft">
+<section class="section soft feedback-section">
   <div class="container">
     <h2 class="title">Customer Feedback</h2>
-    <div class="feedback-grid">
-      <div class="feedback-card">
-        <img src="testimonial1.jpg" alt="Customer feedback">
-        <p>"Can apply even if not working. This is very helpful for people like me."</p>
-        <strong>- Ms. Rosnah, 54 years old</strong>
+
+    <div class="feedback-carousel">
+      <button type="button" class="feedback-arrow feedback-prev" aria-label="Previous testimonials" onclick="changeFeedbackSlide(-1)">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <div class="feedback-slide active">
+        <div class="feedback-card">
+          <img src="testimonial1.jpg" alt="Customer feedback 1">
+          <p>"Funds received within 3 days after application. Very efficient and professional."</p>
+          <strong>- Mr. Lim, 58 years old</strong>
+        </div>
+        <div class="feedback-card">
+          <img src="testimonial2.jpg" alt="Customer feedback 2">
+          <p>"Very helpful service for my family's medical needs."</p>
+          <strong>- Ms. Maimunah, 60 years old</strong>
+        </div>
+        <div class="feedback-card">
+          <img src="testimonial3.jpg" alt="Customer feedback 3">
+          <p>"Trustworthy and reliable company. All processes explained in detail."</p>
+          <strong>- Mr. Kumar, 53 years old</strong>
+        </div>
       </div>
-      <div class="feedback-card">
-        <img src="testimonial2.jpg" alt="Customer feedback">
-        <p>"Simple and uncomplicated loan process. Staff very friendly and helpful."</p>
-        <strong>- Mr. Tan, 59 years old</strong>
+
+      <div class="feedback-slide">
+        <div class="feedback-card">
+          <img src="testimonial1.jpg" alt="Customer feedback 4">
+          <p>"Very satisfied with MEWAH's service. Fast process and staff very helpful."</p>
+          <strong>- Mr. Ahmad, 54 years old</strong>
+        </div>
+        <div class="feedback-card">
+          <img src="testimonial2.jpg" alt="Customer feedback 5">
+          <p>"No advance payment and no monthly commitment. Very suitable for immediate cash needs."</p>
+          <strong>- Ms. Siti, 59 years old</strong>
+        </div>
+        <div class="feedback-card">
+          <img src="testimonial3.jpg" alt="Customer feedback 6">
+          <p>"Even though in bankruptcy list, my application was still approved. Thank you MEWAH!"</p>
+          <strong>- Mr. Raju, 55 years old</strong>
+        </div>
       </div>
-      <div class="feedback-card">
-        <img src="testimonial3.jpg" alt="Customer feedback">
-        <p>"No hidden charges as promised. Honest and transparent company."</p>
-        <strong>- Ms. Fatimah, 55 years old</strong>
+
+      <div class="feedback-slide">
+        <div class="feedback-card">
+          <img src="testimonial1.jpg" alt="Customer feedback 7">
+          <p>"Very grateful to MEWAH. Helped me solve debt problems."</p>
+          <strong>- Mr. Ravi, 58 years old</strong>
+        </div>
+        <div class="feedback-card feedback-info-card">
+          <i class="fa-solid fa-comments feedback-big-icon"></i>
+          <h3>More Testimonials</h3>
+          <p>We have hundreds of positive testimonials from satisfied customers.</p>
+          <a href="https://wa.me/60163061623" target="_blank"><i class="fa-brands fa-whatsapp"></i> View Testimonials on WhatsApp</a>
+        </div>
+        <div class="feedback-card feedback-info-card">
+          <i class="fa-solid fa-star feedback-star-icon"></i>
+          <h3>99.9% Approval Rate</h3>
+          <p>Almost all applications approved with high rate.</p>
+          <strong class="approval-text">99.9% LULUS</strong>
+        </div>
       </div>
+
+      <button type="button" class="feedback-arrow feedback-next" aria-label="Next testimonials" onclick="changeFeedbackSlide(1)">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
     </div>
+
+    <div class="feedback-dots" aria-label="Customer feedback pages">
+      <button type="button" class="feedback-dot active" onclick="showFeedbackSlide(0)"></button>
+      <button type="button" class="feedback-dot" onclick="showFeedbackSlide(1)"></button>
+      <button type="button" class="feedback-dot" onclick="showFeedbackSlide(2)"></button>
+    </div>
+
     <div class="whatsapp-note">
       <i class="fa-brands fa-whatsapp"></i>
       <p>We attach customer testimonials in WhatsApp</p>
-      <a href="#"><i class="fa-brands fa-whatsapp"></i> View Testimonials on WhatsApp</a>
+      <a href="https://wa.me/60163061623" target="_blank"><i class="fa-brands fa-whatsapp"></i> View Testimonials on WhatsApp</a>
     </div>
   </div>
 </section>
@@ -1498,6 +1683,19 @@ function toggleThemeMenu(){ document.getElementById('themeMenu').classList.toggl
 function applyAutoTheme(){ const saved=localStorage.getItem('theme') || 'light'; const dark=saved==='dark' || (saved==='auto' && window.matchMedia('(prefers-color-scheme: dark)').matches); document.body.classList.toggle('dark-mode', dark); }
 function setTheme(mode){ localStorage.setItem('theme', mode); applyAutoTheme(); document.getElementById('themeMenu').classList.remove('show'); }
 applyAutoTheme();
+
+let feedbackIndex = 0;
+function showFeedbackSlide(index){
+  const slides = document.querySelectorAll('.feedback-slide');
+  const dots = document.querySelectorAll('.feedback-dot');
+  if(!slides.length) return;
+  feedbackIndex = (index + slides.length) % slides.length;
+  slides.forEach((slide, i) => slide.classList.toggle('active', i === feedbackIndex));
+  dots.forEach((dot, i) => dot.classList.toggle('active', i === feedbackIndex));
+}
+function changeFeedbackSlide(direction){
+  showFeedbackSlide(feedbackIndex + direction);
+}
 
 function sendWhatsApp(){
   const name = document.getElementById('name').value.trim();
