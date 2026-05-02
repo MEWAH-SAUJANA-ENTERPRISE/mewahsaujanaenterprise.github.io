@@ -1382,6 +1382,47 @@ body.dark-mode .feedback-dot.active{background:#64b5f6;}
   .feedback-carousel .feedback-card img{height:98px;}
 }
 
+
+
+/* ===== LANGUAGE MENU ===== */
+.lang-menu{
+  position:absolute;
+  right:72px;
+  bottom:0;
+  width:230px;
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,.18);
+  display:none;
+  z-index:1002;
+  color:#333;
+}
+.lang-menu.show{display:block;}
+.lang-menu button{
+  width:100%;
+  border:0;
+  background:#fff;
+  display:grid;
+  grid-template-columns:52px 1fr;
+  align-items:center;
+  gap:12px;
+  padding:17px 16px;
+  font-size:24px;
+  color:#333;
+  border-bottom:1px solid #ddd;
+  cursor:pointer;
+  text-align:left;
+}
+.lang-menu button:last-child{border-bottom:0;}
+.lang-menu button:hover,.lang-menu button.active{background:#8cc8eb;color:#fff;}
+.lang-menu .lang-code{font-weight:800;letter-spacing:.5px;}
+.lang-menu .lang-name{line-height:1.2;}
+body.dark-mode .lang-menu,body.dark-mode .lang-menu button{background:#1f1f1f!important;color:#f5f5f5!important;border-color:#444!important;}
+body.dark-mode .lang-menu button:hover,body.dark-mode .lang-menu button.active{background:#64b5f6!important;color:#fff!important;}
+@media(max-width:900px){.lang-menu{right:62px;bottom:0;width:205px}.lang-menu button{font-size:21px;padding:14px 12px;grid-template-columns:45px 1fr;}}
+
 </style>
 </head>
 
@@ -1398,12 +1439,12 @@ body.dark-mode .feedback-dot.active{background:#64b5f6;}
 <!-- ================= HERO ================= -->
 <section class="hero">
   <div class="hero-content">
-    <h1>PROFESSIONAL FINANCIAL <span>CONSULTATION</span></h1>
-    <p class="hero-subtitle">We Offer Settlement Services Using Your EPF Contributions</p>
+    <h1 data-i18n-html="heroTitle">PROFESSIONAL FINANCIAL <span>CONSULTATION</span></h1>
+    <p class="hero-subtitle" data-i18n="heroSubtitle">We Offer Settlement Services Using Your EPF Contributions</p>
 
     <div class="hero-box">
-      <div class="hero-point"><i class="fa-solid fa-check"></i> No Advance Payment</div>
-      <div class="hero-point"><i class="fa-solid fa-check"></i> No Monthly Commitment Burden</div>
+      <div class="hero-point" data-i18n-html="heroPoint1"><i class="fa-solid fa-check"></i> No Advance Payment</div>
+      <div class="hero-point" data-i18n-html="heroPoint2"><i class="fa-solid fa-check"></i> No Monthly Commitment Burden</div>
     </div>
   </div>
 </section>
@@ -1411,18 +1452,18 @@ body.dark-mode .feedback-dot.active{background:#64b5f6;}
 <!-- ================= ABOUT ================= -->
 <section class="section about">
   <div class="container">
-    <h2 class="title">About Us</h2>
+    <h2 class="title" data-i18n="aboutTitle">About Us</h2>
     <div class="panel">
       <h2>MEWAH SAUJANA ENTERPRISE (SA0170975-P)</h2>
-      <p>Also known as <b>MSQARDH</b> is a licensed community credit money lending company registered under the Money Lending Act 1951.</p>
-      <p>We provide special financing facilities for ages</p>
+      <p data-i18n-html="aboutP1">Also known as <b>MSQARDH</b> is a licensed community credit money lending company registered under the Money Lending Act 1951.</p>
+      <p data-i18n="aboutP2">We provide special financing facilities for ages</p>
       <div class="age-badge">"53,54,55" &amp; "58,59,60"</div>
-      <p>Who need immediate cash. Applications can be made <b>online</b>.</p>
+      <p data-i18n-html="aboutP3">Who need immediate cash. Applications can be made <b>online</b>.</p>
     </div>
 
     <div class="warning">
-      <strong><i class="fa-solid fa-triangle-exclamation"></i> IS MEWAH SAUJANA RELATED TO EPF?</strong><br>
-      <b>NO.</b> MEWAH SAUJANA IS NOT A REPRESENTATIVE OR AGENT OF EPF
+      <strong data-i18n-html="warningTitle"><i class="fa-solid fa-triangle-exclamation"></i> IS MEWAH SAUJANA RELATED TO EPF?</strong><br>
+      <span data-i18n-html="warningBody"><b>NO.</b> MEWAH SAUJANA IS NOT A REPRESENTATIVE OR AGENT OF EPF</span>
     </div>
   </div>
 </section>
@@ -1430,27 +1471,27 @@ body.dark-mode .feedback-dot.active{background:#64b5f6;}
 <!-- ================= BENEFITS ================= -->
 <section class="section">
   <div class="container">
-    <h2 class="title">EPF Loan Benefits</h2>
+    <h2 class="title" data-i18n="benefitsTitle">EPF Loan Benefits</h2>
     <div class="benefit-list">
       <div class="benefit-item">
         <i class="fa-solid fa-calendar-check"></i>
-        <div><h3>No Monthly Payments For Up To 24 Months</h3><p>Moratorium period without monthly payments for your convenience</p></div>
+        <div><h3 data-i18n="benefit1Title">No Monthly Payments For Up To 24 Months</h3><p data-i18n="benefit1Text">Moratorium period without monthly payments for your convenience</p></div>
       </div>
       <div class="benefit-item">
         <i class="fa-solid fa-money-bill-wave"></i>
-        <div><h3>No Advance Payment / No Hidden Charges</h3><p>All charges are transparent and no advance payment required</p></div>
+        <div><h3 data-i18n="benefit2Title">No Advance Payment / No Hidden Charges</h3><p data-i18n="benefit2Text">All charges are transparent and no advance payment required</p></div>
       </div>
       <div class="benefit-item">
         <i class="fa-solid fa-file-contract"></i>
-        <div><h3>Have Clear And Legal Agreement Letter</h3><p>Legally binding agreement documents</p></div>
+        <div><h3 data-i18n="benefit3Title">Have Clear And Legal Agreement Letter</h3><p data-i18n="benefit3Text">Legally binding agreement documents</p></div>
       </div>
       <div class="benefit-item">
         <i class="fa-solid fa-shield-halved"></i>
-        <div><h3>All Your Personal Data Is Securely Protected</h3><p>Your privacy and data security is our priority</p></div>
+        <div><h3 data-i18n="benefit4Title">All Your Personal Data Is Securely Protected</h3><p data-i18n="benefit4Text">Your privacy and data security is our priority</p></div>
       </div>
       <div class="benefit-item">
         <i class="fa-solid fa-chart-line"></i>
-        <div><h3>Approval Rate <span class="red">99.9% Approved</span></h3><p>Almost all applications approved with easy conditions</p></div>
+        <div><h3 data-i18n-html="benefit5Title">Approval Rate <span class="red">99.9% Approved</span></h3><p data-i18n="benefit5Text">Almost all applications approved with easy conditions</p></div>
       </div>
     </div>
   </div>
@@ -1459,10 +1500,10 @@ body.dark-mode .feedback-dot.active{background:#64b5f6;}
 <!-- ================= REPAYMENT ================= -->
 <section class="section repayment">
   <div class="container">
-    <h2 class="title">Repayment Method</h2>
+    <h2 class="title" data-i18n="repaymentTitle">Repayment Method</h2>
     <div class="panel">
-      <p>Repayment is made when customer has received EPF withdrawal.</p>
-      <em>Repayment amount is the same as the original agreement made when loan was agreed by both parties.</em>
+      <p data-i18n="repaymentText">Repayment is made when customer has received EPF withdrawal.</p>
+      <em data-i18n="repaymentEm">Repayment amount is the same as the original agreement made when loan was agreed by both parties.</em>
     </div>
   </div>
 </section>
@@ -1470,58 +1511,58 @@ body.dark-mode .feedback-dot.active{background:#64b5f6;}
 <!-- ================= ONLINE APPLICATION ================= -->
 <section class="section">
   <div class="container">
-    <h2 class="title">Online Application</h2>
+    <h2 class="title" data-i18n="applicationTitle">Online Application</h2>
     <div class="app-panel">
-      <h3>Simple Documents, Immediate Approval, Fast Process, And Easy</h3>
-      <div class="eligibility-title">Application Eligibility:</div>
+      <h3 data-i18n="appIntro">Simple Documents, Immediate Approval, Fast Process, And Easy</h3>
+      <div class="eligibility-title" data-i18n="eligibilityTitle">Application Eligibility:</div>
       <ul class="eligibility">
-        <li><i class="fa-solid fa-user-check"></i> Eligible To Apply For Ages 53,54,55 &amp; 58,59,60</li>
-        <li><i class="fa-solid fa-piggy-bank"></i> Have EPF Account 1 Or EMAS Account Savings (Minimum Savings RM30K)</li>
-        <li><i class="fa-solid fa-list-check"></i> Blacklist / CTOS / Bankruptcy / AKPK Eligible</li>
-        <li><i class="fa-solid fa-briefcase"></i> Working / Not Working Eligible</li>
-        <li><i class="fa-solid fa-location-dot"></i> Throughout Peninsular Malaysia (Except Sabah, Sarawak)</li>
+        <li data-i18n-html="eligibility1"><i class="fa-solid fa-user-check"></i> Eligible To Apply For Ages 53,54,55 &amp; 58,59,60</li>
+        <li data-i18n-html="eligibility2"><i class="fa-solid fa-piggy-bank"></i> Have EPF Account 1 Or EMAS Account Savings (Minimum Savings RM30K)</li>
+        <li data-i18n-html="eligibility3"><i class="fa-solid fa-list-check"></i> Blacklist / CTOS / Bankruptcy / AKPK Eligible</li>
+        <li data-i18n-html="eligibility4"><i class="fa-solid fa-briefcase"></i> Working / Not Working Eligible</li>
+        <li data-i18n-html="eligibility5"><i class="fa-solid fa-location-dot"></i> Throughout Peninsular Malaysia (Except Sabah, Sarawak)</li>
       </ul>
 
-      <div class="form-title">Loan Application Form</div>
+      <div class="form-title" data-i18n="formTitle">Loan Application Form</div>
       <form id="loanForm">
         <div class="form-group">
-          <label>Name:</label>
-          <input type="text" id="name" placeholder="Enter your full name">
+          <label data-i18n="labelName">Name:</label>
+          <input type="text" id="name" placeholder="Enter your full name" data-i18n-placeholder="phName">
         </div>
         <div class="form-group">
-          <label>Phone Number:</label>
+          <label data-i18n="labelPhone">Phone Number:</label>
           <div class="phone-row">
             <div class="prefix">+6</div>
             <input type="tel" id="phone" placeholder="0163061623">
           </div>
-          <span class="help"><i class="fa-solid fa-circle-info"></i> Only enter phone number without +6 (example 0163061623)</span>
+          <span class="help" data-i18n-html="helpPhone"><i class="fa-solid fa-circle-info"></i> Only enter phone number without +6 (example 0163061623)</span>
         </div>
         <div class="form-group">
-          <label>State:</label>
+          <label data-i18n="labelState">State:</label>
           <select id="state">
-            <option value="">Please select state</option>
+            <option value="" data-i18n="optionState">Please select state</option>
             <option>Selangor</option><option>Kuala Lumpur</option><option>Johor</option><option>Penang</option>
             <option>Perak</option><option>Kedah</option><option>Kelantan</option><option>Terengganu</option>
             <option>Pahang</option><option>Negeri Sembilan</option><option>Melaka</option><option>Perlis</option>
           </select>
         </div>
         <div class="form-group">
-          <label>Date Of Birth:</label>
+          <label data-i18n="labelDob">Date Of Birth:</label>
           <div class="date-wrap native-date-wrap">
             <input type="date" id="dob" value="1966-04-28" min="1900-01-01" max="2026-12-31">
           </div>
         </div>
         <div class="form-group">
-          <label>EPF Savings Amount (RM):</label>
-          <input type="number" id="epf" placeholder="Example: 35000">
-          <span class="help">* Minimum savings RM30,000 required</span>
+          <label data-i18n="labelEpf">EPF Savings Amount (RM):</label>
+          <input type="number" id="epf" placeholder="Example: 35000" data-i18n-placeholder="phEpf">
+          <span class="help" data-i18n="helpEpf">* Minimum savings RM30,000 required</span>
         </div>
         <div class="form-group">
-          <label>Additional Notes (Optional):</label>
-          <textarea id="notes" placeholder="Please specify any special requirements or additional inquiries"></textarea>
+          <label data-i18n="labelNotes">Additional Notes (Optional):</label>
+          <textarea id="notes" placeholder="Please specify any special requirements or additional inquiries" data-i18n-placeholder="phNotes"></textarea>
         </div>
-        <button type="button" class="submit-btn" onclick="sendWhatsApp()"><i class="fa-solid fa-paper-plane"></i> Submit Application</button>
-        <p class="submit-note">* Data will be saved to our system and sent to WhatsApp</p>
+        <button type="button" class="submit-btn" onclick="sendWhatsApp()" data-i18n-html="submitBtn"><i class="fa-solid fa-paper-plane"></i> Submit Application</button>
+        <p class="submit-note" data-i18n="submitNote">* Data will be saved to our system and sent to WhatsApp</p>
       </form>
     </div>
   </div>
@@ -1530,7 +1571,7 @@ body.dark-mode .feedback-dot.active{background:#64b5f6;}
 <!-- ================= CUSTOMER FEEDBACK ================= -->
 <section class="section soft feedback-section">
   <div class="container">
-    <h2 class="title">Customer Feedback</h2>
+    <h2 class="title" data-i18n="feedbackTitle">Customer Feedback</h2>
 
     <div class="feedback-carousel">
       <button type="button" class="feedback-arrow feedback-prev" aria-label="Previous testimonials" onclick="changeFeedbackSlide(-1)">
@@ -1540,56 +1581,56 @@ body.dark-mode .feedback-dot.active{background:#64b5f6;}
       <div class="feedback-slide active">
         <div class="feedback-card">
           <img src="testimonial1.jpg" alt="Customer feedback 1">
-          <p>"Funds received within 3 days after application. Very efficient and professional."</p>
-          <strong>- Mr. Lim, 58 years old</strong>
+          <p><span data-i18n="fb1Text">"Funds received within 3 days after application. Very efficient and professional."</span></p>
+          <strong><span data-i18n="fb1Name">- Mr. Lim, 58 years old</span></strong>
         </div>
         <div class="feedback-card">
           <img src="testimonial2.jpg" alt="Customer feedback 2">
-          <p>"Very helpful service for my family's medical needs."</p>
-          <strong>- Ms. Maimunah, 60 years old</strong>
+          <p><span data-i18n="fb2Text">"Very helpful service for my family's medical needs."</span></p>
+          <strong><span data-i18n="fb2Name">- Ms. Maimunah, 60 years old</span></strong>
         </div>
         <div class="feedback-card">
           <img src="testimonial3.jpg" alt="Customer feedback 3">
-          <p>"Trustworthy and reliable company. All processes explained in detail."</p>
-          <strong>- Mr. Kumar, 53 years old</strong>
+          <p><span data-i18n="fb3Text">"Trustworthy and reliable company. All processes explained in detail."</span></p>
+          <strong><span data-i18n="fb3Name">- Mr. Kumar, 53 years old</span></strong>
         </div>
       </div>
 
       <div class="feedback-slide">
         <div class="feedback-card">
           <img src="testimonial1.jpg" alt="Customer feedback 4">
-          <p>"Very satisfied with MEWAH's service. Fast process and staff very helpful."</p>
-          <strong>- Mr. Ahmad, 54 years old</strong>
+          <p><span data-i18n="fb4Text">"Very satisfied with MEWAH's service. Fast process and staff very helpful."</span></p>
+          <strong><span data-i18n="fb4Name">- Mr. Ahmad, 54 years old</span></strong>
         </div>
         <div class="feedback-card">
           <img src="testimonial2.jpg" alt="Customer feedback 5">
-          <p>"No advance payment and no monthly commitment. Very suitable for immediate cash needs."</p>
-          <strong>- Ms. Siti, 59 years old</strong>
+          <p><span data-i18n="fb5Text">"No advance payment and no monthly commitment. Very suitable for immediate cash needs."</span></p>
+          <strong><span data-i18n="fb5Name">- Ms. Siti, 59 years old</span></strong>
         </div>
         <div class="feedback-card">
           <img src="testimonial3.jpg" alt="Customer feedback 6">
-          <p>"Even though in bankruptcy list, my application was still approved. Thank you MEWAH!"</p>
-          <strong>- Mr. Raju, 55 years old</strong>
+          <p><span data-i18n="fb6Text">"Even though in bankruptcy list, my application was still approved. Thank you MEWAH!"</span></p>
+          <strong><span data-i18n="fb6Name">- Mr. Raju, 55 years old</span></strong>
         </div>
       </div>
 
       <div class="feedback-slide">
         <div class="feedback-card">
           <img src="testimonial1.jpg" alt="Customer feedback 7">
-          <p>"Very grateful to MEWAH. Helped me solve debt problems."</p>
-          <strong>- Mr. Ravi, 58 years old</strong>
+          <p><span data-i18n="fb7Text">"Very grateful to MEWAH. Helped me solve debt problems."</span></p>
+          <strong><span data-i18n="fb7Name">- Mr. Ravi, 58 years old</span></strong>
         </div>
         <div class="feedback-card feedback-info-card">
           <i class="fa-solid fa-comments feedback-big-icon"></i>
-          <h3>More Testimonials</h3>
-          <p>We have hundreds of positive testimonials from satisfied customers.</p>
-          <a href="https://wa.me/60163061623" target="_blank"><i class="fa-brands fa-whatsapp"></i> View Testimonials on WhatsApp</a>
+          <h3 data-i18n="moreTestimonials">More Testimonials</h3>
+          <p data-i18n="moreTestimonialsText">We have hundreds of positive testimonials from satisfied customers.</p>
+          <a href="https://wa.me/60163061623" target="_blank" data-i18n-html="viewTestimonials"><i class="fa-brands fa-whatsapp"></i> View Testimonials on WhatsApp</a>
         </div>
         <div class="feedback-card feedback-info-card">
           <i class="fa-solid fa-star feedback-star-icon"></i>
-          <h3>99.9% Approval Rate</h3>
-          <p>Almost all applications approved with high rate.</p>
-          <strong class="approval-text">99.9% LULUS</strong>
+          <h3 data-i18n="approvalTitle">99.9% Approval Rate</h3>
+          <p data-i18n="approvalText">Almost all applications approved with high rate.</p>
+          <strong class="approval-text" data-i18n="approvalStrong">99.9% LULUS</strong>
         </div>
       </div>
 
@@ -1606,8 +1647,8 @@ body.dark-mode .feedback-dot.active{background:#64b5f6;}
 
     <div class="whatsapp-note">
       <i class="fa-brands fa-whatsapp"></i>
-      <p>We attach customer testimonials in WhatsApp</p>
-      <a href="https://wa.me/60163061623" target="_blank"><i class="fa-brands fa-whatsapp"></i> View Testimonials on WhatsApp</a>
+      <p data-i18n="waNoteText">We attach customer testimonials in WhatsApp</p>
+      <a href="https://wa.me/60163061623" target="_blank" data-i18n-html="viewTestimonials"><i class="fa-brands fa-whatsapp"></i> View Testimonials on WhatsApp</a>
     </div>
   </div>
 </section>
@@ -1615,7 +1656,7 @@ body.dark-mode .feedback-dot.active{background:#64b5f6;}
 <!-- ================= LOCATION ================= -->
 <section class="section">
   <div class="container">
-    <h2 class="title">Our Location</h2>
+    <h2 class="title" data-i18n="locationTitle">Our Location</h2>
 
     <iframe
       src="https://www.google.com/maps?q=Ms-Qardh%20Rawang&output=embed"
@@ -1639,19 +1680,19 @@ body.dark-mode .feedback-dot.active{background:#64b5f6;}
       <p>Registered under Money Lending Act 1951</p>
     </div>
     <div>
-      <h3>Contact Us</h3>
+      <h3 data-i18n="footerContact">Contact Us</h3>
       <p class="line"><i class="fa-solid fa-location-dot"></i><span>NO 21B JALAN BANDAR RAWANG 2, PUSAT BARU RAWANG, 48000 RAWANG SELANGOR</span></p>
       <p class="line"><i class="fa-solid fa-phone"></i><span>+60163061623</span></p>
       <p class="line"><i class="fa-solid fa-envelope"></i><span>yourcompany@gmail.com</span></p>
     </div>
     <div>
-      <h3>Operating Hours</h3>
-      <p>Monday - Friday: 9:30 AM - 5:30 PM</p>
-      <p>Saturday: 9:30 AM - 2:00 PM</p>
-      <p>Sunday &amp; Public Holidays: Closed</p>
+      <h3 data-i18n="footerHours">Operating Hours</h3>
+      <p data-i18n="hours1">Monday - Friday: 9:30 AM - 5:30 PM</p>
+      <p data-i18n="hours2">Saturday: 9:30 AM - 2:00 PM</p>
+      <p data-i18n="hours3">Sunday &amp; Public Holidays: Closed</p>
     </div>
   </div>
-  <div class="copyright">© 2026 MEWAH SAUJANA ENTERPRISE. All Rights Reserved.</div>
+  <div class="copyright" data-i18n="copyright">© 2026 MEWAH SAUJANA ENTERPRISE. All Rights Reserved.</div>
 </footer>
 
 <!-- ================= FLOATING BUTTONS ================= -->
@@ -1664,7 +1705,12 @@ body.dark-mode .feedback-dot.active{background:#64b5f6;}
   </div>
   <a href="https://wa.me/60163061623" class="float-wa" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
   <a href="tel:+60163061623" class="float-call" title="Call"><i class="fa-solid fa-phone"></i></a>
-  <button type="button" class="float-lang" title="Language coming soon" onclick="alert('Language function hold first. We will add it later.')"><i class="fa-solid fa-globe"></i></button>
+  <div class="lang-menu" id="langMenu">
+    <button type="button" onclick="setLanguage('en')"><span class="lang-code">US</span><span class="lang-name">English</span></button>
+    <button type="button" onclick="setLanguage('ms')"><span class="lang-code">MY</span><span class="lang-name">Bahasa Melayu</span></button>
+    <button type="button" onclick="setLanguage('zh')"><span class="lang-code">CN</span><span class="lang-name">中文</span></button>
+  </div>
+  <button type="button" class="float-lang" title="Change Language" onclick="toggleLangMenu()"><i class="fa-solid fa-globe"></i></button>
 </div>
 
 <script>
@@ -1677,12 +1723,68 @@ function formatDOBForWhatsApp(value){
 }
 document.addEventListener('click', function(e){
   const tm=document.getElementById('themeMenu');
+  const lm=document.getElementById('langMenu');
   if(tm && !e.target.closest('.float-buttons')) tm.classList.remove('show');
+  if(lm && !e.target.closest('.float-buttons')) lm.classList.remove('show');
 });
-function toggleThemeMenu(){ document.getElementById('themeMenu').classList.toggle('show'); }
+function toggleThemeMenu(){ const tm=document.getElementById('themeMenu'); const lm=document.getElementById('langMenu'); if(lm) lm.classList.remove('show'); tm.classList.toggle('show'); }
 function applyAutoTheme(){ const saved=localStorage.getItem('theme') || 'light'; const dark=saved==='dark' || (saved==='auto' && window.matchMedia('(prefers-color-scheme: dark)').matches); document.body.classList.toggle('dark-mode', dark); }
 function setTheme(mode){ localStorage.setItem('theme', mode); applyAutoTheme(); document.getElementById('themeMenu').classList.remove('show'); }
 applyAutoTheme();
+
+
+const translations = {
+  en: {
+    heroTitle:'PROFESSIONAL FINANCIAL <span>CONSULTATION</span>', heroSubtitle:'We Offer Settlement Services Using Your EPF Contributions', heroPoint1:'<i class="fa-solid fa-check"></i> No Advance Payment', heroPoint2:'<i class="fa-solid fa-check"></i> No Monthly Commitment Burden',
+    aboutTitle:'About Us', aboutP1:'Also known as <b>MSQARDH</b> is a licensed community credit money lending company registered under the Money Lending Act 1951.', aboutP2:'We provide special financing facilities for ages', aboutP3:'Who need immediate cash. Applications can be made <b>online</b>.', warningTitle:'<i class="fa-solid fa-triangle-exclamation"></i> IS MEWAH SAUJANA RELATED TO EPF?', warningBody:'<b>NO.</b> MEWAH SAUJANA IS NOT A REPRESENTATIVE OR AGENT OF EPF',
+    benefitsTitle:'EPF Loan Benefits', benefit1Title:'No Monthly Payments For Up To 24 Months', benefit1Text:'Moratorium period without monthly payments for your convenience', benefit2Title:'No Advance Payment / No Hidden Charges', benefit2Text:'All charges are transparent and no advance payment required', benefit3Title:'Have Clear And Legal Agreement Letter', benefit3Text:'Legally binding agreement documents', benefit4Title:'All Your Personal Data Is Securely Protected', benefit4Text:'Your privacy and data security is our priority', benefit5Title:'Approval Rate <span class="red">99.9% Approved</span>', benefit5Text:'Almost all applications approved with easy conditions',
+    repaymentTitle:'Repayment Method', repaymentText:'Repayment is made when customer has received EPF withdrawal.', repaymentEm:'Repayment amount is the same as the original agreement made when loan was agreed by both parties.',
+    applicationTitle:'Online Application', appIntro:'Simple Documents, Immediate Approval, Fast Process, And Easy', eligibilityTitle:'Application Eligibility:', eligibility1:'<i class="fa-solid fa-user-check"></i> Eligible To Apply For Ages 53,54,55 &amp; 58,59,60', eligibility2:'<i class="fa-solid fa-piggy-bank"></i> Have EPF Account 1 Or EMAS Account Savings (Minimum Savings RM30K)', eligibility3:'<i class="fa-solid fa-list-check"></i> Blacklist / CTOS / Bankruptcy / AKPK Eligible', eligibility4:'<i class="fa-solid fa-briefcase"></i> Working / Not Working Eligible', eligibility5:'<i class="fa-solid fa-location-dot"></i> Throughout Peninsular Malaysia (Except Sabah, Sarawak)',
+    formTitle:'Loan Application Form', labelName:'Name:', phName:'Enter your full name', labelPhone:'Phone Number:', helpPhone:'<i class="fa-solid fa-circle-info"></i> Only enter phone number without +6 (example 0163061623)', labelState:'State:', optionState:'Please select state', labelDob:'Date Of Birth:', labelEpf:'EPF Savings Amount (RM):', phEpf:'Example: 35000', helpEpf:'* Minimum savings RM30,000 required', labelNotes:'Additional Notes (Optional):', phNotes:'Please specify any special requirements or additional inquiries', submitBtn:'<i class="fa-solid fa-paper-plane"></i> Submit Application', submitNote:'* Data will be saved to our system and sent to WhatsApp',
+    feedbackTitle:'Customer Feedback', fb1Text:'"Funds received within 3 days after application. Very efficient and professional."', fb1Name:'- Mr. Lim, 58 years old', fb2Text:'"Very helpful service for my family\'s medical needs."', fb2Name:'- Ms. Maimunah, 60 years old', fb3Text:'"Trustworthy and reliable company. All processes explained in detail."', fb3Name:'- Mr. Kumar, 53 years old', fb4Text:'"Very satisfied with MEWAH\'s service. Fast process and staff very helpful."', fb4Name:'- Mr. Ahmad, 54 years old', fb5Text:'"No advance payment and no monthly commitment. Very suitable for immediate cash needs."', fb5Name:'- Ms. Siti, 59 years old', fb6Text:'"Even though in bankruptcy list, my application was still approved. Thank you MEWAH!"', fb6Name:'- Mr. Raju, 55 years old', fb7Text:'"Very grateful to MEWAH. Helped me solve debt problems."', fb7Name:'- Mr. Ravi, 58 years old', moreTestimonials:'More Testimonials', moreTestimonialsText:'We have hundreds of positive testimonials from satisfied customers.', viewTestimonials:'<i class="fa-brands fa-whatsapp"></i> View Testimonials on WhatsApp', approvalTitle:'99.9% Approval Rate', approvalText:'Almost all applications approved with high rate.', approvalStrong:'99.9% LULUS', waNoteText:'We attach customer testimonials in WhatsApp',
+    locationTitle:'Our Location', footerContact:'Contact Us', footerHours:'Operating Hours', hours1:'Monday - Friday: 9:30 AM - 5:30 PM', hours2:'Saturday: 9:30 AM - 2:00 PM', hours3:'Sunday & Public Holidays: Closed', copyright:'© 2026 MEWAH SAUJANA ENTERPRISE. All Rights Reserved.',
+    alertRequired:'Please fill in Name, Phone Number, State, Date of Birth and EPF Savings Amount.', waHeader:'Loan Application', waName:'Name', waPhone:'Phone', waState:'State', waDob:'Date of Birth', waEpf:'EPF Savings', waNotes:'Notes'
+  },
+  ms: {
+    heroTitle:'PERUNDINGAN KEWANGAN <span>PROFESIONAL</span>', heroSubtitle:'Kami Menawarkan Perkhidmatan Penyelesaian Menggunakan Caruman KWSP Anda', heroPoint1:'<i class="fa-solid fa-check"></i> Tanpa Bayaran Pendahuluan', heroPoint2:'<i class="fa-solid fa-check"></i> Tanpa Bebanan Komitmen Bulanan',
+    aboutTitle:'Tentang Kami', aboutP1:'Atau lebih dikenali sebagai <b>MSQARDH</b> adalah sebuah syarikat kredit komuniti pemberi pinjaman wang berlesen yang berdaftar di bawah Akta Pemberi Pinjam Wang 1951.', aboutP2:'Kami memberikan kemudahan pembiayaan khas terhad untuk umur', aboutP3:'Yang memerlukan tunai segera. Permohonan boleh dibuat <b>secara atas talian</b>.', warningTitle:'<i class="fa-solid fa-triangle-exclamation"></i> ADAKAH MEWAH SAUJANA BERKAITAN DENGAN PIHAK KWSP?', warningBody:'<b>TIDAK.</b> MEWAH SAUJANA BUKAN WAKIL ATAU EJEN DARI PIHAK KWSP',
+    benefitsTitle:'Manfaat Pinjaman KWSP', benefit1Title:'Tiada Bayaran Bulanan Sehingga 24 Bulan', benefit1Text:'Tempoh moratorium tanpa bayaran bulanan untuk kemudahan anda', benefit2Title:'Tiada Bayaran Pendahuluan / Tiada Caj Tersembunyi', benefit2Text:'Semua caj adalah telus dan tiada bayaran pendahuluan diperlukan', benefit3Title:'Mempunyai Surat Perjanjian Yang Jelas Dan Sah', benefit3Text:'Dokumen perjanjian yang sah di sisi undang-undang', benefit4Title:'Semua Data Peribadi Anda Terlindung Dengan Selamat', benefit4Text:'Privasi dan keselamatan data anda adalah keutamaan kami', benefit5Title:'Kadar Kelulusan <span class="red">99.9% Lulus</span>', benefit5Text:'Hampir semua permohonan diluluskan dengan syarat yang mudah',
+    repaymentTitle:'Kaedah Pembayaran Semula', repaymentText:'Pembayaran semula dibuat apabila pelanggan sudah menerima pengeluaran KWSP.', repaymentEm:'Jumlah pembayaran semula adalah sama seperti perjanjian asal dibuat sewaktu pinjaman dipersetujui oleh kedua-dua pihak.',
+    applicationTitle:'Permohonan Atas Talian', appIntro:'Dokumen Ringkas, Kelulusan Segera, Proses Cepat, Dan Mudah', eligibilityTitle:'Kelayakan Permohonan:', eligibility1:'<i class="fa-solid fa-user-check"></i> Layak memohon kepada umur 53,54,55 &amp; 58,59,60', eligibility2:'<i class="fa-solid fa-piggy-bank"></i> Mempunyai simpanan KWSP Akaun 1 atau Akaun Emas (Simpanan minimum RM30K)', eligibility3:'<i class="fa-solid fa-list-check"></i> Blacklist / CTOS / Bankruptcy / AKPK Layak', eligibility4:'<i class="fa-solid fa-briefcase"></i> Bekerja / Tidak bekerja layak', eligibility5:'<i class="fa-solid fa-location-dot"></i> Seluruh Semenanjung Malaysia (Kecuali Sabah, Sarawak)',
+    formTitle:'Borang Permohonan Pinjaman', labelName:'Nama:', phName:'Masukkan nama penuh anda', labelPhone:'No Telefon:', helpPhone:'<i class="fa-solid fa-circle-info"></i> Hanya masukkan nombor telefon tanpa +6 (contoh 0163061623)', labelState:'Negeri:', optionState:'Sila pilih negeri', labelDob:'Tarikh Lahir:', labelEpf:'Jumlah Simpanan KWSP (RM):', phEpf:'Contoh: 35000', helpEpf:'* Simpanan minimum RM30,000 diperlukan', labelNotes:'Catatan Tambahan (Optional):', phNotes:'Sila nyatakan jika ada keperluan khas atau pertanyaan tambahan', submitBtn:'<i class="fa-solid fa-paper-plane"></i> Hantar Permohonan', submitNote:'* Data akan disimpan ke sistem kami dan dihantar ke WhatsApp',
+    feedbackTitle:'Feedback Pelanggan', fb1Text:'"Dana diterima dalam masa 3 hari selepas permohonan. Sangat efisien dan profesional."', fb1Name:'- Encik Lim, 58 tahun', fb2Text:'"Perkhidmatan yang sangat membantu untuk keperluan perubatan keluarga saya."', fb2Name:'- Puan Maimunah, 60 tahun', fb3Text:'"Syarikat yang amanah dan boleh dipercayai. Semua proses dijelaskan dengan terperinci."', fb3Name:'- Encik Kumar, 53 tahun', fb4Text:'"Sangat berpuas hati dengan perkhidmatan MEWAH. Proses cepat dan staff sangat membantu."', fb4Name:'- Encik Ahmad, 54 tahun', fb5Text:'"Tiada bayaran pendahuluan dan tiada komitmen bulanan. Sangat sesuai untuk keperluan tunai segera."', fb5Name:'- Puan Siti, 59 tahun', fb6Text:'"Walaupun dalam senarai bankrap, permohonan saya masih diluluskan. Terima kasih MEWAH!"', fb6Name:'- Encik Raju, 55 tahun', fb7Text:'"Sangat berterima kasih kepada MEWAH. Membantu saya menyelesaikan masalah hutang."', fb7Name:'- Encik Ravi, 58 tahun', moreTestimonials:'Lebih Banyak Testimoni', moreTestimonialsText:'Kami mempunyai ratusan testimoni positif daripada pelanggan yang berpuas hati.', viewTestimonials:'<i class="fa-brands fa-whatsapp"></i> Lihat Testimoni di WhatsApp', approvalTitle:'Kadar Kelulusan 99.9%', approvalText:'Hampir semua permohonan diluluskan dengan kadar yang tinggi.', approvalStrong:'99.9% LULUS', waNoteText:'Kami attach testimoni pelanggan dalam WhatsApp',
+    locationTitle:'Lokasi Kami', footerContact:'Hubungi Kami', footerHours:'Waktu Operasi', hours1:'Isnin - Jumaat: 9:30 pagi - 5:30 petang', hours2:'Sabtu: 9:30 pagi - 2:00 petang', hours3:'Ahad & Cuti Umum: Tutup', copyright:'© 2026 MEWAH SAUJANA ENTERPRISE. Hak Cipta Terpelihara.',
+    alertRequired:'Sila isi Nama, No Telefon, Negeri, Tarikh Lahir dan Jumlah Simpanan KWSP.', waHeader:'Permohonan Pinjaman', waName:'Nama', waPhone:'No Telefon', waState:'Negeri', waDob:'Tarikh Lahir', waEpf:'Jumlah Simpanan KWSP', waNotes:'Catatan'
+  },
+  zh: {
+    heroTitle:'专业财务<span>咨询</span>', heroSubtitle:'我们提供使用您的 EPF/KWSP 公积金贡献进行解决方案服务', heroPoint1:'<i class="fa-solid fa-check"></i> 无需预付款', heroPoint2:'<i class="fa-solid fa-check"></i> 无每月还款负担',
+    aboutTitle:'关于我们', aboutP1:'也称为 <b>MSQARDH</b>，是一家根据 1951 年放贷人法令注册的持牌社区信贷放贷公司。', aboutP2:'我们为以下年龄层提供特别融资便利', aboutP3:'适合需要即时现金的人士。申请可通过 <b>线上</b> 提交。', warningTitle:'<i class="fa-solid fa-triangle-exclamation"></i> MEWAH SAUJANA 是否与 EPF/KWSP 有关？', warningBody:'<b>不是。</b> MEWAH SAUJANA 不是 EPF/KWSP 的代表或代理。',
+    benefitsTitle:'EPF/KWSP 贷款好处', benefit1Title:'最长 24 个月无需每月还款', benefit1Text:'提供无每月还款的宽限期，让您更方便安排现金流', benefit2Title:'无预付款 / 无隐藏收费', benefit2Text:'所有收费透明，无需预付款', benefit3Title:'清楚且合法的协议书', benefit3Text:'提供具有法律效力的协议文件', benefit4Title:'您的个人资料受到安全保护', benefit4Text:'隐私与资料安全是我们的优先事项', benefit5Title:'批准率 <span class="red">99.9% 通过</span>', benefit5Text:'几乎所有申请都可在简单条件下获得批准',
+    repaymentTitle:'还款方式', repaymentText:'客户收到 EPF/KWSP 提款后才进行还款。', repaymentEm:'还款金额将依据双方同意贷款时签署的原始协议。',
+    applicationTitle:'线上申请', appIntro:'文件简单、快速批准、流程快捷又方便', eligibilityTitle:'申请资格：', eligibility1:'<i class="fa-solid fa-user-check"></i> 年龄 53,54,55 及 58,59,60 可申请', eligibility2:'<i class="fa-solid fa-piggy-bank"></i> 拥有 EPF/KWSP Account 1 或 Emas Account 储蓄（最低 RM30K）', eligibility3:'<i class="fa-solid fa-list-check"></i> Blacklist / CTOS / Bankruptcy / AKPK 也可申请', eligibility4:'<i class="fa-solid fa-briefcase"></i> 有工作 / 无工作皆可申请', eligibility5:'<i class="fa-solid fa-location-dot"></i> 全西马地区（不包括 Sabah、Sarawak）',
+    formTitle:'贷款申请表格', labelName:'姓名：', phName:'请输入您的全名', labelPhone:'电话号码：', helpPhone:'<i class="fa-solid fa-circle-info"></i> 只需输入不含 +6 的号码（例：0163061623）', labelState:'州属：', optionState:'请选择州属', labelDob:'出生日期：', labelEpf:'EPF/KWSP 储蓄金额 (RM)：', phEpf:'例：35000', helpEpf:'* 最低储蓄 RM30,000', labelNotes:'附加备注（可选）：', phNotes:'请注明任何特别需求或额外询问', submitBtn:'<i class="fa-solid fa-paper-plane"></i> 提交申请', submitNote:'* 资料将保存到系统并发送至 WhatsApp',
+    feedbackTitle:'客户反馈', fb1Text:'"申请后 3 天内收到款项。非常有效率，也很专业。"', fb1Name:'- 林先生，58 岁', fb2Text:'"服务非常有帮助，解决了我家庭医疗方面的需要。"', fb2Name:'- Maimunah 女士，60 岁', fb3Text:'"值得信赖的公司，所有流程都有详细解释。"', fb3Name:'- Kumar 先生，53 岁', fb4Text:'"对 MEWAH 的服务非常满意。流程很快，员工也很帮忙。"', fb4Name:'- Ahmad 先生，54 岁', fb5Text:'"没有预付款，也没有每月负担。很适合需要即时现金的人。"', fb5Name:'- Siti 女士，59 岁', fb6Text:'"即使在破产名单中，我的申请还是获批了。谢谢 MEWAH！"', fb6Name:'- Raju 先生，55 岁', fb7Text:'"非常感谢 MEWAH，帮助我解决债务问题。"', fb7Name:'- Ravi 先生，58 岁', moreTestimonials:'更多客户见证', moreTestimonialsText:'我们有许多满意客户的正面见证。', viewTestimonials:'<i class="fa-brands fa-whatsapp"></i> 在 WhatsApp 查看见证', approvalTitle:'99.9% 批准率', approvalText:'几乎所有申请都以高通过率获得批准。', approvalStrong:'99.9% 通过', waNoteText:'我们在 WhatsApp 附上客户见证',
+    locationTitle:'我们的位置', footerContact:'联系我们', footerHours:'营业时间', hours1:'星期一至星期五：9:30 AM - 5:30 PM', hours2:'星期六：9:30 AM - 2:00 PM', hours3:'星期日与公共假期：休息', copyright:'© 2026 MEWAH SAUJANA ENTERPRISE. 版权所有。',
+    alertRequired:'请填写姓名、电话号码、州属、出生日期和 EPF/KWSP 储蓄金额。', waHeader:'贷款申请', waName:'姓名', waPhone:'电话', waState:'州属', waDob:'出生日期', waEpf:'EPF/KWSP 储蓄', waNotes:'备注'
+  }
+};
+let currentLang = localStorage.getItem('siteLang') || 'en';
+function toggleLangMenu(){ document.getElementById('langMenu').classList.toggle('show'); }
+function setLanguage(lang){
+  currentLang = lang;
+  localStorage.setItem('siteLang', lang);
+  const dict = translations[lang] || translations.en;
+  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => { const key = el.dataset.i18n; if(dict[key] !== undefined) el.textContent = dict[key]; });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => { const key = el.dataset.i18nHtml; if(dict[key] !== undefined) el.innerHTML = dict[key]; });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { const key = el.dataset.i18nPlaceholder; if(dict[key] !== undefined) el.placeholder = dict[key]; });
+  document.querySelectorAll('.lang-menu button').forEach(btn => btn.classList.remove('active'));
+  const active = document.querySelector(`.lang-menu button[onclick="setLanguage('${lang}')"]`);
+  if(active) active.classList.add('active');
+  const lm=document.getElementById('langMenu');
+  if(lm) lm.classList.remove('show');
+}
+setLanguage(currentLang);
 
 let feedbackIndex = 0;
 function showFeedbackSlide(index){
@@ -1706,7 +1808,7 @@ function sendWhatsApp(){
   const notes = document.getElementById('notes').value.trim();
 
   if(!name || !phone || !state || !dob || !epf){
-    alert('Please fill in Name, Phone Number, State, Date of Birth and EPF Savings Amount.');
+    alert((translations[currentLang] || translations.en).alertRequired);
     return;
   }
 
@@ -1719,14 +1821,15 @@ function sendWhatsApp(){
     notes: notes
   };
 
+  const t = translations[currentLang] || translations.en;
   const msg =
-    `Loan Application%0A%0A` +
-    `Name: ${encodeURIComponent(name)}%0A` +
-    `Phone: ${encodeURIComponent('+6' + phone)}%0A` +
-    `State: ${encodeURIComponent(state)}%0A` +
-    `Date of Birth: ${encodeURIComponent(dob)}%0A` +
-    `EPF Savings: RM${encodeURIComponent(epf)}%0A` +
-    `Notes: ${encodeURIComponent(notes)}`;
+    `${encodeURIComponent(t.waHeader)}%0A%0A` +
+    `${encodeURIComponent(t.waName)}: ${encodeURIComponent(name)}%0A` +
+    `${encodeURIComponent(t.waPhone)}: ${encodeURIComponent('+6' + phone)}%0A` +
+    `${encodeURIComponent(t.waState)}: ${encodeURIComponent(state)}%0A` +
+    `${encodeURIComponent(t.waDob)}: ${encodeURIComponent(dob)}%0A` +
+    `${encodeURIComponent(t.waEpf)}: RM${encodeURIComponent(epf)}%0A` +
+    `${encodeURIComponent(t.waNotes)}: ${encodeURIComponent(notes)}`;
 
   // Open WhatsApp immediately. This prevents mobile browsers from blocking the popup.
   window.open(`https://wa.me/60163061623?text=${msg}`, '_blank');
