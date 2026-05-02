@@ -1499,10 +1499,7 @@ function applyAutoTheme(){ const saved=localStorage.getItem('theme') || 'light';
 function setTheme(mode){ localStorage.setItem('theme', mode); applyAutoTheme(); document.getElementById('themeMenu').classList.remove('show'); }
 applyAutoTheme();
 
-async function sendWhatsApp(){
-  const submitBtn = document.querySelector('.submit-btn');
-  const originalBtnText = submitBtn ? submitBtn.innerHTML : '';
-
+function sendWhatsApp(){
   const name = document.getElementById('name').value.trim();
   const phone = document.getElementById('phone').value.trim();
   const state = document.getElementById('state').value;
@@ -1524,39 +1521,28 @@ async function sendWhatsApp(){
     notes: notes
   };
 
-  if(submitBtn){
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Saving...';
-  }
-
-  try{
-    await fetch('https://script.google.com/macros/s/AKfycbxHPCOuYMdPP402fHtYUmIpSGpLcq0WiJbh0g-Gziag3YbPqxL3ITu-OXfK6dTVl1Yxdg/exec', {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    });
-  }catch(error){
-    console.error('Google Sheet save failed:', error);
-  }
-
-  if(submitBtn){
-    submitBtn.disabled = false;
-    submitBtn.innerHTML = originalBtnText;
-  }
-
   const msg =
     `Loan Application%0A%0A` +
     `Name: ${encodeURIComponent(name)}%0A` +
-    `Phone: %2B6${encodeURIComponent(phone)}%0A` +
+    `Phone: ${encodeURIComponent('+6' + phone)}%0A` +
     `State: ${encodeURIComponent(state)}%0A` +
     `Date of Birth: ${encodeURIComponent(dob)}%0A` +
     `EPF Savings: RM${encodeURIComponent(epf)}%0A` +
     `Notes: ${encodeURIComponent(notes)}`;
 
+  // Open WhatsApp immediately. This prevents mobile browsers from blocking the popup.
   window.open(`https://wa.me/60163061623?text=${msg}`, '_blank');
+
+  // Save to Google Sheet in the background.
+  fetch('https://script.google.com/macros/s/AKfycbz5mfyXw1MHhIL7SieMrlm9UlezT2X3ji2j877_ef-s87sDt-Jxzwcl5YB8k1gn8Ufxxg/exec', {
+    method: 'POST',
+    mode: 'no-cors',
+    body: JSON.stringify(data)
+  }).then(() => {
+    console.log('Google Sheet save request sent');
+  }).catch((error) => {
+    console.error('Google Sheet save failed:', error);
+  });
 }
 </script>
 
