@@ -1358,6 +1358,19 @@ body.dark-mode .feedback-info-card h3,
 body.dark-mode .feedback-info-card a{color:#f5f5f5!important;}
 body.dark-mode .feedback-big-icon{color:#64b5f6!important;}
 body.dark-mode .feedback-star-icon{color:#ffd400!important;}
+/* ===== FEEDBACK AUTO SLIDE + MOBILE SWIPE FIX ===== */
+.feedback-carousel{
+  touch-action: pan-y;
+  user-select:none;
+}
+.feedback-slide{
+  animation: feedbackFade .35s ease;
+}
+@keyframes feedbackFade{
+  from{opacity:.25; transform:translateX(8px);}
+  to{opacity:1; transform:translateX(0);}
+}
+
 body.dark-mode .approval-text{color:#ff8a65!important;}
 body.dark-mode .feedback-dot{background:#4a4a4a;}
 body.dark-mode .feedback-dot.active{background:#64b5f6;}
@@ -1789,6 +1802,10 @@ function setLanguage(lang){
 setLanguage(currentLang);
 
 let feedbackIndex = 0;
+let feedbackTimer = null;
+let feedbackTouchStartX = 0;
+let feedbackTouchStartY = 0;
+
 function showFeedbackSlide(index){
   const slides = document.querySelectorAll('.feedback-slide');
   const dots = document.querySelectorAll('.feedback-dot');
@@ -1797,9 +1814,66 @@ function showFeedbackSlide(index){
   slides.forEach((slide, i) => slide.classList.toggle('active', i === feedbackIndex));
   dots.forEach((dot, i) => dot.classList.toggle('active', i === feedbackIndex));
 }
+
 function changeFeedbackSlide(direction){
   showFeedbackSlide(feedbackIndex + direction);
+  restartFeedbackAutoSlide();
 }
+
+function startFeedbackAutoSlide(){
+  stopFeedbackAutoSlide();
+  feedbackTimer = setInterval(() => {
+    showFeedbackSlide(feedbackIndex + 1);
+  }, 4500);
+}
+
+function stopFeedbackAutoSlide(){
+  if(feedbackTimer){
+    clearInterval(feedbackTimer);
+    feedbackTimer = null;
+  }
+}
+
+function restartFeedbackAutoSlide(){
+  startFeedbackAutoSlide();
+}
+
+function initFeedbackSwipe(){
+  const carousel = document.querySelector('.feedback-carousel');
+  if(!carousel) return;
+
+  carousel.addEventListener('mouseenter', stopFeedbackAutoSlide);
+  carousel.addEventListener('mouseleave', startFeedbackAutoSlide);
+
+  carousel.addEventListener('touchstart', function(e){
+    feedbackTouchStartX = e.touches[0].clientX;
+    feedbackTouchStartY = e.touches[0].clientY;
+    stopFeedbackAutoSlide();
+  }, {passive:true});
+
+  carousel.addEventListener('touchend', function(e){
+    const endX = e.changedTouches[0].clientX;
+    const endY = e.changedTouches[0].clientY;
+    const diffX = endX - feedbackTouchStartX;
+    const diffY = endY - feedbackTouchStartY;
+
+    // Only trigger when it is a real left/right swipe, not vertical scrolling
+    if(Math.abs(diffX) > 45 && Math.abs(diffX) > Math.abs(diffY) * 1.4){
+      if(diffX < 0){
+        showFeedbackSlide(feedbackIndex + 1);
+      }else{
+        showFeedbackSlide(feedbackIndex - 1);
+      }
+    }
+    startFeedbackAutoSlide();
+  }, {passive:true});
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  showFeedbackSlide(feedbackIndex);
+  initFeedbackSwipe();
+  startFeedbackAutoSlide();
+});
 
 function sendWhatsApp(){
   const name = document.getElementById('name').value.trim();
