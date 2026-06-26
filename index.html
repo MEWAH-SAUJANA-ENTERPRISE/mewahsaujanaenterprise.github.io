@@ -62,35 +62,41 @@ body{
   white-space:nowrap;
 }
 
-/* ================= HERO ================= */
+/* ================= HERO & NEW TWO-COLUMN LAYOUT ================= */
 .hero{
-  min-height:440px;
+  min-height:540px;
   background:url("bg.jpg") center/cover no-repeat;
   position:relative;
   display:flex;
   align-items:center;
   justify-content:center;
-  text-align:center;
   overflow:hidden;
 }
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,.43);
+  background:rgba(0,0,0,.55); /* 加深遮罩让左边文字和右边滑块更显眼 */
   backdrop-filter:blur(1px);
 }
 .hero-content{
   position:relative;
-  width:min(980px, calc(100% - 36px));
+  width:min(1200px, calc(100% - 40px));
   margin:auto;
   color:#fff;
-  padding:32px 0;
+  padding:40px 0;
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr; /* 左右分栏 */
+  gap:40px;
+  align-items:center;
+}
+.hero-left {
+  text-align:left;
 }
 .hero h1{
   margin:0 0 22px;
-  font-size:36px;
-  line-height:1.15;
+  font-size:38px;
+  line-height:1.2;
   font-weight:800;
   letter-spacing:.4px;
   color:#fff;
@@ -104,13 +110,12 @@ body{
   text-shadow:0 2px 4px rgba(0,0,0,.5);
 }
 .hero-box{
-  width:min(760px, 100%);
-  margin:auto;
+  width:100%;
   text-align:left;
   padding:22px 30px;
-  border:1px solid rgba(255,255,255,.45);
+  border:1px solid rgba(255,255,255,.35);
   border-radius:6px;
-  background:rgba(255,255,255,.16);
+  background:rgba(255,255,255,.12);
   backdrop-filter:blur(4px);
   box-shadow:0 10px 35px rgba(0,0,0,.18);
 }
@@ -119,7 +124,7 @@ body{
   align-items:center;
   gap:16px;
   color:#fff;
-  font-size:18px;
+  font-size:17px;
   font-weight:700;
   margin:12px 0;
 }
@@ -134,6 +139,131 @@ body{
   justify-content:center;
   font-size:12px;
 }
+
+/* 右侧顾问轮播滑块核心样式 */
+.hero-right {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.consultant-slider-wrap {
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:100%;
+  max-width:320px;
+}
+.consultant-badge-wa {
+  background:#22d061;
+  color:#fff;
+  padding:9px 18px;
+  border-radius:30px;
+  font-weight:700;
+  text-decoration:none;
+  margin-bottom:-18px;
+  z-index:10;
+  box-shadow:0 6px 15px rgba(0,0,0,0.25);
+  font-size:13px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  transition:transform 0.2s ease;
+}
+.consultant-badge-wa:hover {
+  transform:scale(1.05);
+}
+.consultant-carousel-main {
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+}
+.consultant-circle-frame {
+  position:relative;
+  width:250px;
+  height:250px;
+  border-radius:50%;
+  border:5px solid rgba(255,255,255,0.75);
+  overflow:hidden;
+  box-shadow:0 12px 28px rgba(0,0,0,0.3);
+  background:#1f1f1f;
+}
+.consultant-circle-frame img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:opacity 0.3s ease;
+}
+.consultant-license-tag {
+  position:absolute;
+  left:-8px;
+  top:38%;
+  background:#fff;
+  color:#24384a;
+  padding:5px 12px;
+  border-radius:20px;
+  font-size:11px;
+  font-weight:700;
+  box-shadow:0 4px 10px rgba(0,0,0,0.15);
+  border:1px solid #ddd;
+}
+.consultant-arrow {
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(255,255,255,0.9);
+  color:#333;
+  border:none;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  cursor:pointer;
+  box-shadow:0 4px 12px rgba(0,0,0,0.2);
+  z-index:5;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  transition:background 0.2s;
+}
+.consultant-arrow:hover { background:#fff; }
+.consultant-arrow.prev { left:-10px; }
+.consultant-arrow.next { right:-10px; }
+
+.consultant-text-block {
+  text-align:center;
+  margin-top:16px;
+  color:#fff;
+}
+.consultant-text-block h3 {
+  margin:0;
+  font-size:22px;
+  font-weight:800;
+  text-shadow:0 2px 5px rgba(0,0,0,0.5);
+}
+.consultant-text-block p {
+  margin:4px 0 0;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1px;
+  color:#e0e6ed;
+}
+.consultant-dots-container {
+  display:flex;
+  gap:7px;
+  margin-top:14px;
+}
+.c-dot {
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.4);
+  cursor:pointer;
+  transition:background 0.2s;
+}
+.c-dot.active { background:#3498db; }
 
 /* ================= COMMON ================= */
 .section{
@@ -476,10 +606,9 @@ input:focus,select:focus,textarea:focus{
   justify-content:center;
   font-size:24px;
   box-shadow:2px 2px 12px rgba(0, 0, 0, 0.25) !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important; /* 动感顺滑过渡 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
 
-/* 核心整合：鼠标悬浮或手机按住时微微放大，并加深立体阴影 */
 .float-buttons a:hover, .float-buttons button:hover {
   transform: scale(1.12) !important;
   box-shadow: 2px 8px 18px rgba(0, 0, 0, 0.35) !important;
@@ -521,6 +650,8 @@ body.dark-mode{background:#121a22;color:#eaf1f7;}body.dark-mode .header,body.dar
   .header img{height:46px}
   .header-title{font-size:17px}
   .hero{min-height:420px}
+  .hero-content{grid-template-columns:1fr; gap:20px;} /* 变成一列 */
+  .hero-left{text-align:center;}
   .hero h1{font-size:28px}
   .hero-subtitle{font-size:15px}
   .hero-point{font-size:15px}
@@ -635,42 +766,45 @@ body.dark-mode{background:#121a22;color:#eaf1f7;}body.dark-mode .header,body.dar
   /* hero: taller, image-focused, less crowded */
   .hero{
     min-height:500px;
-    height:calc(100vh - 92px);
-    max-height:590px;
+    height:auto;
+    max-height:none;
     background-position:center top;
-    align-items:center;
   }
   .hero::before{
-    background:rgba(0,0,0,.34);
+    background:rgba(0,0,0,.5);
     backdrop-filter:none;
   }
   .hero-content{
     width:100%;
-    padding:0 18px;
-    transform:translateY(58px);
+    padding:20px 18px;
+    display:flex;
+    flex-direction:column;
+    gap:30px;
   }
   .hero h1{
-    font-size:17px;
+    font-size:22px;
     line-height:1.2;
     margin:0 0 10px;
     letter-spacing:.2px;
     text-shadow:0 2px 5px rgba(0,0,0,.6);
+    text-align:center;
   }
   .hero-subtitle{
-    font-size:11.5px;
+    font-size:13px;
     line-height:1.4;
     margin:0 auto 16px;
     max-width:310px;
+    text-align:center;
   }
   .hero-box{
-    width:88%;
+    width:100%;
     padding:11px 13px;
     border-radius:4px;
     background:rgba(255,255,255,.18);
     backdrop-filter:blur(3px);
   }
   .hero-point{
-    font-size:11px;
+    font-size:12px;
     gap:9px;
     margin:5px 0;
     line-height:1.25;
@@ -680,6 +814,18 @@ body.dark-mode{background:#121a22;color:#eaf1f7;}body.dark-mode .header,body.dar
     height:16px;
     min-width:16px;
     font-size:9px;
+  }
+  
+  /* 移动端顾问容器微调 */
+  .consultant-slider-wrap {
+    max-width:240px;
+  }
+  .consultant-circle-frame {
+    width:180px;
+    height:180px;
+  }
+  .consultant-text-block h3 {
+    font-size:18px;
   }
 
   /* compact section rhythm */
@@ -749,15 +895,30 @@ body.dark-mode{background:#121a22;color:#eaf1f7;}body.dark-mode .header,body.dar
   .footer i{font-size:9px;margin-top:2px;}
   .copyright{font-size:8px;margin-top:18px;padding-top:10px;}
 
-  .float-buttons{right:10px;bottom:12px;gap:7px;}
-  .float-buttons a{width:35px;height:35px;font-size:14px;box-shadow:0 5px 14px rgba(0,0,0,.18);}
+  .float-buttons{right:10px;bottom:14px;gap:9px !important;z-index:3000 !important;}
+  .float-buttons a,.float-buttons button.float-moon,.float-buttons button.float-lang{
+    width:48px !important;height:48px !important;min-width:48px !important;min-height:48px !important;
+    padding:0 !important;border-radius:50% !important;display:flex !important;align-items:center !important;justify-content:center !important;
+    line-height:1 !important;box-shadow:0 8px 20px rgba(0,0,0,.22) !important;
+    transition: transform 0.3s ease !important;
+  }
+  .float-buttons a:active, .float-buttons button:active {
+    transform: scale(1.15) !important;
+  }
+  .float-buttons i{font-size:22px !important;line-height:1 !important;display:block !important;}
+  .float-wa i{font-size:24px !important;}
+  .float-call i{font-size:22px !important;}
+  .float-lang i{font-size:23px !important;}
+  .float-moon{background:#3498db !important;}
+  .float-wa{background:#22d061 !important;}
+  .float-call{background:#43b649 !important;}
+  .float-lang{background:#263b4e !important;color:#fff !important;}
 }
 
 @media (max-width:380px){
   .header img{height:32px;max-width:82px;}
   .header-title{font-size:11px;}
   .hero{min-height:470px;}
-  .hero-content{transform:translateY(48px);}
   .feedback-card img{height:102px;}
   .footer-inner{gap:8px;}
   .footer h3{font-size:10px;}
@@ -799,6 +960,7 @@ body.dark-mode .whatsapp-note{
 body.dark-mode .title,
 body.dark-mode .section-title,
 body.dark-mode h1,
+body.dark-mode .section-title,
 body.dark-mode h2,
 body.dark-mode h3,
 body.dark-mode h4,
@@ -1002,7 +1164,7 @@ body.dark-mode .footer{
     backdrop-filter:none !important;
   }
   .hero-content{
-    width:min(980px, calc(100% - 80px)) !important;
+    width:min(1200px, calc(100% - 80px)) !important;
     transform:none !important;
     padding:0 !important;
   }
@@ -1010,7 +1172,7 @@ body.dark-mode .footer{
     font-size:42px !important;
     line-height:1.12 !important;
     margin:0 0 22px !important;
-    white-space:nowrap;
+    white-space:normal;
   }
   .hero-subtitle{
     font-size:18px !important;
@@ -1225,34 +1387,6 @@ body.dark-mode .prefix{
   .header-title{font-size:14px !important; line-height:1.15 !important;}
 }
 
-/* ===== MOBILE FLOAT ICON FINAL FIX WITH ZOOM ANIMATION ===== */
-@media (max-width:768px){
-  .float-buttons{right:10px !important;bottom:14px !important;gap:9px !important;z-index:3000 !important;}
-  .float-buttons a,.float-buttons button.float-moon,.float-buttons button.float-lang{
-    width:48px !important;height:48px !important;min-width:48px !important;min-height:48px !important;
-    padding:0 !important;border-radius:50% !important;display:flex !important;align-items:center !important;justify-content:center !important;
-    line-height:1 !important;box-shadow:0 8px 20px rgba(0,0,0,.22) !important;
-    transition: transform 0.3s ease !important;
-  }
-  /* 确保移动端长按或点击时也有缩放反馈效果 */
-  .float-buttons a:active, .float-buttons button:active {
-    transform: scale(1.15) !important;
-  }
-  .float-buttons i{font-size:22px !important;line-height:1 !important;display:block !important;}
-  .float-wa i{font-size:24px !important;}
-  .float-call i{font-size:22px !important;}
-  .float-lang i{font-size:23px !important;}
-  .float-moon{background:#3498db !important;}
-  .float-wa{background:#22d061 !important;}
-  .float-call{background:#43b649 !important;}
-  .float-lang{background:#263b4e !important;color:#fff !important;}
-}
-@media (max-width:380px){
-  .float-buttons a,.float-buttons button.float-moon,.float-buttons button.float-lang{width:44px !important;height:44px !important;min-width:44px !important;min-height:44px !important;}
-  .float-buttons i{font-size:20px !important;}
-  .float-wa i{font-size:22px !important;}
-}
-
 /* ===== CUSTOMER FEEDBACK CAROUSEL FINAL ===== */
 .feedback-section{position:relative;}
 .feedback-carousel{
@@ -1430,7 +1564,7 @@ body.dark-mode .feedback-dot.active{background:#64b5f6;}
 .lang-menu .lang-name{line-height:1.2;}
 body.dark-mode .lang-menu,body.dark-mode .lang-menu button{background:#1f1f1f!important;color:#f5f5f5!important;border-color:#444!important;}
 body.dark-mode .lang-menu button:hover,body.dark-mode .lang-menu button.active{background:#64b5f6!important;color:#fff!important;}
-@media(max-width:900px){...lang-menu{right:62px;bottom:0;width:205px}.lang-menu button{font-size:21px;padding:14px 12px;grid-template-columns:45px 1fr;}}
+@media(max-width:900px){.lang-menu{right:62px;bottom:0;width:205px}.lang-menu button{font-size:21px;padding:14px 12px;grid-template-columns:45px 1fr;}}
 
 </style>
 </head>
@@ -1446,13 +1580,47 @@ body.dark-mode .lang-menu button:hover,body.dark-mode .lang-menu button.active{b
 
 <section class="hero">
   <div class="hero-content">
-    <h1 data-i18n-html="heroTitle">PROFESSIONAL FINANCIAL <span>CONSULTATION</span></h1>
-    <p class="hero-subtitle" data-i18n="heroSubtitle">We Offer Settlement Services Using Your EPF Contributions</p>
+    
+    <div class="hero-left">
+      <h1 data-i18n-html="heroTitle">PROFESSIONAL FINANCIAL <span>CONSULTATION</span></h1>
+      <p class="hero-subtitle" data-i18n="heroSubtitle">We Offer Settlement Services Using Your EPF Contributions</p>
 
-    <div class="hero-box">
-      <div class="hero-point" data-i18n-html="heroPoint1"><i class="fa-solid fa-check"></i> No Advance Payment</div>
-      <div class="hero-point" data-i18n-html="heroPoint2"><i class="fa-solid fa-check"></i> No Monthly Commitment Burden</div>
+      <div class="hero-box">
+        <div class="hero-point" data-i18n-html="heroPoint1"><i class="fa-solid fa-check"></i> No Advance Payment</div>
+        <div class="hero-point" data-i18n-html="heroPoint2"><i class="fa-solid fa-check"></i> No Monthly Commitment Burden</div>
+      </div>
     </div>
+
+    <div class="hero-right">
+      <div class="consultant-slider-wrap">
+        <a href="https://wa.me/60163061623" id="consultant-wa-badge" class="consultant-badge-wa" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> <span id="badge-text">Hubungi Rossa (WhatsApp)</span>
+        </a>
+        
+        <div class="consultant-carousel-main">
+          <button type="button" class="consultant-arrow prev" onclick="changeConsultant(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+          
+          <div class="consultant-circle-frame">
+            <img src="testimonial1.jpg" id="consultant-img" alt="Perunding Kewangan">
+            <div class="consultant-license-tag"><i class="fa-solid fa-circle-check"></i> 100% Berlesen</div>
+          </div>
+          
+          <button type="button" class="consultant-arrow next" onclick="changeConsultant(1)"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        
+        <div class="consultant-text-block">
+          <h3 id="consultant-name">Rossa</h3>
+          <p data-i18n="perundingKewangan">PERUNDING KEWANGAN</p>
+        </div>
+        
+        <div class="consultant-dots-container">
+          <span class="c-dot active" onclick="setConsultant(0)"></span>
+          <span class="c-dot" onclick="setConsultant(1)"></span>
+          <span class="c-dot" onclick="setConsultant(2)"></span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1558,7 +1726,7 @@ body.dark-mode .lang-menu button:hover,body.dark-mode .lang-menu button.active{b
         <div class="form-group">
           <label data-i18n="labelEpf">EPF Savings Amount (RM):</label>
           <input type="number" id="epf" placeholder="Example: 35000" data-i18n-placeholder="phEpf">
-          <span class="help" data-i18n-html="helpEpf">* Minimum savings RM30,000 required</span>
+          <span class="help" data-i18n="helpEpf">* Minimum savings RM30,000 required</span>
         </div>
         <div class="form-group">
           <label data-i18n="labelNotes">Additional Notes (Optional):</label>
@@ -1660,7 +1828,7 @@ body.dark-mode .lang-menu button:hover,body.dark-mode .lang-menu button.active{b
     <h2 class="title" data-i18n="locationTitle">Our Location</h2>
 
     <iframe
-      src="https://maps.google.com/maps?q=NO%2021B%20JALAN%20BANDAR%20RAWANG%202,%20PUSAT%20BARU%20RAWANG&t=&z=13&ie=UTF8&iwloc=&output=embed"
+      src="http://googleusercontent.com/maps.google.com/2"
       width="100%"
       height="350"
       style="border:0; border-radius:10px;"
@@ -1733,6 +1901,7 @@ applyAutoTheme();
 const translations = {
   en: {
     heroTitle:'PROFESSIONAL FINANCIAL <span>CONSULTATION</span>', heroSubtitle:'We Offer Settlement Services Using Your EPF Contributions', heroPoint1:'<i class="fa-solid fa-check"></i> No Advance Payment', heroPoint2:'<i class="fa-solid fa-check"></i> No Monthly Commitment Burden',
+    perundingKewangan:'FINANCIAL CONSULTANT',
     aboutTitle:'About Us', aboutP1:'Also known as <b>MSQARDH</b> is a licensed community credit money lending company registered under the Money Lending Act 1951.', aboutP2:'We provide special financing facilities for ages', aboutP3:'Who need immediate cash. Applications can be made <b>online</b>.', warningTitle:'<i class="fa-solid fa-triangle-exclamation"></i> IS MEWAH SAUJANA RELATED TO EPF?', warningBody:'<b>NO.</b> MEWAH SAUJANA IS NOT A REPRESENTATIVE OR AGENT OF EPF',
     benefitsTitle:'EPF Loan Benefits', benefit1Title:'No Monthly Payments For Up To 24 Months', benefit1Text:'Moratorium period without monthly payments for your convenience', benefit2Title:'No Advance Payment / No Hidden Charges', benefit2Text:'All charges are transparent and no advance payment required', benefit3Title:'Have Clear And Legal Agreement Letter', benefit3Text:'Legally binding agreement documents', benefit4Title:'All Your Personal Data Is Securely Protected', benefit4Text:'Your privacy and data security is our priority', benefit5Title:'Approval Rate <span class="red">99.9% Approved</span>', benefit5Text:'Almost all applications approved with easy conditions',
     repaymentTitle:'Repayment Method', repaymentText:'Repayment is made when customer has received EPF withdrawal.', repaymentEm:'Repayment amount is the same as the original agreement made when loan was agreed by both parties.',
@@ -1744,18 +1913,20 @@ const translations = {
   },
   ms: {
     heroTitle:'PERUNDINGAN KEWANGAN <span>PROFESIONAL</span>', heroSubtitle:'Kami Menawarkan Perkhidmatan Penyelesaian Menggunakan Caruman KWSP Anda', heroPoint1:'<i class="fa-solid fa-check"></i> Tanpa Bayaran Pendahuluan', heroPoint2:'<i class="fa-solid fa-check"></i> Tanpa Bebanan Komitmen Bulanan',
+    perundingKewangan:'PERUNDING KEWANGAN',
     aboutTitle:'Tentang Kami', aboutP1:'Atau lebih dikenali sebagai <b>MSQARDH</b> adalah sebuah syarikat kredit komuniti pemberi pinjaman wang berlesen yang berdaftar di bawah Akta Pemberi Pinjam Wang 1951.', aboutP2:'Kami memberikan kemudahan pembiayaan khas terhad untuk umur', aboutP3:'Yang memerlukan tunai segera. Permohonan boleh dibuat <b>secara atas talian</b>.', warningTitle:'<i class="fa-solid fa-triangle-exclamation"></i> ADAKAH MEWAH SAUJANA BERKAITAN DENGAN PIHAK KWSP?', warningBody:'<b>TIDAK.</b> MEWAH SAUJANA BUKAN WAKIL ATAU EJEN DARI PIHAK KWSP',
     benefitsTitle:'Manfaat Pinjaman KWSP', benefit1Title:'Tiada Bayaran Bulanan Sehingga 24 Bulan', benefit1Text:'Tempoh moratorium tanpa bayaran bulanan untuk kemudahan anda', benefit2Title:'Tiada Bayaran Pendahuluan / Tiada Caj Tersembunyi', benefit2Text:'Semua caj adalah telus dan tiada bayaran pendahuluan diperlukan', benefit3Title:'Mempunyai Surat Perjanjian Yang Jelas Dan Sah', benefit3Text:'Dokumen perjanjian yang sah di sisi undang-undang', benefit4Title:'Semua Data Peribadi Anda Terlindung Dengan Selamat', benefit4Text:'Privasi dan keselamatan data anda adalah keutamaan kami', benefit5Title:'Kadar Kelulusan <span class="red">99.9% Lulus</span>', benefit5Text:'Hampir semua permohonan diluluskan dengan syarat yang mudah',
     repaymentTitle:'Kaedah Pembayaran Semula', repaymentText:'Pembayaran semula dibuat apabila pelanggan sudah menerima pengeluaran KWSP.', repaymentEm:'Jumlah pembayaran semula adalah sama seperti perjanjian asal dibuat sewaktu pinjaman dipersetujui oleh kedua-dua pihak.',
     applicationTitle:'Permohonan Atas Talian', appIntro:'Dokumen Ringkas, Kelulusan Segera, Proses Cepat, Dan Mudah', eligibilityTitle:'Kelayakan Permohonan:', eligibility1:'<i class="fa-solid fa-user-check"></i> Layak memohon kepada umur 53,54,55 & 58,59,60', eligibility2:'<i class="fa-solid fa-piggy-bank"></i> Mempunyai simpanan KWSP Akaun 1 atau Akaun Emas (Simpanan minimum RM30K)', eligibility3:'<i class="fa-solid fa-list-check"></i> Blacklist / CTOS / Bankruptcy / AKPK Layak', eligibility4:'<i class="fa-solid fa-briefcase"></i> Bekerja / Tidak bekerja layak', eligibility5:'<i class="fa-solid fa-location-dot"></i> Seluruh Semenanjung Malaysia (Kecuali Sabah, Sarawak)',
     formTitle:'Borang Permohonan Pinjaman', labelName:'Nama:', phName:'Masukkan nama penuh anda', labelPhone:'No Telefon:', helpPhone:'<i class="fa-solid fa-circle-info"></i> Hanya masukkan nombor telefon tanpa +6 (contoh 0163061623)', labelState:'Negeri:', optionState:'Sila pilih negeri', labelDob:'Tarikh Lahir:', labelEpf:'Jumlah Simpanan KWSP (RM):', phEpf:'Contoh: 35000', helpEpf:'* Simpanan minimum RM30,000 diperlukan', labelNotes:'Catatan Tambahan (Optional):', phNotes:'Sila nyatakan jika ada keperluan khas atau pertanyaan tambahan', submitBtn:'<i class="fa-solid fa-paper-plane"></i> Hantar Permohonan', submitNote:'* Data akan disimpan ke sistem kami dan dihantar ke WhatsApp',
-    feedbackTitle:'Feedback Pelanggan', fb1Text:'"Boleh mohon walaupun tidak bekerja. Ini sangat membantu untuk orang seperti saya."', fb1Name:'- Encik Khairul, 53 tahun', fb2Text:'"Proses pinjaman yang mudah dan tidak rumit. Staff sangat ramah dan membantu."', fb2Name:'- Puan Lau, 54 tahun', fb3Text:'"Sangat berpuas hati dengan perkhidmatan MEWAH. Proses cepat dan staff sangat membantu."', fb3Name:'- Encik Wan, 53 tahun', fb4Text:'"Tiada caj tersembunyi seperti yang dijanjikan. Syarikat yang jujur dan telus."', fb4Name:'- Encik Kamaruddin, 58 tahun', fb5Text:'"Sangat berterima kasih kepada MEWAH. Membantu saya menyelesaikan masalah hutang."', fb5Name:'- Encik Mahfooz, 53 tahun', fb6Text:'"Dana diterima dalam masa 3 hari selepas permohonan. Sangat efisien dan profesional."', fb6Name:'- Encik Badrul, 53 tahun', fb7Text:'"Walaupun dalam senarai bankrap, permohonan saya masih diluluskan. Terima kasih MEWAH!"', fb7Name:'- Puan Nornikmah, 54 tahun', moreTestimonials:'Lebih Banyak Testimoni', moreTestimonialsText:'Kami mempunyai ratusan testimoni positif daripada pelanggan yang berpuas hati.', viewTestimonials:'<i class="fa-brands fa-whatsapp"></i> Lihat Testimoni di WhatsApp', approvalTitle:'Kadar Kelulusan 99.9%', approvalText:'Hampir semua permohonan diluluskan dengan kadar yang tinggi.', approvalStrong:'99.9% LULUS', waNoteText:'Kami attach testimoni pelanggan dalam WhatsApp',
+    feedbackTitle:'Feedback Pelanggan', fb1Text:'"Boleh mohon walaupun tidak bekerja. Ini sangat membantu untuk orang seperti saya."', fb1Name:'- Encik Khairul, 53 tahun', fb2Text:'"Proses pinjaman yang mudah dan tidak rumit. Staff sangat ramah and membantu."', fb2Name:'- Puan Lau, 54 tahun', fb3Text:'"Sangat berpuas hati dengan perkhidmatan MEWAH. Proses cepat dan staff sangat membantu."', fb3Name:'- Encik Wan, 53 tahun', fb4Text:'"Tiada caj tersembunyi seperti yang dijanjikan. Syarikat yang jujur dan telus."', fb4Name:'- Encik Kamaruddin, 58 tahun', fb5Text:'"Sangat berterima kasih kepada MEWAH. Membantu saya menyelesaikan masalah hutang."', fb5Name:'- Encik Mahfooz, 53 tahun', fb6Text:'"Dana diterima dalam masa 3 hari selepas permohonan. Sangat efisien dan profesional."', fb6Name:'- Encik Badrul, 53 tahun', fb7Text:'"Walaupun dalam senarai bankrap, permohonan saya masih diluluskan. Terima kasih MEWAH!"', fb7Name:'- Puan Nornikmah, 54 tahun', moreTestimonials:'Lebih Banyak Testimoni', moreTestimonialsText:'Kami mempunyai ratusan testimoni positif daripada pelanggan yang berpuas hati.', viewTestimonials:'<i class="fa-brands fa-whatsapp"></i> Lihat Testimoni di WhatsApp', approvalTitle:'Kadar Kelulusan 99.9%', approvalText:'Hampir semua permohonan diluluskan dengan kadar yang tinggi.', approvalStrong:'99.9% LULUS', waNoteText:'Kami attach testimoni pelanggan dalam WhatsApp',
     locationTitle:'Lokasi Kami', footerContact:'Hubungi Kami', footerHours:'Waktu Operasi', hours1:'Isnin - Jumaat: 9:30 pagi - 5:30 petang', hours2:'Sabtu: 9:30 pagi - 2:00 petang', hours3:'Ahad & Cuti Umum: Tutup', copyright:'© 2026 MEWAH SAUJANA ENTERPRISE. Hak Cipta Terpelihara.',
     alertRequired:'Sila isi Nama, No Telefon, Negeri, Tarikh Lahir dan Jumlah Simpanan KWSP.', waHeader:'Permohonan Pinjaman', waName:'Nama', waPhone:'No Telefon', waState:'Negeri', waDob:'Tarikh Lahir', waEpf:'Jumlah Simpanan KWSP', waNotes:'Catatan'
   },
   zh: {
     heroTitle:'专业财务<span>咨询</span>', heroSubtitle:'我们提供使用您的 KWSP/EPF 公积金供款的解决方案服务', heroPoint1:'<i class="fa-solid fa-check"></i> 无需预付款', heroPoint2:'<i class="fa-solid fa-check"></i> 无每月还款负担',
-    aboutTitle:'关于我们', aboutP1:'也称为 <b>MSQARDH</b>，是一家根据 1951 年放贷人法令注册的持牌社区信贷借贷公司。', aboutP2:'我们为以下年龄层提供特别融资服务', aboutP3:'适合需要现金周转的人士。申请可通过 <b>线上</b> 提交。', warningTitle:'<i class="fa-solid fa-triangle-exclamation"></i> MEWAH SAUJANA 是否与 KWSP/EPF 有关？', warningBody:'<b>不是。</b> MEWAH SAUJANA 并不是 KWSP/EPF 的代表或代理。',
+    perundingKewangan:'财务顾问',
+    aboutTitle:'关于我们', aboutP1:'也称为 <b>MSQARDH</b>，是一家根据 1951 年放贷人法令注册的持牌社区信贷借贷 company。', aboutP2:'我们为以下年龄层提供特别融资服务', aboutP3:'适合需要现金周转的人士。申请可通过 <b>线上</b> 提交。', warningTitle:'<i class="fa-solid fa-triangle-exclamation"></i> MEWAH SAUJANA 是否与 KWSP/EPF 有关？', warningBody:'<b>不是。</b> MEWAH SAUJANA 并不是 KWSP/EPF 的代表或代理。',
     benefitsTitle:'KWSP/EPF 贷款优势', benefit1Title:'最长 24 个月无需每月付款', benefit1Text:'提供免每月付款的宽限期，方便您安排现金流', benefit2Title:'无需预付 / 无隐藏收费', benefit2Text:'所有费用透明，无需提前付款', benefit3Title:'清楚且合法的协议文件', benefit3Text:'提供具有法律效力的正式协议文件', benefit4Title:'您的个人资料安全受保护', benefit4Text:'客户隐私与资料安全是我们的首要考量', benefit5Title:'批准率 <span class="red">99.9% 批准</span>', benefit5Text:'大多数申请可在简单条件下获得批准',
     repaymentTitle:'付款方式', repaymentText:'客户收到 KWSP/EPF 提款后才进行付款。', repaymentEm:'付款金额将根据双方同意并签署的原始协议为准。',
     applicationTitle:'线上申请', appIntro:'文件简单、快速批准、流程快捷又方便', eligibilityTitle:'申请资格：', eligibility1:'<i class="fa-solid fa-user-check"></i> 年龄 53、54、55 及 58、59、60 可申请', eligibility2:'<i class="fa-solid fa-piggy-bank"></i> 拥有 KWSP/EPF Account 1 或 Akaun Emas 储蓄（最低 RM30K）', eligibility3:'<i class="fa-solid fa-list-check"></i> 黑名单 / CTOS / 破产 / AKPK 也可申请', eligibility4:'<i class="fa-solid fa-briefcase"></i> 有工作 / 无工作皆可申请', eligibility5:'<i class="fa-solid fa-location-dot"></i> 全西马地区（不包括沙巴、砂拉越）',
@@ -1783,6 +1954,55 @@ function setLanguage(lang){
 }
 setLanguage(currentLang);
 
+/* ================= HERO CONSULTANT AUTO SLIDER JAVASCRIPT ================= */
+const consultants = [
+  { name: "Rossa", img: "testimonial1.jpg", phone: "60163061623" }, // 这里预设用你已有的 testimonial 贴图做测试
+  { name: "Wani", img: "testimonial2.jpg", phone: "60163061623" },  // 以后可以换成专用的照片
+  { name: "Siti", img: "testimonial3.jpg", phone: "60163061623" }
+];
+let currentConsultantIdx = 0;
+let consultantTimer = null;
+
+function updateConsultantDOM() {
+  const c = consultants[currentConsultantIdx];
+  document.getElementById('consultant-name').textContent = c.name;
+  document.getElementById('consultant-img').src = c.img;
+  document.getElementById('badge-text').textContent = `Hubungi ${c.name} (WhatsApp)`;
+  
+  // 智能整合：点击圆圈顶部的 WhatsApp，直接传专属悄悄话给该业务员
+  const msgText = encodeURIComponent(`Hello ${c.name}, saya nak tanya tentang bantuan pengeluaran KWSP.`);
+  document.getElementById('consultant-wa-badge').href = `https://wa.me/${c.phone}?text=${msgText}`;
+  
+  // 刷新小圆点
+  document.querySelectorAll('.c-dot').forEach((dot, idx) => {
+    dot.classList.toggle('active', idx === currentConsultantIdx);
+  });
+}
+
+function changeConsultant(direction) {
+  currentConsultantIdx = (currentConsultantIdx + direction + consultants.length) % consultants.length;
+  updateConsultantDOM();
+  restartConsultantTimer();
+}
+
+function setConsultant(idx) {
+  currentConsultantIdx = idx;
+  updateConsultantDOM();
+  restartConsultantTimer();
+}
+
+function startConsultantTimer() {
+  consultantTimer = setInterval(() => {
+    changeConsultant(1);
+  }, 4000); // 每 4 秒自动丝滑切换一个业务员
+}
+
+function restartConsultantTimer() {
+  clearInterval(consultantTimer);
+  startConsultantTimer();
+}
+
+/* ================= CUSTOMER FEEDBACK SLIDER ================= */
 let feedbackIndex = 0;
 let feedbackTimer = null;
 let feedbackTouchStartX = 0;
@@ -1851,6 +2071,10 @@ function initFeedbackSwipe(){
 }
 
 document.addEventListener('DOMContentLoaded', function(){
+  // 同时激活顶层顾问滑块和底部反馈滑块
+  updateConsultantDOM();
+  startConsultantTimer();
+  
   showFeedbackSlide(feedbackIndex);
   initFeedbackSwipe();
   startFeedbackAutoSlide();
