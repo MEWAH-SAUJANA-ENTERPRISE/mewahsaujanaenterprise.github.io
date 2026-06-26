@@ -62,21 +62,22 @@ body{
   white-space:nowrap;
 }
 
-/* ================= HERO & NEW TWO-COLUMN LAYOUT ================= */
+/* ================= HERO & TWO-COLUMN LAYOUT ================= */
 .hero{
-  min-height:540px;
+  min-height:680px;
   background:url("bg.jpg") center/cover no-repeat;
   position:relative;
   display:flex;
   align-items:center;
   justify-content:center;
   overflow:hidden;
+  padding:40px 0;
 }
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,.55); /* 加深遮罩让左边文字和右边滑块更显眼 */
+  background:rgba(0,0,0,.55); 
   backdrop-filter:blur(1px);
 }
 .hero-content{
@@ -84,9 +85,8 @@ body{
   width:min(1200px, calc(100% - 40px));
   margin:auto;
   color:#fff;
-  padding:40px 0;
   display:grid;
-  grid-template-columns:1.1fr 0.9fr; /* 左右分栏 */
+  grid-template-columns:1.1fr 0.9fr; 
   gap:40px;
   align-items:center;
 }
@@ -140,7 +140,7 @@ body{
   font-size:12px;
 }
 
-/* 右侧顾问轮播滑块核心样式 */
+/* 右侧顾问轮播滑块样式 */
 .hero-right {
   display:flex;
   justify-content:center;
@@ -152,12 +152,12 @@ body{
   flex-direction:column;
   align-items:center;
   width:100%;
-  max-width:320px;
+  max-width:340px;
 }
 .consultant-badge-wa {
   background:#22d061;
   color:#fff;
-  padding:9px 18px;
+  padding:10px 22px;
   border-radius:30px;
   font-weight:700;
   text-decoration:none;
@@ -182,10 +182,10 @@ body{
 }
 .consultant-circle-frame {
   position:relative;
-  width:250px;
-  height:250px;
+  width:240px;
+  height:240px;
   border-radius:50%;
-  border:5px solid rgba(255,255,255,0.75);
+  border:5px solid rgba(255,255,255,0.85);
   overflow:hidden;
   box-shadow:0 12px 28px rgba(0,0,0,0.3);
   background:#1f1f1f;
@@ -213,7 +213,7 @@ body{
   position:absolute;
   top:50%;
   transform:translateY(-50%);
-  background:rgba(255,255,255,0.9);
+  background:rgba(255,255,255,0.95);
   color:#333;
   border:none;
   width:36px;
@@ -229,12 +229,12 @@ body{
   transition:background 0.2s;
 }
 .consultant-arrow:hover { background:#fff; }
-.consultant-arrow.prev { left:-10px; }
-.consultant-arrow.next { right:-10px; }
+.consultant-arrow.prev { left:-12px; }
+.consultant-arrow.next { right:-12px; }
 
 .consultant-text-block {
   text-align:center;
-  margin-top:16px;
+  margin-top:14px;
   color:#fff;
 }
 .consultant-text-block h3 {
@@ -244,12 +244,56 @@ body{
   text-shadow:0 2px 5px rgba(0,0,0,0.5);
 }
 .consultant-text-block p {
-  margin:4px 0 0;
+  margin:3px 0 0;
   font-size:11px;
   font-weight:700;
   letter-spacing:1px;
   color:#e0e6ed;
 }
+
+/* 核心新增：CASH AIM 风格的独立介绍卡片 */
+.consultant-bio-card {
+  position:relative;
+  width:100%;
+  background:#fff;
+  border-radius:10px;
+  padding:20px 18px 16px;
+  margin-top:22px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.2);
+  border-left:5px solid #22d061;
+}
+.consultant-bio-card .bio-badge {
+  position:absolute;
+  right:12px;
+  top:-12px;
+  background:#fff;
+  color:#d97706; /* 橙色文字 */
+  border:1px solid #fcd34d;
+  padding:4px 10px;
+  border-radius:6px;
+  font-size:11px;
+  font-weight:800;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+  display:flex;
+  align-items:center;
+  gap:4px;
+}
+.consultant-bio-card p {
+  margin:0 0 8px;
+  color:#24384a;
+  font-size:13.5px;
+  font-style:italic;
+  font-weight:600;
+  line-height:1.45;
+}
+.consultant-bio-card em {
+  display:block;
+  text-align:right;
+  color:#666;
+  font-size:12px;
+  font-weight:700;
+}
+
 .consultant-dots-container {
   display:flex;
   gap:7px;
@@ -266,14 +310,9 @@ body{
 .c-dot.active { background:#3498db; }
 
 /* ================= COMMON ================= */
-.section{
-  padding:48px 20px;
-}
+.section{padding:48px 20px;}
 .section.soft{background:#f4f4f4}
-.container{
-  width:min(1200px, 100%);
-  margin:auto;
-}
+.container{width:min(1200px, 100%); margin:auto;}
 .title{
   text-align:center;
   font-size:26px;
@@ -296,21 +335,12 @@ body{
   border:1px solid var(--border);
   border-radius:7px;
   padding:28px 28px;
-  box-shadow:0 8px 26px rgba(0,0,0,.06);
+  box-shadow:0 8px 26 rgba(0,0,0,.06);
 }
 
 /* ================= ABOUT ================= */
-.about h2{
-  margin:0 0 18px;
-  font-size:22px;
-  font-weight:800;
-}
-.about p{
-  margin:10px 0;
-  font-size:16px;
-  color:#111827;
-  text-transform:uppercase;
-}
+.about h2{margin:0 0 18px; font-size:22px; font-weight:800;}
+.about p{margin:10px 0; font-size:16px; color:#111827; text-transform:uppercase;}
 .age-badge{
   display:inline-block;
   margin:20px 0;
@@ -347,31 +377,13 @@ body{
   border-bottom:1px solid #d9d9d9;
 }
 .benefit-item:last-child{border-bottom:0}
-.benefit-item i{
-  color:var(--blue);
-  font-size:18px;
-  margin-top:4px;
-}
-.benefit-item h3{
-  margin:0 0 4px;
-  font-size:16px;
-  color:#1f2937;
-  font-weight:800;
-  text-transform:uppercase;
-}
-.benefit-item p{
-  margin:0;
-  color:#111827;
-  font-size:15px;
-}
+.benefit-item i{color:var(--blue); font-size:18px; margin-top:4px;}
+.benefit-item h3{margin:0 0 4px; font-size:16px; color:#1f2937; font-weight:800; text-transform:uppercase;}
+.benefit-item p{margin:0; color:#111827; font-size:15px;}
 .red{color:#ff3b30}
 
 /* ================= REPAYMENT ================= */
-.repayment p{
-  margin:0 0 22px;
-  font-size:16px;
-  color:#111827;
-}
+.repayment p{margin:0 0 22px; font-size:16px; color:#111827;}
 .repayment em{font-size:16px;color:#1f2937}
 
 /* ================= APPLICATION ================= */
@@ -382,23 +394,9 @@ body{
   padding:30px;
   box-shadow:0 8px 26px rgba(0,0,0,.06);
 }
-.app-panel h3{
-  margin:0 0 28px;
-  font-size:19px;
-  color:#1f2937;
-  font-weight:800;
-  text-transform:uppercase;
-}
-.eligibility-title{
-  font-size:22px;
-  font-weight:800;
-  margin:0 0 24px;
-}
-.eligibility{
-  margin:0 0 34px;
-  padding:0;
-  list-style:none;
-}
+.app-panel h3{margin:0 0 28px; font-size:19px; color:#1f2937; font-weight:800; text-transform:uppercase;}
+.eligibility-title{font-size:22px; font-weight:800; margin:0 0 24px;}
+.eligibility{margin:0 0 34px; padding:0; list-style:none;}
 .eligibility li{
   display:grid;
   grid-template-columns:28px 1fr;
@@ -412,21 +410,9 @@ body{
   font-size:15px;
 }
 .eligibility i{color:var(--blue);font-size:18px}
-.form-title{
-  text-align:center;
-  font-size:18px;
-  font-weight:800;
-  margin:34px 0 26px;
-}
+.form-title{text-align:center; font-size:18px; font-weight:800; margin:34px 0 26px;}
 .form-group{margin-bottom:22px}
-label{
-  display:block;
-  margin-bottom:9px;
-  font-size:15px;
-  color:#152b40;
-  font-weight:600;
-  text-transform:uppercase;
-}
+label{display:block; margin-bottom:9px; font-size:15px; color:#152b40; font-weight:600; text-transform:uppercase;}
 input,select,textarea{
   width:100%;
   height:46px;
@@ -444,11 +430,7 @@ input:focus,select:focus,textarea:focus{
   border-color:#3399ff;
   box-shadow:0 0 0 2px rgba(51,153,255,.12);
 }
-.phone-row{
-  display:grid;
-  grid-template-columns:62px 1fr;
-  gap:10px;
-}
+.phone-row{display:grid; grid-template-columns:62px 1fr; gap:10px;}
 .prefix{
   height:46px;
   border:1px solid #d5d5d5;
@@ -460,12 +442,7 @@ input:focus,select:focus,textarea:focus{
   font-weight:700;
   color:#152b40;
 }
-.help{
-  display:block;
-  margin-top:7px;
-  color:#777;
-  font-size:12px;
-}
+.help{display:block; margin-top:7px; color:#777; font-size:12px;}
 .submit-btn{
   width:100%;
   border:0;
@@ -479,19 +456,10 @@ input:focus,select:focus,textarea:focus{
   text-transform:uppercase;
 }
 .submit-btn:hover{background:#258ad0}
-.submit-note{
-  text-align:center;
-  margin:14px 0 0;
-  color:#777;
-  font-size:13px;
-}
+.submit-note{text-align:center; margin:14px 0 0; color:#777; font-size:13px;}
 
 /* ================= FEEDBACK ================= */
-.feedback-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:28px;
-}
+.feedback-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
 .feedback-card{
   background:#fff;
   border:1px solid #ddd;
@@ -500,78 +468,22 @@ input:focus,select:focus,textarea:focus{
   text-align:center;
   box-shadow:0 8px 24px rgba(0,0,0,.08);
 }
-.feedback-card img{
-  width:100%;
-  height:170px;
-  object-fit:cover;
-  border-radius:4px;
-  border:1px solid #ddd;
-}
-.feedback-card p{
-  font-size:15px;
-  color:#111827;
-  margin:18px 0;
-  font-style:italic;
-}
+.feedback-card img{width:100%; height:170px; object-fit:cover; border-radius:4px; border:1px solid #ddd;}
+.feedback-card p{font-size:15px; color:#111827; margin:18px 0; font-style:italic;}
 .feedback-card strong{font-size:15px}
-.whatsapp-note{
-  margin-top:28px;
-  background:#fff;
-  border:1px solid #ddd;
-  border-radius:6px;
-  padding:28px;
-  text-align:center;
-}
-.whatsapp-note i{
-  color:#25d366;
-  font-size:46px;
-}
-.whatsapp-note a{
-  display:inline-block;
-  margin-top:12px;
-  color:#1d4ed8;
-  font-size:15px;
-}
+.whatsapp-note{margin-top:28px; background:#fff; border:1px solid #ddd; border-radius:6px; padding:28px; text-align:center;}
+.whatsapp-note i{color:#25d366; font-size:46px;}
+.whatsapp-note a{display:inline-block; margin-top:12px; color:#1d4ed8; font-size:15px;}
 
 /* ================= LOCATION ================= */
-.map-box{
-  width:100%;
-  height:280px;
-  border:0;
-  border-radius:6px;
-  box-shadow:0 8px 24px rgba(0,0,0,.12);
-}
+.map-box{width:100%; height:350px; border:0; border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,.12);}
 
 /* ================= FOOTER ================= */
-.footer{
-  background:#263b4e;
-  color:#fff;
-  padding:48px 20px 24px;
-}
-.footer-inner{
-  width:min(1120px, 100%);
-  margin:auto;
-  display:grid;
-  grid-template-columns:1.2fr 1.2fr 1fr;
-  gap:70px;
-}
-.footer h3{
-  margin:0 0 24px;
-  font-size:20px;
-  color:#fff;
-  font-weight:800;
-}
-.footer p{
-  margin:13px 0;
-  color:#fff;
-  font-size:15px;
-}
-.footer .line{
-  display:grid;
-  grid-template-columns:24px 1fr;
-  gap:14px;
-  align-items:start;
-}
+.footer{background:#263b4e; color:#fff; padding:48px 20px 24px;}
+.footer-inner{width:min(1120px, 100%); margin:auto; display:grid; grid-template-columns:1.2fr 1.2fr 1fr; gap:70px;}
+.footer h3{margin:0 0 24px; font-size:20px; color:#fff; font-weight:800;}
+.footer p{margin:13px 0; color:#fff; font-size:15px;}
+.footer .line{display:grid; grid-template-columns:24px 1fr; gap:14px; align-items:start;}
 .footer i{color:#fff;margin-top:4px}
 .footer a{color:#fff;text-decoration:none}
 .footer a:hover{text-decoration:underline}
@@ -585,7 +497,7 @@ input:focus,select:focus,textarea:focus{
   font-size:13px;
 }
 
-/* ================= FLOATING BUTTONS + ANIMATION INTEGRATION ================= */
+/* ================= FLOATING BUTTONS & BUG FIXES ================= */
 .float-buttons{
   position:fixed;
   right:24px;
@@ -593,7 +505,7 @@ input:focus,select:focus,textarea:focus{
   display:flex;
   flex-direction:column;
   gap:12px;
-  z-index:1001;
+  z-index:9999; /* 升级层级，确保不被任何元素遮挡 */
 }
 .float-buttons a, .float-buttons button {
   width:58px;
@@ -608,7 +520,6 @@ input:focus,select:focus,textarea:focus{
   box-shadow:2px 2px 12px rgba(0, 0, 0, 0.25) !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
-
 .float-buttons a:hover, .float-buttons button:hover {
   transform: scale(1.12) !important;
   box-shadow: 2px 8px 18px rgba(0, 0, 0, 0.35) !important;
@@ -619,317 +530,50 @@ input:focus,select:focus,textarea:focus{
 .float-call{background:#43b649}
 .float-lang{background:#263b4e}
 
-/* ================= CUSTOM DATE PICKER ================= */
-.date-wrap{position:relative;width:100%;}
-.date-wrap input{padding-right:48px;cursor:pointer;background:#fff;}
-.calendar-btn{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:34px;height:34px;border:0;background:transparent;color:#333;font-size:18px;cursor:pointer;}
-.date-picker{position:absolute;left:0;top:calc(100% + 8px);width:292px;background:#fff;border:1px solid #ddd;border-radius:2px;box-shadow:0 10px 30px rgba(0,0,0,.15);z-index:2000;padding:14px;display:none;color:#111;}
-.date-picker.show{display:block;}
-.dp-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;font-weight:700;color:#111;}
-.dp-header button{border:0;background:#fff;font-size:22px;line-height:1;cursor:pointer;padding:4px 8px;color:#111;}
-.dp-month{border:0;background:#fff;font-weight:700;font-size:15px;color:#111;cursor:pointer;}
-.dp-week,.dp-grid{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;gap:2px;}
-.dp-week span{font-size:13px;color:#111;padding:6px 0;}
-.dp-day{height:34px;border:0;background:#fff;cursor:pointer;font-size:14px;color:#111;border-radius:2px;}
-.dp-day:hover{background:#eaf4ff;}.dp-day.muted{color:#777;}.dp-day.selected{outline:2px solid #111;font-weight:700;background:#eee;}
-.dp-footer{display:flex;justify-content:space-between;margin-top:12px;}.dp-footer button{border:0;background:#fff;color:#006fe6;font-size:14px;cursor:pointer;padding:6px 4px;}
-@media(max-width:520px){.date-picker{width:270px;left:0;}.dp-day{height:31px;font-size:13px;}}
-
-/* ================= THEME MENU / DARK MODE ================= */
-.float-buttons button.float-moon,.float-buttons button.float-lang{border:0;cursor:pointer;width:58px;height:58px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 10px 26px rgba(0,0,0,.18);}
-.theme-menu{position:absolute;right:72px;bottom:175px;width:175px;background:#fff;border:1px solid #ddd;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.18);display:none;z-index:1002;color:#333;}
-.theme-menu.show{display:block;}.theme-menu button{width:100%;border:0;background:#fff;display:grid;grid-template-columns:45px 1fr;align-items:center;gap:10px;padding:16px 14px;font-size:26px;color:#333;border-bottom:1px solid #ddd;cursor:pointer;text-align:left;}.theme-menu button:last-child{border-bottom:0;}.theme-menu button:hover,.theme-menu button.active{background:#3498db;color:#fff;}.theme-menu i{font-size:20px;text-align:center;}.theme-menu span{line-height:1.25;}
-body.dark-mode{background:#121a22;color:#eaf1f7;}body.dark-mode .header,body.dark-mode .panel,body.dark-mode .benefit-list,body.dark-mode .app-panel,body.dark-mode .feedback-card,body.dark-mode .whatsapp-note{background:#1d2935;color:#eaf1f7;border-color:#33475a;}body.dark-mode .section.soft{background:#151f29;}body.dark-mode p,body.dark-mode .help,body.dark-mode .submit-note{color:#d3d9df;}body.dark-mode input,body.dark-mode select,body.dark-mode textarea{background:#111b24;color:#fff;border-color:#43566a;}body.dark-mode .date-picker,body.dark-mode .dp-header button,body.dark-mode .dp-month,body.dark-mode .dp-day,body.dark-mode .dp-footer button,body.dark-mode .theme-menu,body.dark-mode .theme-menu button{background:#1d2935;color:#fff;border-color:#43566a;}
-@media(max-width:900px){.float-buttons button.float-moon,.float-buttons button.float-lang{width:50px;height:50px;font-size:20px;}.theme-menu{right:62px;bottom:152px;width:165px;}.theme-menu button{font-size:22px;padding:14px 12px;}}
-
-/* ================= RESPONSIVE ================= */
-@media(max-width:900px){
-  body{padding-top:76px}
-  .header{height:76px}
-  .header-inner{width:calc(100% - 24px)}
-  .header img{height:46px}
-  .header-title{font-size:17px}
-  .hero{min-height:420px}
-  .hero-content{grid-template-columns:1fr; gap:20px;} /* 变成一列 */
-  .hero-left{text-align:center;}
-  .hero h1{font-size:28px}
-  .hero-subtitle{font-size:15px}
-  .hero-point{font-size:15px}
-  .feedback-grid{grid-template-columns:1fr}
-  .footer-inner{grid-template-columns:1fr;gap:24px}
-  .float-buttons{right:14px;bottom:20px}
-  .float-buttons a{width:50px;height:50px;font-size:20px}
+/* 彻底修复菜单层级与移位问题：改用悬浮按钮上方的绝对定位 */
+.theme-menu, .lang-menu {
+  position:absolute;
+  right:70px;
+  width:190px;
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  display:none;
+  z-index:10000;
+  color:#333;
 }
-@media(max-width:520px){
-  body{font-size:13px}
-  .header-title{font-size:15px}
-  .hero h1{font-size:24px}
-  .title{font-size:22px}
-  .panel,.benefit-list,.app-panel{padding:22px 16px}
-  .phone-row{grid-template-columns:58px 1fr}
+.theme-menu { bottom:180px; }
+.lang-menu { bottom:0px; }
+
+.theme-menu.show, .lang-menu.show { display:block; }
+
+.theme-menu button, .lang-menu button {
+  width:100%;
+  border:0;
+  background:#fff;
+  display:grid;
+  grid-template-columns:40px 1fr;
+  align-items:center;
+  gap:8px;
+  padding:14px 14px;
+  font-size:14px;
+  color:#333;
+  border-bottom:1px solid #f0f0f0;
+  cursor:pointer;
+  text-align:left;
 }
+.theme-menu button:last-child, .lang-menu button:last-child { border-bottom:0; }
+.theme-menu button:hover, .theme-menu button.active,
+.lang-menu button:hover, .lang-menu button.active { background:#3498db; color:#fff; }
+.lang-menu .lang-code { font-weight:800; font-size:12px; background:#eaf4ff; color:#3498db; padding:2px 6px; border-radius:4px; text-align:center; }
+.lang-menu button:hover .lang-code, .lang-menu button.active .lang-code { background:rgba(255,255,255,0.2); color:#fff; }
 
-/* ================= MOBILE POLISH LIKE REFERENCE ================= */
-@media(max-width:768px){
-  body{padding-top:108px;font-size:12px;background:#fff;}
-  .header{height:108px;box-shadow:0 2px 12px rgba(0,0,0,.10);}
-  .header-inner{width:100%;padding:0 8px;gap:10px;justify-content:flex-start;}
-  .header img{height:38px;}
-  .header-title{font-size:14px;font-weight:700;letter-spacing:-.2px;}
-  .section{padding:34px 10px;}
-  .section.soft{background:#f5f5f5;}
-  .container{width:100%;}
-  .title{font-size:22px;margin-bottom:26px;}
-  .title::after{width:72px;height:2px;margin-top:11px;}
-  .panel,.benefit-list,.app-panel{border-radius:5px;padding:18px 14px;box-shadow:0 5px 16px rgba(0,0,0,.07);}
-  .about h2{font-size:17px}
-  .about p{font-size:12px;line-height:1.65}
-  .age-badge{font-size:12px;padding:10px 12px}
-  .warning{padding:14px 14px;font-size:12px}
-  .benefit-item{grid-template-columns:28px 1fr;padding:13px 0;}
-  .benefit-item i{font-size:17px}
-  .benefit-item h3{font-size:13px;margin-bottom:4px}
-  .benefit-item p{font-size:12px}
-  .repay p{font-size:13px}
-  .application-intro{font-size:13px}
-  .eligibility li{font-size:12px;padding:12px 0;grid-template-columns:28px 1fr}
-  label{font-size:12px;margin-top:14px}
-  input,select,textarea{font-size:12px;padding:11px 12px}
-  .submit-btn{font-size:14px;padding:13px}
-  .feedback-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
-  .feedback-card{padding:10px;border-radius:5px;box-shadow:0 5px 16px rgba(0,0,0,.10);}
-  .feedback-card img{height:132px;border-radius:3px;}
-  .feedback-card p{font-size:11px;line-height:1.5;margin:10px 0;}
-  .feedback-card strong{font-size:11px}
-  .whatsapp-note{margin-top:26px;padding:22px 10px;border-radius:4px;background:#fff;}
-  .whatsapp-note i{font-size:34px}
-  .whatsapp-note p{font-size:12px;margin:10px 0}
-  .whatsapp-note a{font-size:12px}
-  .map-box{height:228px;border-radius:4px;}
-  .footer{padding:30px 10px 14px;}
-  .footer-inner{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;}
-  .footer h3{font-size:13px;margin-bottom:14px;}
-  .footer p{font-size:10px;line-height:1.55;margin:8px 0;}
-  .footer .line{grid-template-columns:14px 1fr;gap:6px;}
-  .footer i{font-size:10px;margin-top:3px}
-  .copyright{margin-top:22px;padding-top:12px;font-size:9px;}
-  .float-buttons{right:10px;bottom:12px;gap:8px;}
-  .float-buttons a{width:50px;height:50px;font-size:20px}
-}
-@media(max-width:390px){
-  .header-title{font-size:13px}
-  .feedback-card img{height:118px}
-  .footer-inner{gap:10px}
-  .footer h3{font-size:12px}
-  .footer p{font-size:9.5px}
-}
-
-/* =========================================================
-   MOBILE FINAL POLISH - closest to reference mobile layout
-   ========================================================= */
-@media (max-width:768px){
-  html,body{width:100%;overflow-x:hidden;}
-  body{
-    padding-top:92px;
-    font-size:11.5px;
-    line-height:1.55;
-    background:#fff;
-    color:#1f3347;
-  }
-
-  /* fixed top bar like reference */
-  .header{
-    height:92px;
-    background:#fff;
-    box-shadow:0 2px 10px rgba(0,0,0,.12);
-  }
-  .header-inner{
-    width:100%;
-    height:100%;
-    padding:0 8px;
-    gap:8px;
-    justify-content:flex-start;
-  }
-  .header img{
-    height:36px;
-    max-width:92px;
-    object-fit:contain;
-  }
-  .header-title{
-    font-size:12px;
-    font-weight:700;
-    color:#26394d;
-    line-height:1.15;
-    white-space:normal;
-  }
-
-  /* hero: taller, image-focused, less crowded */
-  .hero{
-    min-height:500px;
-    height:auto;
-    max-height:none;
-    background-position:center top;
-  }
-  .hero::before{
-    background:rgba(0,0,0,.5);
-    backdrop-filter:none;
-  }
-  .hero-content{
-    width:100%;
-    padding:20px 18px;
-    display:flex;
-    flex-direction:column;
-    gap:30px;
-  }
-  .hero h1{
-    font-size:22px;
-    line-height:1.2;
-    margin:0 0 10px;
-    letter-spacing:.2px;
-    text-shadow:0 2px 5px rgba(0,0,0,.6);
-    text-align:center;
-  }
-  .hero-subtitle{
-    font-size:13px;
-    line-height:1.4;
-    margin:0 auto 16px;
-    max-width:310px;
-    text-align:center;
-  }
-  .hero-box{
-    width:100%;
-    padding:11px 13px;
-    border-radius:4px;
-    background:rgba(255,255,255,.18);
-    backdrop-filter:blur(3px);
-  }
-  .hero-point{
-    font-size:12px;
-    gap:9px;
-    margin:5px 0;
-    line-height:1.25;
-  }
-  .hero-point i{
-    width:16px;
-    height:16px;
-    min-width:16px;
-    font-size:9px;
-  }
-  
-  /* 移动端顾问容器微调 */
-  .consultant-slider-wrap {
-    max-width:240px;
-  }
-  .consultant-circle-frame {
-    width:180px;
-    height:180px;
-  }
-  .consultant-text-block h3 {
-    font-size:18px;
-  }
-
-  /* compact section rhythm */
-  .section{padding:30px 9px;}
-  .section.soft{background:#f5f5f5;}
-  .container{width:100%;max-width:100%;}
-  .title{
-    font-size:17px;
-    line-height:1.25;
-    margin:0 0 20px;
-  }
-  .title::after{
-    width:56px;
-    height:2px;
-    margin-top:10px;
-  }
-  .panel,.benefit-list,.app-panel{
-    padding:14px 12px;
-    border-radius:4px;
-    box-shadow:0 4px 14px rgba(0,0,0,.07);
-  }
-  .about h2{font-size:14px;margin-bottom:12px;}
-  .about p{font-size:10.8px;line-height:1.65;margin:8px 0;}
-  .age-badge{font-size:11px;padding:8px 10px;margin:12px 0;}
-  .warning{padding:12px 12px;margin-top:14px;font-size:10.8px;border-left-width:3px;}
-
-  /* benefits smaller like reference */
-  .benefit-item{grid-template-columns:24px 1fr;padding:11px 0;gap:8px;}
-  .benefit-item i{font-size:14px;margin-top:2px;}
-  .benefit-item h3{font-size:10.8px;line-height:1.35;margin:0 0 3px;}
-  .benefit-item p{font-size:10.5px;line-height:1.45;margin:0;}
-  .repay p,.repay em{font-size:11px;line-height:1.55;}
-
-  /* application form */
-  .app-panel h3{font-size:12px;line-height:1.45;margin-bottom:18px;}
-  .eligibility-title{font-size:14px;margin:18px 0 8px;}
-  .eligibility li{font-size:10.7px;line-height:1.35;padding:10px 0;grid-template-columns:24px 1fr;gap:8px;}
-  .eligibility i{font-size:13px;}
-  .form-title{font-size:13px;margin:20px 0 12px;}
-  label{font-size:11px;margin-top:12px;margin-bottom:6px;}
-  input,select,textarea{font-size:11px;padding:9px 10px;border-radius:3px;}
-  textarea{min-height:76px;}
-  .phone-row{grid-template-columns:44px 1fr;gap:6px;}
-  .prefix{font-size:11px;border-radius:3px;}
-  .help{font-size:9.6px;line-height:1.4;}
-  .submit-btn{font-size:12px;padding:11px;border-radius:3px;margin-top:14px;}
-
-  /* feedback: two-column cards, compact */
-  .feedback-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
-  .feedback-card{padding:8px;border-radius:4px;box-shadow:0 4px 12px rgba(0,0,0,.10);}
-  .feedback-card img{height:116px;border-radius:3px;object-fit:cover;}
-  .feedback-card p{font-size:9.8px;line-height:1.42;margin:8px 0;}
-  .feedback-card strong{font-size:9.8px;}
-  .slider-dots{margin-top:12px;}
-  .dot{width:8px;height:8px;}
-  .whatsapp-note{margin-top:22px;padding:20px 8px;border-radius:4px;background:#fff;}
-  .whatsapp-note i{font-size:31px;}
-  .whatsapp-note p,.whatsapp-note a{font-size:10.5px;}
-
-  /* map & footer */
-  .map-box{height:214px;border-radius:4px;}
-  .footer{padding:28px 10px 12px;}
-  .footer-inner{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}
-  .footer h3{font-size:11px;margin:0 0 12px;}
-  .footer p{font-size:8.8px;line-height:1.55;margin:7px 0;}
-  .footer .line{grid-template-columns:12px 1fr;gap:5px;align-items:start;}
-  .footer i{font-size:9px;margin-top:2px;}
-  .copyright{font-size:8px;margin-top:18px;padding-top:10px;}
-
-  .float-buttons{right:10px;bottom:14px;gap:9px !important;z-index:3000 !important;}
-  .float-buttons a,.float-buttons button.float-moon,.float-buttons button.float-lang{
-    width:48px !important;height:48px !important;min-width:48px !important;min-height:48px !important;
-    padding:0 !important;border-radius:50% !important;display:flex !important;align-items:center !important;justify-content:center !important;
-    line-height:1 !important;box-shadow:0 8px 20px rgba(0,0,0,.22) !important;
-    transition: transform 0.3s ease !important;
-  }
-  .float-buttons a:active, .float-buttons button:active {
-    transform: scale(1.15) !important;
-  }
-  .float-buttons i{font-size:22px !important;line-height:1 !important;display:block !important;}
-  .float-wa i{font-size:24px !important;}
-  .float-call i{font-size:22px !important;}
-  .float-lang i{font-size:23px !important;}
-  .float-moon{background:#3498db !important;}
-  .float-wa{background:#22d061 !important;}
-  .float-call{background:#43b649 !important;}
-  .float-lang{background:#263b4e !important;color:#fff !important;}
-}
-
-@media (max-width:380px){
-  .header img{height:32px;max-width:82px;}
-  .header-title{font-size:11px;}
-  .hero{min-height:470px;}
-  .feedback-card img{height:102px;}
-  .footer-inner{gap:8px;}
-  .footer h3{font-size:10px;}
-  .footer p{font-size:8px;}
-}
-
-/* ===== STABLE FIXES: native date + readable dark mode ===== */
+/* ===== STABLE NATIVE DATE ===== */
 .native-date-wrap{position:relative;}
 .native-date-wrap input[type="date"]{
   width:100%;
-  box-sizing:border-box;
   min-height:46px;
   font-family:inherit;
   font-size:14px;
@@ -940,637 +584,102 @@ body.dark-mode{background:#121a22;color:#eaf1f7;}body.dark-mode .header,body.dar
   padding:10px 14px;
   color-scheme:light;
 }
-.native-date-wrap input[type="date"]::-webkit-calendar-picker-indicator{
-  cursor:pointer;
-  opacity:.85;
-}
-body.dark-mode{background:#101820;color:#f3f6f9;}
-body.dark-mode .section,
-body.dark-mode .section.soft,
-body.dark-mode .panel,
-body.dark-mode .benefit-list,
-body.dark-mode .repay-box,
-body.dark-mode .app-panel,
-body.dark-mode .feedback-card,
-body.dark-mode .whatsapp-note{
-  background:#172432!important;
-  color:#f3f6f9!important;
-  border-color:#3b5268!important;
-}
-body.dark-mode .title,
-body.dark-mode .section-title,
-body.dark-mode h1,
-body.dark-mode .section-title,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode h4,
-body.dark-mode label,
-body.dark-mode .form-title,
-body.dark-mode .app-panel strong,
-body.dark-mode .benefit-list strong,
-body.dark-mode .footer h3,
-body.dark-mode .footer p,
-body.dark-mode .feedback-card b,
-body.dark-mode .feedback-card p,
-body.dark-mode .feedback-card em,
-body.dark-mode .eligibility li,
-body.dark-mode .repay-box p{
-  color:#f8fafc!important;
-}
-body.dark-mode p,
-body.dark-mode li,
-body.dark-mode .help,
-body.dark-mode .submit-note,
-body.dark-mode .muted{color:#d7e0ea!important;}
-body.dark-mode input,
-body.dark-mode select,
-body.dark-mode textarea,
-body.dark-mode .prefix{
-  background:#0f1b25!important;
-  color:#fff!important;
-  border-color:#4c6379!important;
-}
-body.dark-mode input::placeholder, body.dark-mode textarea::placeholder{color:#aebdca!important;}
-body.dark-mode input[type="date"]{color-scheme:dark;}
-body.dark-mode .theme-menu, body.dark-mode .theme-menu button{background:#1c2a38!important;color:#fff!important;border-color:#43566a!important;}
-body.dark-mode .theme-menu button.active, body.dark-mode .theme-menu button:hover{background:#3498db!important;color:#fff!important;}
-@media(max-width:520px){
-  .native-date-wrap input[type="date"]{font-size:13px;min-height:42px;padding:9px 11px;}
-}
 
-/* =========================================================
-   DARK MODE V2 - closer to Milano reference
-   Put this at the very end of <style>
-   ========================================================= */
-body.dark-mode{
-  background:#111111!important;
-  color:#f5f5f5!important;
-}
-body.dark-mode .header{
-  background:#1f1f1f!important;
-  box-shadow:0 2px 14px rgba(0,0,0,.35)!important;
-}
-body.dark-mode .header-title{
-  color:#f5f5f5!important;
-}
-body.dark-mode .section,
-body.dark-mode .section.soft{
-  background:#111111!important;
-}
-body.dark-mode .title,
-body.dark-mode .section-title,
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode h4{
-  color:#f5f5f5!important;
-  text-shadow:none!important;
-}
-body.dark-mode .title::after{
-  background:#3498db!important;
-}
-body.dark-mode .panel,
-body.dark-mode .benefit-list,
-body.dark-mode .app-panel,
-body.dark-mode .feedback-card,
-body.dark-mode .whatsapp-note{
-  background:#1f1f1f!important;
-  border-color:#444!important;
-  color:#f5f5f5!important;
-  box-shadow:none!important;
-}
-body.dark-mode .about p,
-body.dark-mode .repayment p,
-body.dark-mode .repayment em,
-body.dark-mode .benefit-item p,
-body.dark-mode .feedback-card p,
-body.dark-mode .feedback-card strong,
-body.dark-mode .eligibility li,
-body.dark-mode label,
-body.dark-mode p,
-body.dark-mode li,
-body.dark-mode span,
-body.dark-mode b,
-body.dark-mode strong,
-body.dark-mode em{
-  color:#f5f5f5!important;
-}
-body.dark-mode .benefit-item,
-body.dark-mode .eligibility li{
-  border-bottom-color:#555!important;
-}
-body.dark-mode .age-badge{
-  background:#0d57bb!important;
-  color:#fff!important;
-}
-body.dark-mode .warning{
-  background:#3b3100!important;
-  border-left-color:#ffc107!important;
-  color:#fff!important;
-}
-body.dark-mode .warning strong,
-body.dark-mode .warning b,
-body.dark-mode .warning i{
-  color:#ffd43b!important;
-}
-body.dark-mode input,
-body.dark-mode select,
-body.dark-mode textarea,
-body.dark-mode .prefix{
-  background:#151515!important;
-  color:#fff!important;
-  border-color:#555!important;
-}
-body.dark-mode input::placeholder,
-body.dark-mode textarea::placeholder{
-  color:#bdbdbd!important;
-}
-body.dark-mode .help,
-body.dark-mode .submit-note{
-  color:#cfcfcf!important;
-}
-body.dark-mode .theme-menu{
-  background:#1f1f1f!important;
-  border-color:#444!important;
-}
-body.dark-mode .theme-menu button{
-  background:#1f1f1f!important;
-  color:#f5f5f5!important;
-  border-color:#444!important;
-}
-body.dark-mode .theme-menu button.active,
-body.dark-mode .theme-menu button:hover{
-  background:#64b5f6!important;
-  color:#fff!important;
-}
-body.dark-mode .float-lang{
-  background:#f1f5f9!important;
-  color:#111!important;
-}
-body.dark-mode .footer{
-  background:#263b4e!important;
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+  body{padding-top:76px}
+  .header{height:76px}
+  .header-inner{width:calc(100% - 24px)}
+  .header img{height:46px}
+  .header-title{font-size:17px}
+  .hero{min-height:auto;}
+  .hero-content{grid-template-columns:1fr; gap:30px;} 
+  .hero-left{text-align:center;}
+  .hero h1{font-size:28px}
+  .hero-subtitle{font-size:15px}
+  .feedback-grid{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr;gap:24px}
+  .float-buttons{right:14px;bottom:20px}
+  .float-buttons a, .float-buttons button{width:50px;height:50px;font-size:20px}
+  .theme-menu { bottom:150px; right:62px; }
+  .lang-menu { bottom:0px; right:62px; }
 }
 
 @media(max-width:768px){
-  body.dark-mode{background:#111!important;}
-  body.dark-mode .header{background:#1f1f1f!important;}
-  body.dark-mode .panel,
-  body.dark-mode .benefit-list,
-  body.dark-mode .app-panel,
-  body.dark-mode .feedback-card,
-  body.dark-mode .whatsapp-note{
-    background:#1f1f1f!important;
-    border-color:#444!important;
-  }
+  html,body{width:100%;overflow-x:hidden;}
+  body{padding-top:92px; font-size:11.5px;}
+  .header{height:92px; box-shadow:0 2px 10px rgba(0,0,0,.12);}
+  .header-inner{padding:0 8px; gap:8px;}
+  .header img{height:36px; max-width:92px;}
+  .header-title{font-size:12px; white-space:normal;}
+  .hero::before{background:rgba(0,0,0,.55);}
+  .hero-content{padding:20px 14px; gap:24px;}
+  .hero h1{font-size:22px;}
+  .hero-subtitle{font-size:13px; max-width:310px; margin:0 auto 18px;}
+  .hero-box{padding:14px 16px;}
+  .hero-point{font-size:12px; gap:8px;}
+  .consultant-slider-wrap { max-width:280px; }
+  .consultant-circle-frame { width:190px; height:180px; }
+  .consultant-text-block h3 { font-size:18px; }
+  .consultant-bio-card p { font-size:12px; }
+  .section{padding:30px 9px;}
+  .title{font-size:17px;}
+  .panel,.benefit-list,.app-panel{padding:16px 12px;}
+  .feedback-slide{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+  .footer-inner{grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px;}
+  .footer h3{font-size:11px;}
+  .footer p{font-size:8.5px;}
+  .float-buttons{right:10px; bottom:14px; gap:8px !important;}
+  .float-buttons a,.float-buttons button{width:46px !important; height:48px !important; min-width:46px !important; font-size:20px !important;}
 }
 
-/* =========================================================
-   DESKTOP / TABLET MILANO MATCH PATCH
-   This fixes the big visual difference when browser width is around 800px.
-   ========================================================= */
-@media (min-width:769px){
-  body{
-    padding-top:150px !important;
-    font-size:14px;
-  }
-  .header{
-    height:150px !important;
-    background:#fff;
-  }
-  .header-inner{
-    width:min(1240px, calc(100% - 110px)) !important;
-    padding:0 !important;
-    gap:26px !important;
-    justify-content:flex-start !important;
-  }
-  .header img{
-    height:78px !important;
-    max-width:230px !important;
-  }
-  .header-title{
-    font-size:25px !important;
-    font-weight:800 !important;
-    color:#26394d !important;
-    white-space:nowrap !important;
-  }
+/* ================= DARK MODE SYSTEM ================= */
+body.dark-mode{background:#111111!important; color:#f5f5f5!important;}
+body.dark-mode .header{background:#1f1f1f!important; box-shadow:0 2px 14px rgba(0,0,0,.35)!important;}
+body.dark-mode .header-title{color:#f5f5f5!important;}
+body.dark-mode .section, body.dark-mode .section.soft{background:#111111!important;}
+body.dark-mode .panel, body.dark-mode .benefit-list, body.dark-mode .app-panel, body.dark-mode .feedback-card, body.dark-mode .whatsapp-note{background:#1f1f1f!important; border-color:#444!important; color:#f5f5f5!important;}
+body.dark-mode .consultant-bio-card { background:#1f1f1f!important; border:1px solid #444; border-left:5px solid #22d061!important; }
+body.dark-mode .consultant-bio-card p { color:#fff!important; }
+body.dark-mode .consultant-bio-card .bio-badge { background:#2a2a2a!important; color:#fbbf24!important; border-color:#444!important; }
+body.dark-mode .about p, body.dark-mode .repayment p, body.dark-mode .repayment em, body.dark-mode .benefit-item p, body.dark-mode .feedback-card p, body.dark-mode .feedback-card strong, body.dark-mode .eligibility li, body.dark-mode label, body.dark-mode p, body.dark-mode li, body.dark-mode span, body.dark-mode b, body.dark-mode strong, body.dark-mode em{color:#f5f5f5!important;}
+body.dark-mode .benefit-item, body.dark-mode .eligibility li{border-bottom-color:#555!important;}
+body.dark-mode .age-badge{background:#0d57bb!important; color:#fff!important;}
+body.dark-mode .warning{background:#3b3100!important; border-left-color:#ffc107!important; color:#fff!important;}
+body.dark-mode .warning strong, body.dark-mode .warning b, body.dark-mode .warning i{color:#ffd43b!important;}
+body.dark-mode input, body.dark-mode select, body.dark-mode textarea, body.dark-mode .prefix{background:#151515!important; color:#fff!important; border-color:#555!important;}
+body.dark-mode input[type="date"]{color-scheme:dark;}
+body.dark-mode .theme-menu, body.dark-mode .lang-menu, body.dark-mode .theme-menu button, body.dark-mode .lang-menu button{background:#1f1f1f!important; color:#f5f5f5!important; border-color:#444!important;}
+body.dark-mode .theme-menu button:hover, body.dark-mode .lang-menu button:hover { background:#64b5f6!important; color:#fff!important; }
 
-  .hero{
-    min-height:575px !important;
-    height:575px !important;
-    background-position:center center !important;
-  }
-  .hero::before{
-    background:rgba(0,0,0,.43) !important;
-    backdrop-filter:none !important;
-  }
-  .hero-content{
-    width:min(1200px, calc(100% - 80px)) !important;
-    transform:none !important;
-    padding:0 !important;
-  }
-  .hero h1{
-    font-size:42px !important;
-    line-height:1.12 !important;
-    margin:0 0 22px !important;
-    white-space:normal;
-  }
-  .hero-subtitle{
-    font-size:18px !important;
-    margin:0 0 34px !important;
-    max-width:none !important;
-  }
-  .hero-box{
-    width:min(760px, 100%) !important;
-    padding:22px 30px !important;
-    border-radius:6px !important;
-  }
-  .hero-point{
-    font-size:17px !important;
-    margin:12px 0 !important;
-    gap:16px !important;
-  }
-  .hero-point i{
-    width:22px !important;
-    height:22px !important;
-    min-width:22px !important;
-    font-size:12px !important;
-  }
-
-  .section{
-    padding:58px 20px !important;
-  }
-  .container{
-    width:min(1200px, calc(100% - 40px)) !important;
-  }
-  .title{
-    font-size:28px !important;
-    margin-bottom:36px !important;
-  }
-  .title::after{
-    width:92px !important;
-    height:3px !important;
-    margin-top:16px !important;
-  }
-  .panel,.benefit-list,.app-panel{
-    padding:30px 30px !important;
-    border-radius:7px !important;
-  }
-  .feedback-grid{
-    grid-template-columns:repeat(3,1fr) !important;
-  }
-  .footer-inner{
-    grid-template-columns:1.2fr 1.2fr 1fr !important;
-    gap:70px !important;
-  }
-  .float-buttons a,
-  .float-buttons button.float-moon,
-  .float-buttons button.float-lang{
-    width:58px !important;
-    height:58px !important;
-    font-size:24px !important;
-  }
-}
-
-/* Make dark mode closer to Milano black/grey instead of blue-black */
-body.dark-mode{
-  background:#101010 !important;
-  color:#f5f5f5 !important;
-}
-body.dark-mode .header{
-  background:#1f1f1f !important;
-  box-shadow:0 2px 12px rgba(0,0,0,.4) !important;
-}
-body.dark-mode .header-title{color:#ffffff !important;}
-body.dark-mode .section,
-body.dark-mode .section.soft{
-  background:#111111 !important;
-}
-body.dark-mode .panel,
-body.dark-mode .benefit-list,
-body.dark-mode .app-panel,
-body.dark-mode .feedback-card,
-body.dark-mode .whatsapp-note{
-  background:#1f1f1f !important;
-  border-color:#3b3b3b !important;
-  color:#ffffff !important;
-}
-body.dark-mode .warning{
-  background:#3a3100 !important;
-  border-left-color:#ffc400 !important;
-  color:#ffffff !important;
-}
-body.dark-mode .age-badge{
-  background:#1654b8 !important;
-  color:#ffffff !important;
-}
-body.dark-mode input,
-body.dark-mode select,
-body.dark-mode textarea,
-body.dark-mode .prefix{
-  background:#141414 !important;
-  color:#ffffff !important;
-  border-color:#4a4a4a !important;
-}
-
-/* ===== FINAL HEADER SYNC WITH MILANO DESKTOP ===== */
-@media (min-width:769px){
-  body{
-    padding-top:180px !important;
-  }
-  .header{
-    height:180px !important;
-    background:#fff !important;
-    box-shadow:0 2px 12px rgba(0,0,0,.08) !important;
-  }
-  body.dark-mode .header{
-    background:#1f1f1f !important;
-    box-shadow:none !important;
-  }
-  .header-inner{
-    width:min(1200px, calc(100% - 52px)) !important;
-    height:100%;
-    margin:0 auto !important;
-    display:flex !important;
-    align-items:center !important;
-    gap:22px !important;
-    justify-content:flex-start !important;
-  }
-  .header img{
-    height:72px !important;
-    width:auto !important;
-    max-width:170px !important;
-    object-fit:contain !important;
-    display:block;
-  }
-  .header-title{
-    font-size:25px !important;
-    line-height:1.1 !important;
-    font-weight:800 !important;
-    color:#26394d !important;
-    white-space:nowrap !important;
-    letter-spacing:-.2px;
-  }
-  body.dark-mode .header-title{
-    color:#f2f2f2 !important;
-  }
-}
-
-/* Keep mobile header compact */
-@media (max-width:768px){
-  body{padding-top:92px !important;}
-  .header{height:92px !important;}
-}
-
-/* =========================================================
-   FINAL HEADER PERFECT ALIGNMENT - Milano style
-   Desktop/tablet: taller premium header, larger logo, aligned title
-   ========================================================= */
-@media (min-width: 769px){
-  body{
-    padding-top:180px !important;
-  }
-  .header{
-    height:180px !important;
-    background:#fff !important;
-    box-shadow:0 2px 12px rgba(0,0,0,.08) !important;
-  }
-  body.dark-mode .header{
-    background:#1f1f1f !important;
-    box-shadow:none !important;
-  }
-  .header-inner{
-    width:min(1200px, calc(100% - 34px)) !important;
-    height:100% !important;
-    margin:0 auto !important;
-    display:flex !important;
-    align-items:center !important;
-    justify-content:flex-start !important;
-    gap:24px !important;
-    padding:0 !important;
-  }
-  .header img{
-    height:74px !important;
-    width:auto !important;
-    max-width:190px !important;
-    object-fit:contain !important;
-    display:block !important;
-  }
-  .header-title{
-    font-size:25px !important;
-    line-height:1.1 !important;
-    font-weight:800 !important;
-    letter-spacing:-.3px !important;
-    color:#26394d !important;
-    white-space:nowrap !important;
-    margin:0 !important;
-  }
-  body.dark-mode .header-title{
-    color:#f7f7f7 !important;
-  }
-}
-
-/* 800px-ish laptop split screen: keep same desktop look but fit nicely */
-@media (min-width:769px) and (max-width:920px){
-  body{padding-top:170px !important;}
-  .header{height:170px !important;}
-  .header-inner{width:calc(100% - 30px) !important; gap:18px !important;}
-  .header img{height:66px !important; max-width:160px !important;}
-  .header-title{font-size:21px !important;}
-}
-
-/* Mobile header remains compact and clean */
-@media (max-width:768px){
-  body{padding-top:92px !important;}
-  .header{height:92px !important;}
-  .header-inner{padding:0 10px !important; gap:10px !important;}
-  .header img{height:48px !important; max-width:95px !important;}
-  .header-title{font-size:14px !important; line-height:1.15 !important;}
-}
-
-/* ===== CUSTOMER FEEDBACK CAROUSEL FINAL ===== */
-.feedback-section{position:relative;}
-.feedback-carousel{
-  position:relative;
-  width:100%;
-  overflow:visible;
-}
-.feedback-slide{
-  display:none;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:28px;
-  align-items:stretch;
-}
+/* ===== CUSTOMER FEEDBACK CAROUSEL ===== */
+.feedback-carousel{position:relative; width:100%; overflow:visible; touch-action: pan-y; user-select:none;}
+.feedback-slide{display:none; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; align-items:stretch; animation: feedbackFade .35s ease;}
+@keyframes feedbackFade{ from{opacity:.25; transform:translateX(8px);} to{opacity:1; transform:translateX(0);} }
 .feedback-slide.active{display:grid;}
-.feedback-carousel .feedback-card{
-  min-height:360px;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
-  align-items:center;
-}
-.feedback-carousel .feedback-card img{
-  width:100%;
-  height:170px;
-  object-fit:cover;
-  object-position:center;
-}
-.feedback-carousel .feedback-card p{
-  font-size:16px;
-  line-height:1.55;
-}
-.feedback-carousel .feedback-card strong{
-  margin-top:auto;
-  font-size:16px;
-}
-.feedback-arrow{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  width:46px;
-  height:46px;
-  border:0;
-  border-radius:50%;
-  background:rgba(0,0,0,.55);
-  color:#fff;
-  font-size:22px;
-  cursor:pointer;
-  z-index:5;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.feedback-prev{left:-18px;}
-.feedback-next{right:-18px;}
-.feedback-arrow:hover{background:rgba(0,0,0,.78);}
-.feedback-dots{
-  display:flex;
-  justify-content:center;
-  gap:9px;
-  margin:20px 0 0;
-}
-.feedback-dot{
-  width:10px;
-  height:10px;
-  border:0;
-  border-radius:50%;
-  background:#d5d5d5;
-  cursor:pointer;
-  padding:0;
-}
+.feedback-carousel .feedback-card{min-height:360px; display:flex; flex-direction:column; justify-content:flex-start; align-items:center;}
+.feedback-carousel .feedback-card img{width:100%; height:170px; object-fit:cover;}
+.feedback-arrow{position:absolute; top:50%; transform:translateY(-50%); width:46px; height:46px; border:0; border-radius:50%; background:rgba(0,0,0,.55); color:#fff; font-size:22px; cursor:pointer; z-index:5; display:flex; align-items:center; justify-content:center;}
+.feedback-prev{left:-18px;} .feedback-next{right:-18px;}
+.feedback-dots{display:flex; justify-content:center; gap:9px; margin:20px 0 0;}
+.feedback-dot{width:10px; height:10px; border:0; border-radius:50%; background:#d5d5d5; cursor:pointer; padding:0;}
 .feedback-dot.active{background:#3498db;}
-.feedback-info-card{
-  justify-content:center!important;
-  padding:42px 28px!important;
-}
-.feedback-info-card h3{
-  margin:18px 0 12px;
-  font-size:20px;
-  color:#1f2937;
-}
-.feedback-info-card a{
-  color:#1d4ed8;
-  font-size:15px;
-}
-.feedback-big-icon{
-  font-size:50px;
-  color:#64b5f6;
-}
-.feedback-star-icon{
-  font-size:58px;
-  color:#ffd400;
-}
-.approval-text{
-  color:#ff7b55!important;
-  font-size:24px!important;
-  margin-top:18px!important;
-}
-body.dark-mode .feedback-info-card h3,
-body.dark-mode .feedback-info-card a{color:#f5f5f5!important;}
-body.dark-mode .feedback-big-icon{color:#64b5f6!important;}
-body.dark-mode .feedback-star-icon{color:#ffd400!important;}
-/* ===== FEEDBACK AUTO SLIDE + MOBILE SWIPE FIX ===== */
-.feedback-carousel{
-  touch-action: pan-y;
-  user-select:none;
-}
-.feedback-slide{
-  animation: feedbackFade .35s ease;
-}
-@keyframes feedbackFade{
-  from{opacity:.25; transform:translateX(8px);}
-  to{opacity:1; transform:translateX(0);}
-}
-
-body.dark-mode .approval-text{color:#ff8a65!important;}
-body.dark-mode .feedback-dot{background:#4a4a4a;}
-body.dark-mode .feedback-dot.active{background:#64b5f6;}
-
+.feedback-info-card{justify-content:center!important; padding:42px 28px!important;}
+.feedback-big-icon{font-size:50px; color:#64b5f6;} .feedback-star-icon{font-size:58px; color:#ffd400;}
+.approval-text{color:#ff7b55!important; font-size:24px!important; margin-top:18px!important;}
+body.dark-mode .approval-text{color:#ff8a65!important;} body.dark-mode .feedback-dot{background:#4a4a4a;} body.dark-mode .feedback-dot.active{background:#64b5f6;}
 @media(max-width:768px){
   .feedback-slide{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
   .feedback-carousel .feedback-card{min-height:245px;}
-  .feedback-carousel .feedback-card img{height:116px;}
-  .feedback-carousel .feedback-card p{font-size:10px;line-height:1.45;}
-  .feedback-carousel .feedback-card strong{font-size:10px;}
-  .feedback-info-card{padding:24px 10px!important;}
-  .feedback-info-card h3{font-size:13px;margin:10px 0 8px;}
-  .feedback-info-card a{font-size:10px;}
-  .feedback-big-icon{font-size:32px;}
-  .feedback-star-icon{font-size:36px;}
-  .approval-text{font-size:15px!important;}
-  .feedback-arrow{width:34px;height:34px;font-size:16px;}
-  .feedback-prev{left:-6px;}
-  .feedback-next{right:-6px;}
+  .feedback-arrow{width:34px; height:34px; font-size:16px;}
+  .feedback-prev{left:-6px;} .feedback-next{right:-6px;}
 }
-@media(max-width:420px){
-  .feedback-slide{grid-template-columns:repeat(2,minmax(0,1fr));}
-  .feedback-carousel .feedback-card{min-height:230px;}
-  .feedback-carousel .feedback-card img{height:98px;}
-}
-
-/* ===== LANGUAGE MENU ===== */
-.lang-menu{
-  position:absolute;
-  right:72px;
-  bottom:0;
-  width:230px;
-  background:#fff;
-  border:1px solid #ddd;
-  border-radius:12px;
-  overflow:hidden;
-  box-shadow:0 10px 30px rgba(0,0,0,.18);
-  display:none;
-  z-index:1002;
-  color:#333;
-}
-.lang-menu.show{display:block;}
-.lang-menu button{
-  width:100%;
-  border:0;
-  background:#fff;
-  display:grid;
-  grid-template-columns:52px 1fr;
-  align-items:center;
-  gap:12px;
-  padding:17px 16px;
-  font-size:24px;
-  color:#333;
-  border-bottom:1px solid #ddd;
-  cursor:pointer;
-  text-align:left;
-}
-.lang-menu button:last-child{border-bottom:0;}
-.lang-menu button:hover,.lang-menu button.active{background:#8cc8eb;color:#fff;}
-.lang-menu .lang-code{font-weight:800;letter-spacing:.5px;}
-.lang-menu .lang-name{line-height:1.2;}
-body.dark-mode .lang-menu,body.dark-mode .lang-menu button{background:#1f1f1f!important;color:#f5f5f5!important;border-color:#444!important;}
-body.dark-mode .lang-menu button:hover,body.dark-mode .lang-menu button.active{background:#64b5f6!important;color:#fff!important;}
-@media(max-width:900px){.lang-menu{right:62px;bottom:0;width:205px}.lang-menu button{font-size:21px;padding:14px 12px;grid-template-columns:45px 1fr;}}
-
 </style>
 </head>
 
 <body>
 
+<!-- ================= FIXED HEADER ================= -->
 <header class="header">
   <div class="header-inner">
     <img src="logo.png" alt="MEWAH SAUJANA ENTERPRISE Logo" />
@@ -1578,9 +687,11 @@ body.dark-mode .lang-menu button:hover,body.dark-mode .lang-menu button.active{b
   </div>
 </header>
 
+<!-- ================= HERO WITH SPLIT AUTO SLIDER ================= -->
 <section class="hero">
   <div class="hero-content">
     
+    <!-- 左边：宣传文案 -->
     <div class="hero-left">
       <h1 data-i18n-html="heroTitle">PROFESSIONAL FINANCIAL <span>CONSULTATION</span></h1>
       <p class="hero-subtitle" data-i18n="heroSubtitle">We Offer Settlement Services Using Your EPF Contributions</p>
@@ -1591,8 +702,10 @@ body.dark-mode .lang-menu button:hover,body.dark-mode .lang-menu button.active{b
       </div>
     </div>
 
+    <!-- 右边：理财顾问自动滑块 (完美支持6人团队与独立名言卡) -->
     <div class="hero-right">
       <div class="consultant-slider-wrap">
+        <!-- 头部通道徽章 -->
         <a href="https://wa.me/60163061623" id="consultant-wa-badge" class="consultant-badge-wa" target="_blank">
           <i class="fa-brands fa-whatsapp"></i> <span id="badge-text">Hubungi Rossa (WhatsApp)</span>
         </a>
@@ -1600,23 +713,36 @@ body.dark-mode .lang-menu button:hover,body.dark-mode .lang-menu button.active{b
         <div class="consultant-carousel-main">
           <button type="button" class="consultant-arrow prev" onclick="changeConsultant(-1)"><i class="fa-solid fa-chevron-left"></i></button>
           
+          <!-- 头像框 -->
           <div class="consultant-circle-frame">
-            <img src="testimonial1.jpg" id="consultant-img" alt="Perunding Kewangan">
+            <img src="StaffFoto1.jpg" id="consultant-img" alt="Perunding Kewangan">
             <div class="consultant-license-tag"><i class="fa-solid fa-circle-check"></i> 100% Berlesen</div>
           </div>
           
           <button type="button" class="consultant-arrow next" onclick="changeConsultant(1)"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
         
+        <!-- 名字与职衔 -->
         <div class="consultant-text-block">
           <h3 id="consultant-name">Rossa</h3>
           <p data-i18n="perundingKewangan">PERUNDING KEWANGAN</p>
         </div>
+
+        <!-- 核心新增：卡片式名言介绍 (跟着人员自动更新) -->
+        <div class="consultant-bio-card">
+          <div class="bio-badge"><i class="fa-solid fa-bolt"></i> RM0 Caj Awal</div>
+          <p id="consultant-bio">"Mudah, Cepat Dan Teratur Dengan Skim Pinjaman KWSP"</p>
+          <em id="consultant-bio-author">— Oleh Rossa</em>
+        </div>
         
+        <!-- 圆点指示器 (6个圆点) -->
         <div class="consultant-dots-container">
           <span class="c-dot active" onclick="setConsultant(0)"></span>
           <span class="c-dot" onclick="setConsultant(1)"></span>
           <span class="c-dot" onclick="setConsultant(2)"></span>
+          <span class="c-dot" onclick="setConsultant(3)"></span>
+          <span class="c-dot" onclick="setConsultant(4)"></span>
+          <span class="c-dot" onclick="setConsultant(5)"></span>
         </div>
       </div>
     </div>
@@ -1624,6 +750,7 @@ body.dark-mode .lang-menu button:hover,body.dark-mode .lang-menu button.active{b
   </div>
 </section>
 
+<!-- ================= ABOUT ================= -->
 <section class="section about">
   <div class="container">
     <h2 class="title" data-i18n="aboutTitle">About Us</h2>
@@ -1642,6 +769,7 @@ body.dark-mode .lang-menu button:hover,body.dark-mode .lang-menu button.active{b
   </div>
 </section>
 
+<!-- ================= BENEFITS ================= -->
 <section class="section">
   <div class="container">
     <h2 class="title" data-i18n="benefitsTitle">EPF Loan Benefits</h2>
@@ -1670,6 +798,7 @@ body.dark-mode .lang-menu button:hover,body.dark-mode .lang-menu button.active{b
   </div>
 </section>
 
+<!-- ================= REPAYMENT ================= -->
 <section class="section repayment">
   <div class="container">
     <h2 class="title" data-i18n="repaymentTitle">Repayment Method</h2>
@@ -1680,6 +809,7 @@ body.dark-mode .lang-menu button:hover,body.dark-mode .lang-menu button.active{b
   </div>
 </section>
 
+<!-- ================= ONLINE APPLICATION ================= -->
 <section class="section">
   <div class="container">
     <h2 class="title" data-i18n="applicationTitle">Online Application</h2>
@@ -1726,7 +856,7 @@ body.dark-mode .lang-menu button:hover,body.dark-mode .lang-menu button.active{b
         <div class="form-group">
           <label data-i18n="labelEpf">EPF Savings Amount (RM):</label>
           <input type="number" id="epf" placeholder="Example: 35000" data-i18n-placeholder="phEpf">
-          <span class="help" data-i18n="helpEpf">* Minimum savings RM30,000 required</span>
+          <span class="help" data-i18n-html="helpEpf">* Minimum savings RM30,000 required</span>
         </div>
         <div class="form-group">
           <label data-i18n="labelNotes">Additional Notes (Optional):</label>
@@ -1739,6 +869,7 @@ body.dark-mode .lang-menu button:hover,body.dark-mode .lang-menu button.active{b
   </div>
 </section>
 
+<!-- ================= CUSTOMER FEEDBACK ================= -->
 <section class="section soft feedback-section">
   <div class="container">
     <h2 class="title" data-i18n="feedbackTitle">Customer Feedback</h2>
@@ -1823,22 +954,21 @@ body.dark-mode .lang-menu button:hover,body.dark-mode .lang-menu button.active{b
   </div>
 </section>
 
+<!-- ================= LOCATION (地图完好保留在原位) ================= -->
 <section class="section">
   <div class="container">
     <h2 class="title" data-i18n="locationTitle">Our Location</h2>
-
+    <!-- 提示：把下面的 src 链接替换为您在 Google Maps 复制出来的 Embed HTML 里面的 src 地址即可 -->
     <iframe
-      src="http://googleusercontent.com/maps.google.com/2"
-      width="100%"
-      height="350"
-      style="border:0; border-radius:10px;"
+      class="map-box"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.332822767098!2d101.5746816!3d3.3172088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc424075199999%3A0x6fb878b31a1b1b1b!2sJalan%20Bandar%20Rawang%202!5e0!3m2!1sen!2smy!4v1626000000000"
       allowfullscreen=""
       loading="lazy">
     </iframe>
-
   </div>
 </section>
   
+<!-- ================= FOOTER ================= -->
 <footer class="footer">
   <div class="footer-inner">
     <div>
@@ -1863,19 +993,22 @@ body.dark-mode .lang-menu button:hover,body.dark-mode .lang-menu button.active{b
   <div class="copyright" data-i18n="copyright">© 2026 MEWAH SAUJANA ENTERPRISE. All Rights Reserved.</div>
 </footer>
 
+<!-- ================= FLOATING BUTTONS ================= -->
 <div class="float-buttons">
   <button type="button" class="float-moon" title="Theme" onclick="toggleThemeMenu()"><i class="fa-solid fa-moon"></i></button>
   <div class="theme-menu" id="themeMenu">
-    <button type="button" onclick="setTheme('light')"><i class="fa-solid fa-sun"></i><span>Light<br>Mode</span></button>
-    <button type="button" onclick="setTheme('dark')"><i class="fa-solid fa-moon"></i><span>Dark<br>Mode</span></button>
-    <button type="button" onclick="setTheme('auto')"><i class="fa-solid fa-circle-half-stroke"></i><span>Auto<br>(System)</span></button>
+    <button type="button" onclick="setTheme('light')"><i class="fa-solid fa-sun"></i><span>Light Mode</span></button>
+    <button type="button" onclick="setTheme('dark')"><i class="fa-solid fa-moon"></i><span>Dark Mode</span></button>
+    <button type="button" onclick="setTheme('auto')"><i class="fa-solid fa-circle-half-stroke"></i><span>Auto (System)</span></button>
   </div>
+  
   <a href="https://wa.me/60163061623" class="float-wa" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
   <a href="tel:+60163061623" class="float-call" title="Call"><i class="fa-solid fa-phone"></i></a>
+  
   <div class="lang-menu" id="langMenu">
-    <button type="button" onclick="setLanguage('en')"><span class="lang-code">US</span><span class="lang-name">English</span></button>
-    <button type="button" onclick="setLanguage('ms')"><span class="lang-code">MY</span><span class="lang-name">Bahasa Melayu</span></button>
-    <button type="button" onclick="setLanguage('zh')"><span class="lang-code">CN</span><span class="lang-name">中文</span></button>
+    <button type="button" onclick="setLanguage('en')"><span class="lang-code">US</span><span>English</span></button>
+    <button type="button" onclick="setLanguage('ms')"><span class="lang-code">MY</span><span>Bahasa Melayu</span></button>
+    <button type="button" onclick="setLanguage('zh')"><span class="lang-code">CN</span><span>中文</span></button>
   </div>
   <button type="button" class="float-lang" title="Change Language" onclick="toggleLangMenu()"><i class="fa-solid fa-globe"></i></button>
 </div>
@@ -1887,13 +1020,28 @@ function formatDOBForWhatsApp(value){
   if(parts.length !== 3) return value;
   return `${parts[2]}/${parts[1]}/${parts[0]}`;
 }
+
+// 修复点击外部关闭菜单的系统逻辑
 document.addEventListener('click', function(e){
   const tm=document.getElementById('themeMenu');
   const lm=document.getElementById('langMenu');
   if(tm && !e.target.closest('.float-buttons')) tm.classList.remove('show');
   if(lm && !e.target.closest('.float-buttons')) lm.classList.remove('show');
 });
-function toggleThemeMenu(){ const tm=document.getElementById('themeMenu'); const lm=document.getElementById('langMenu'); if(lm) lm.classList.remove('show'); tm.classList.toggle('show'); }
+
+function toggleThemeMenu(){ 
+  const tm=document.getElementById('themeMenu'); 
+  const lm=document.getElementById('langMenu'); 
+  if(lm) lm.classList.remove('show'); 
+  tm.classList.toggle('show'); 
+}
+function toggleLangMenu(){ 
+  const tm=document.getElementById('themeMenu'); 
+  const lm=document.getElementById('langMenu'); 
+  if(tm) tm.classList.remove('show'); 
+  lm.classList.toggle('show'); 
+}
+
 function applyAutoTheme(){ const saved=localStorage.getItem('theme') || 'light'; const dark=saved==='dark' || (saved==='auto' && window.matchMedia('(prefers-color-scheme: dark)').matches); document.body.classList.toggle('dark-mode', dark); }
 function setTheme(mode){ localStorage.setItem('theme', mode); applyAutoTheme(); document.getElementById('themeMenu').classList.remove('show'); }
 applyAutoTheme();
@@ -1901,13 +1049,12 @@ applyAutoTheme();
 const translations = {
   en: {
     heroTitle:'PROFESSIONAL FINANCIAL <span>CONSULTATION</span>', heroSubtitle:'We Offer Settlement Services Using Your EPF Contributions', heroPoint1:'<i class="fa-solid fa-check"></i> No Advance Payment', heroPoint2:'<i class="fa-solid fa-check"></i> No Monthly Commitment Burden',
-    perundingKewangan:'FINANCIAL CONSULTANT',
     aboutTitle:'About Us', aboutP1:'Also known as <b>MSQARDH</b> is a licensed community credit money lending company registered under the Money Lending Act 1951.', aboutP2:'We provide special financing facilities for ages', aboutP3:'Who need immediate cash. Applications can be made <b>online</b>.', warningTitle:'<i class="fa-solid fa-triangle-exclamation"></i> IS MEWAH SAUJANA RELATED TO EPF?', warningBody:'<b>NO.</b> MEWAH SAUJANA IS NOT A REPRESENTATIVE OR AGENT OF EPF',
     benefitsTitle:'EPF Loan Benefits', benefit1Title:'No Monthly Payments For Up To 24 Months', benefit1Text:'Moratorium period without monthly payments for your convenience', benefit2Title:'No Advance Payment / No Hidden Charges', benefit2Text:'All charges are transparent and no advance payment required', benefit3Title:'Have Clear And Legal Agreement Letter', benefit3Text:'Legally binding agreement documents', benefit4Title:'All Your Personal Data Is Securely Protected', benefit4Text:'Your privacy and data security is our priority', benefit5Title:'Approval Rate <span class="red">99.9% Approved</span>', benefit5Text:'Almost all applications approved with easy conditions',
     repaymentTitle:'Repayment Method', repaymentText:'Repayment is made when customer has received EPF withdrawal.', repaymentEm:'Repayment amount is the same as the original agreement made when loan was agreed by both parties.',
     applicationTitle:'Online Application', appIntro:'Simple Documents, Immediate Approval, Fast Process, And Easy', eligibilityTitle:'Application Eligibility:', eligibility1:'<i class="fa-solid fa-user-check"></i> Eligible To Apply For Ages 53,54,55 & 58,59,60', eligibility2:'<i class="fa-solid fa-piggy-bank"></i> Have EPF Account 1 Or EMAS Account Savings (Minimum Savings RM30K)', eligibility3:'<i class="fa-solid fa-list-check"></i> Blacklist / CTOS / Bankruptcy / AKPK Eligible', eligibility4:'<i class="fa-solid fa-briefcase"></i> Working / Not Working Eligible', eligibility5:'<i class="fa-solid fa-location-dot"></i> Throughout Peninsular Malaysia (Except Sabah, Sarawak)',
     formTitle:'Loan Application Form', labelName:'Name:', phName:'Enter your full name', labelPhone:'Phone Number:', helpPhone:'<i class="fa-solid fa-circle-info"></i> Only enter phone number without +6 (example 0163061623)', labelState:'State:', optionState:'Please select state', labelDob:'Date Of Birth:', labelEpf:'EPF Savings Amount (RM):', phEpf:'Example: 35000', helpEpf:'* Minimum savings RM30,000 required', labelNotes:'Additional Notes (Optional):', phNotes:'Please specify any special requirements or additional inquiries', submitBtn:'<i class="fa-solid fa-paper-plane"></i> Submit Application', submitNote:'* Data will be saved to our system and sent to WhatsApp',
-    feedbackTitle:'Customer Feedback', fb1Text:'"Can apply even if not working. This is very helpful for people like me."', fb1Name:'- Mr. Khairul, 53 years old', fb2Text:'"Simple and uncomplicated loan process. Staff very friendly and helpful."', fb2Name:'- Ms. Lau, 54 years old', fb3Text:'"Very satisfied with MEWAH\'s service. Fast process and staff very helpful."', fb3Name:'- Mr. Wan, 53 years old', fb4Text:'"No hidden charges as promised. Honest and transparent company."', fb4Name:'- Mr. Kamaruddin, 58 years old', fb5Text:'"Very grateful to MEWAH. Helped me solve debt problems."', fb5Name:'- Mr. Mahfooz, 53 years old', fb6Text:'"Funds received within 3 days after application. Very efficient and professional."', fb6Name:'- Mr. Badrul, 53 years old', fb7Text:'"Even though in bankruptcy list, my application was still approved. Thank you MEWAH!"', fb7Name:'- Ms. Nornikmah, 54 years old', moreTestimonials:'More Testimonials', moreTestimonialsText:'We have hundreds of positive testimonials from satisfied customers.', viewTestimonials:'<i class="fa-brands fa-whatsapp"></i> View Testimonials on WhatsApp', approvalTitle:'99.9% Approval Rate', approvalText:'Almost all applications approved with high rate.', approvalStrong:'99.9% LULUS', waNoteText:'We attach customer testimonials in WhatsApp',
+    feedbackTitle:'Customer Feedback', fb1Text:'"Can apply even if not working. This is very helpful for people like me."', fb1Name:'- Mr. Khairul, 53 years old', fb2Text:'"Simple and uncomplicated loan process. Staff very friendly and helpful."', fb2Name:'- Ms. Lau, 54 years old', fb3Text:'"Very satisfied with MEWAH's service. Fast process and staff very helpful."', fb3Name:'- Mr. Wan, 53 years old', fb4Text:'"No hidden charges as promised. Honest and transparent company."', fb4Name:'- Mr. Kamaruddin, 58 years old', fb5Text:'"Very grateful to MEWAH. Helped me solve debt problems."', fb5Name:'- Mr. Mahfooz, 53 years old', fb6Text:'"Funds received within 3 days after application. Very efficient and professional."', fb6Name:'- Mr. Badrul, 53 years old', fb7Text:'"Even though in bankruptcy list, my application was still approved. Thank you MEWAH!"', fb7Name:'- Ms. Nornikmah, 54 years old', moreTestimonials:'More Testimonials', moreTestimonialsText:'We have hundreds of positive testimonials from satisfied customers.', viewTestimonials:'<i class="fa-brands fa-whatsapp"></i> View Testimonials on WhatsApp', approvalTitle:'99.9% Approval Rate', approvalText:'Almost all applications approved with high rate.', approvalStrong:'99.9% LULUS', waNoteText:'We attach customer testimonials in WhatsApp',
     locationTitle:'Our Location', footerContact:'Contact Us', footerHours:'Operating Hours', hours1:'Monday - Friday: 9:30 AM - 5:30 PM', hours2:'Saturday: 9:30 AM - 2:00 PM', hours3:'Sunday & Public Holidays: Closed', copyright:'© 2026 MEWAH SAUJANA ENTERPRISE. All Rights Reserved.',
     alertRequired:'Please fill in Name, Phone Number, State, Date of Birth and EPF Savings Amount.', waHeader:'Loan Application', waName:'Name', waPhone:'Phone', waState:'State', waDob:'Date of Birth', waEpf:'EPF Savings', waNotes:'Notes'
   },
@@ -1925,8 +1072,7 @@ const translations = {
   },
   zh: {
     heroTitle:'专业财务<span>咨询</span>', heroSubtitle:'我们提供使用您的 KWSP/EPF 公积金供款的解决方案服务', heroPoint1:'<i class="fa-solid fa-check"></i> 无需预付款', heroPoint2:'<i class="fa-solid fa-check"></i> 无每月还款负担',
-    perundingKewangan:'财务顾问',
-    aboutTitle:'关于我们', aboutP1:'也称为 <b>MSQARDH</b>，是一家根据 1951 年放贷人法令注册的持牌社区信贷借贷 company。', aboutP2:'我们为以下年龄层提供特别融资服务', aboutP3:'适合需要现金周转的人士。申请可通过 <b>线上</b> 提交。', warningTitle:'<i class="fa-solid fa-triangle-exclamation"></i> MEWAH SAUJANA 是否与 KWSP/EPF 有关？', warningBody:'<b>不是。</b> MEWAH SAUJANA 并不是 KWSP/EPF 的代表或代理。',
+    aboutTitle:'关于我们', aboutP1:'也称为 <b>MSQARDH</b>，是一家根据 1951 年放贷人法令注册的持牌社区信贷借贷公司。', aboutP2:'我们为以下年龄层提供特别融资服务', aboutP3:'适合需要现金周转的人士。申请可通过 <b>线上</b> 提交。', warningTitle:'<i class="fa-solid fa-triangle-exclamation"></i> MEWAH SAUJANA 是否与 KWSP/EPF 有关？', warningBody:'<b>不是。</b> MEWAH SAUJANA 并不是 KWSP/EPF 的代表或代理。',
     benefitsTitle:'KWSP/EPF 贷款优势', benefit1Title:'最长 24 个月无需每月付款', benefit1Text:'提供免每月付款的宽限期，方便您安排现金流', benefit2Title:'无需预付 / 无隐藏收费', benefit2Text:'所有费用透明，无需提前付款', benefit3Title:'清楚且合法的协议文件', benefit3Text:'提供具有法律效力的正式协议文件', benefit4Title:'您的个人资料安全受保护', benefit4Text:'客户隐私与资料安全是我们的首要考量', benefit5Title:'批准率 <span class="red">99.9% 批准</span>', benefit5Text:'大多数申请可在简单条件下获得批准',
     repaymentTitle:'付款方式', repaymentText:'客户收到 KWSP/EPF 提款后才进行付款。', repaymentEm:'付款金额将根据双方同意并签署的原始协议为准。',
     applicationTitle:'线上申请', appIntro:'文件简单、快速批准、流程快捷又方便', eligibilityTitle:'申请资格：', eligibility1:'<i class="fa-solid fa-user-check"></i> 年龄 53、54、55 及 58、59、60 可申请', eligibility2:'<i class="fa-solid fa-piggy-bank"></i> 拥有 KWSP/EPF Account 1 或 Akaun Emas 储蓄（最低 RM30K）', eligibility3:'<i class="fa-solid fa-list-check"></i> 黑名单 / CTOS / 破产 / AKPK 也可申请', eligibility4:'<i class="fa-solid fa-briefcase"></i> 有工作 / 无工作皆可申请', eligibility5:'<i class="fa-solid fa-location-dot"></i> 全西马地区（不包括沙巴、砂拉越）',
@@ -1936,8 +1082,8 @@ const translations = {
     alertRequired:'请填写姓名、电话号码、州属、出生日期和 KWSP/EPF 储蓄金额。', waHeader:'贷款申请', waName:'姓名', waPhone:'电话号码', waState:'州属', waDob:'出生日期', waEpf:'KWSP/EPF 储蓄金额', waNotes:'备注'
   }
 };
+
 let currentLang = localStorage.getItem('siteLang') || 'en';
-function toggleLangMenu(){ document.getElementById('langMenu').classList.toggle('show'); }
 function setLanguage(lang){
   currentLang = lang;
   localStorage.setItem('siteLang', lang);
@@ -1954,11 +1100,14 @@ function setLanguage(lang){
 }
 setLanguage(currentLang);
 
-/* ================= HERO CONSULTANT AUTO SLIDER JAVASCRIPT ================= */
+/* ================= 核心重写：6名专属顾问阵容 + 动态口号介绍卡 ================= */
 const consultants = [
-  { name: "Rossa", img: "testimonial1.jpg", phone: "60163061623" }, // 这里预设用你已有的 testimonial 贴图做测试
-  { name: "Wani", img: "testimonial2.jpg", phone: "60163061623" },  // 以后可以换成专用的照片
-  { name: "Siti", img: "testimonial3.jpg", phone: "60163061623" }
+  { name: "Rossa", img: "StaffFoto1.jpg", phone: "60163061623", bio: '"Mudah, Cepat Dan Teratur Dengan Skim Pinjaman KWSP."' },
+  { name: "Wani", img: "StaffFoto2.jpg", phone: "60163061623", bio: '"Proses telus, selamat dan mesra. Saya sedia membantu perancangan kewangan anda."' },
+  { name: "Siti", img: "StaffFoto3.jpg", phone: "60163061623", bio: '"Kelulusan pantas dalam 1 jam, tiada sebarang bayaran pendahuluan dikenakan."' },
+  { name: "Amira", img: "StaffFoto4.jpg", phone: "60163061623", bio: '"Perundingan profesional khas terhad untuk warga emas usia 53, 55, 58 & 60 tahun."' },
+  { name: "Farah", img: "StaffFoto5.jpg", phone: "60163061623", bio: '"Moratorium fleksibel sehingga 24 bulan tanpa komitmen bulanan yang membebankan."' },
+  { name: "Linda", img: "StaffFoto6.jpg", phone: "60163061623", bio: '"Senarai hitam CTOS / AKPK / Bankrupt layak memohon, hubungi saya semak kelayakan."' }
 ];
 let currentConsultantIdx = 0;
 let consultantTimer = null;
@@ -1969,11 +1118,14 @@ function updateConsultantDOM() {
   document.getElementById('consultant-img').src = c.img;
   document.getElementById('badge-text').textContent = `Hubungi ${c.name} (WhatsApp)`;
   
-  // 智能整合：点击圆圈顶部的 WhatsApp，直接传专属悄悄话给该业务员
-  const msgText = encodeURIComponent(`Hello ${c.name}, saya nak tanya tentang bantuan pengeluaran KWSP.`);
+  // 联动更新 CASH AIM 风格的独立介绍卡片内容
+  document.getElementById('consultant-bio').textContent = c.bio;
+  document.getElementById('consultant-bio-author').textContent = `— Oleh ${c.name}`;
+  
+  const msgText = encodeURIComponent(`Hello ${c.name}, saya nak tanya tentang perundingan pengeluaran KWSP.`);
   document.getElementById('consultant-wa-badge').href = `https://wa.me/${c.phone}?text=${msgText}`;
   
-  // 刷新小圆点
+  // 刷新6个点的位置状态
   document.querySelectorAll('.c-dot').forEach((dot, idx) => {
     dot.classList.toggle('active', idx === currentConsultantIdx);
   });
@@ -1994,7 +1146,7 @@ function setConsultant(idx) {
 function startConsultantTimer() {
   consultantTimer = setInterval(() => {
     changeConsultant(1);
-  }, 4000); // 每 4 秒自动丝滑切换一个业务员
+  }, 4000);
 }
 
 function restartConsultantTimer() {
@@ -2024,57 +1176,37 @@ function changeFeedbackSlide(direction){
 
 function startFeedbackAutoSlide(){
   stopFeedbackAutoSlide();
-  feedbackTimer = setInterval(() => {
-    showFeedbackSlide(feedbackIndex + 1);
-  }, 4500);
+  feedbackTimer = setInterval(() => { showFeedbackSlide(feedbackIndex + 1); }, 4500);
 }
 
-function stopFeedbackAutoSlide(){
-  if(feedbackTimer){
-    clearInterval(feedbackTimer);
-    feedbackTimer = null;
-  }
-}
-
-function restartFeedbackAutoSlide(){
-  startFeedbackAutoSlide();
-}
+function stopFeedbackAutoSlide(){ if(feedbackTimer){ clearInterval(feedbackTimer); feedbackTimer = null; } }
+function restartFeedbackAutoSlide(){ startFeedbackAutoSlide(); }
 
 function initFeedbackSwipe(){
   const carousel = document.querySelector('.feedback-carousel');
   if(!carousel) return;
-
   carousel.addEventListener('mouseenter', stopFeedbackAutoSlide);
   carousel.addEventListener('mouseleave', startFeedbackAutoSlide);
-
   carousel.addEventListener('touchstart', function(e){
     feedbackTouchStartX = e.touches[0].clientX;
     feedbackTouchStartY = e.touches[0].clientY;
     stopFeedbackAutoSlide();
   }, {passive:true});
-
   carousel.addEventListener('touchend', function(e){
     const endX = e.changedTouches[0].clientX;
     const endY = e.changedTouches[0].clientY;
     const diffX = endX - feedbackTouchStartX;
     const diffY = endY - feedbackTouchStartY;
-
     if(Math.abs(diffX) > 45 && Math.abs(diffX) > Math.abs(diffY) * 1.4){
-      if(diffX < 0){
-        showFeedbackSlide(feedbackIndex + 1);
-      }else{
-        showFeedbackSlide(feedbackIndex - 1);
-      }
+      if(diffX < 0){ showFeedbackSlide(feedbackIndex + 1); }else{ showFeedbackSlide(feedbackIndex - 1); }
     }
     startFeedbackAutoSlide();
   }, {passive:true});
 }
 
 document.addEventListener('DOMContentLoaded', function(){
-  // 同时激活顶层顾问滑块和底部反馈滑块
   updateConsultantDOM();
   startConsultantTimer();
-  
   showFeedbackSlide(feedbackIndex);
   initFeedbackSwipe();
   startFeedbackAutoSlide();
@@ -2093,15 +1225,7 @@ function sendWhatsApp(){
     return;
   }
 
-  const data = {
-    name: name,
-    phone: '+6' + phone,
-    state: state,
-    dob: dob,
-    epf: epf,
-    notes: notes
-  };
-
+  const data = { name: name, phone: '+6' + phone, state: state, dob: dob, epf: epf, notes: notes };
   const t = translations[currentLang] || translations.en;
   const msg =
     `${encodeURIComponent(t.waHeader)}%0A%0A` +
@@ -2118,11 +1242,7 @@ function sendWhatsApp(){
     method: 'POST',
     mode: 'no-cors',
     body: JSON.stringify(data)
-  }).then(() => {
-    console.log('Google Sheet save request sent');
-  }).catch((error) => {
-    console.error('Google Sheet save failed:', error);
-  });
+  }).then(() => { console.log('Google Sheet save request sent'); }).catch((error) => { console.error('Google Sheet save failed:', error); });
 }
 </script>
 
