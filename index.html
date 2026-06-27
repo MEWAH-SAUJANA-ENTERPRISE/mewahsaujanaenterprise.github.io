@@ -140,7 +140,7 @@ body{
   font-size:12px;
 }
 
-/* 右侧顾问轮播滑块样式 */
+/* 右侧顾问自动轮播滑块样式 */
 .hero-right {
   display:flex;
   justify-content:center;
@@ -251,7 +251,7 @@ body{
   color:#e0e6ed;
 }
 
-/* 核心新增：CASH AIM 风格的独立介绍卡片 */
+/* 卡片式名言介绍 */
 .consultant-bio-card {
   position:relative;
   width:100%;
@@ -267,7 +267,7 @@ body{
   right:12px;
   top:-12px;
   background:#fff;
-  color:#d97706; /* 橙色文字 */
+  color:#d97706; 
   border:1px solid #fcd34d;
   padding:4px 10px;
   border-radius:6px;
@@ -335,7 +335,7 @@ body{
   border:1px solid var(--border);
   border-radius:7px;
   padding:28px 28px;
-  box-shadow:0 8px 26 rgba(0,0,0,.06);
+  box-shadow:0 8px 26px rgba(0,0,0,.06);
 }
 
 /* ================= ABOUT ================= */
@@ -386,7 +386,7 @@ body{
 .repayment p{margin:0 0 22px; font-size:16px; color:#111827;}
 .repayment em{font-size:16px;color:#1f2937}
 
-/* ================= APPLICATION ================= */
+/* ================= ONLINE APPLICATION ================= */
 .app-panel{
   background:#f7f7f7;
   border:1px solid #ddd;
@@ -505,7 +505,7 @@ input:focus,select:focus,textarea:focus{
   display:flex;
   flex-direction:column;
   gap:12px;
-  z-index:9999; /* 升级层级，确保不被任何元素遮挡 */
+  z-index:9999; 
 }
 .float-buttons a, .float-buttons button {
   width:58px;
@@ -530,7 +530,6 @@ input:focus,select:focus,textarea:focus{
 .float-call{background:#43b649}
 .float-lang{background:#263b4e}
 
-/* 彻底修复菜单层级与移位问题：改用悬浮按钮上方的绝对定位 */
 .theme-menu, .lang-menu {
   position:absolute;
   right:70px;
@@ -674,12 +673,12 @@ body.dark-mode .approval-text{color:#ff8a65!important;} body.dark-mode .feedback
   .feedback-arrow{width:34px; height:34px; font-size:16px;}
   .feedback-prev{left:-6px;} .feedback-next{right:-6px;}
 }
+.lang-menu{right:62px;bottom:0;width:205px}.lang-menu button{font-size:21px;padding:14px 12px;grid-template-columns:45px 1fr;}
 </style>
 </head>
 
 <body>
 
-<!-- ================= FIXED HEADER ================= -->
 <header class="header">
   <div class="header-inner">
     <img src="logo.png" alt="MEWAH SAUJANA ENTERPRISE Logo" />
@@ -687,11 +686,9 @@ body.dark-mode .approval-text{color:#ff8a65!important;} body.dark-mode .feedback
   </div>
 </header>
 
-<!-- ================= HERO WITH SPLIT AUTO SLIDER ================= -->
 <section class="hero">
   <div class="hero-content">
     
-    <!-- 左边：宣传文案 -->
     <div class="hero-left">
       <h1 data-i18n-html="heroTitle">PROFESSIONAL FINANCIAL <span>CONSULTATION</span></h1>
       <p class="hero-subtitle" data-i18n="heroSubtitle">We Offer Settlement Services Using Your EPF Contributions</p>
@@ -702,10 +699,8 @@ body.dark-mode .approval-text{color:#ff8a65!important;} body.dark-mode .feedback
       </div>
     </div>
 
-    <!-- 右边：理财顾问自动滑块 (完美支持6人团队与独立名言卡) -->
     <div class="hero-right">
       <div class="consultant-slider-wrap">
-        <!-- 头部通道徽章 -->
         <a href="https://wa.me/60163061623" id="consultant-wa-badge" class="consultant-badge-wa" target="_blank">
           <i class="fa-brands fa-whatsapp"></i> <span id="badge-text">Hubungi Rossa (WhatsApp)</span>
         </a>
@@ -713,7 +708,6 @@ body.dark-mode .approval-text{color:#ff8a65!important;} body.dark-mode .feedback
         <div class="consultant-carousel-main">
           <button type="button" class="consultant-arrow prev" onclick="changeConsultant(-1)"><i class="fa-solid fa-chevron-left"></i></button>
           
-          <!-- 头像框 -->
           <div class="consultant-circle-frame">
             <img src="StaffFoto1.jpg" id="consultant-img" alt="Perunding Kewangan">
             <div class="consultant-license-tag"><i class="fa-solid fa-circle-check"></i> 100% Berlesen</div>
@@ -722,20 +716,17 @@ body.dark-mode .approval-text{color:#ff8a65!important;} body.dark-mode .feedback
           <button type="button" class="consultant-arrow next" onclick="changeConsultant(1)"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
         
-        <!-- 名字与职衔 -->
         <div class="consultant-text-block">
           <h3 id="consultant-name">Rossa</h3>
           <p data-i18n="perundingKewangan">PERUNDING KEWANGAN</p>
         </div>
 
-        <!-- 核心新增：卡片式名言介绍 (跟着人员自动更新) -->
         <div class="consultant-bio-card">
           <div class="bio-badge"><i class="fa-solid fa-bolt"></i> RM0 Caj Awal</div>
           <p id="consultant-bio">"Mudah, Cepat Dan Teratur Dengan Skim Pinjaman KWSP"</p>
           <em id="consultant-bio-author">— Oleh Rossa</em>
         </div>
         
-        <!-- 圆点指示器 (6个圆点) -->
         <div class="consultant-dots-container">
           <span class="c-dot active" onclick="setConsultant(0)"></span>
           <span class="c-dot" onclick="setConsultant(1)"></span>
@@ -750,7 +741,6 @@ body.dark-mode .approval-text{color:#ff8a65!important;} body.dark-mode .feedback
   </div>
 </section>
 
-<!-- ================= ABOUT ================= -->
 <section class="section about">
   <div class="container">
     <h2 class="title" data-i18n="aboutTitle">About Us</h2>
@@ -769,7 +759,6 @@ body.dark-mode .approval-text{color:#ff8a65!important;} body.dark-mode .feedback
   </div>
 </section>
 
-<!-- ================= BENEFITS ================= -->
 <section class="section">
   <div class="container">
     <h2 class="title" data-i18n="benefitsTitle">EPF Loan Benefits</h2>
@@ -798,7 +787,6 @@ body.dark-mode .approval-text{color:#ff8a65!important;} body.dark-mode .feedback
   </div>
 </section>
 
-<!-- ================= REPAYMENT ================= -->
 <section class="section repayment">
   <div class="container">
     <h2 class="title" data-i18n="repaymentTitle">Repayment Method</h2>
@@ -809,7 +797,6 @@ body.dark-mode .approval-text{color:#ff8a65!important;} body.dark-mode .feedback
   </div>
 </section>
 
-<!-- ================= ONLINE APPLICATION ================= -->
 <section class="section">
   <div class="container">
     <h2 class="title" data-i18n="applicationTitle">Online Application</h2>
@@ -869,7 +856,6 @@ body.dark-mode .approval-text{color:#ff8a65!important;} body.dark-mode .feedback
   </div>
 </section>
 
-<!-- ================= CUSTOMER FEEDBACK ================= -->
 <section class="section soft feedback-section">
   <div class="container">
     <h2 class="title" data-i18n="feedbackTitle">Customer Feedback</h2>
@@ -954,11 +940,9 @@ body.dark-mode .approval-text{color:#ff8a65!important;} body.dark-mode .feedback
   </div>
 </section>
 
-<!-- ================= LOCATION (地图完好保留在原位) ================= -->
 <section class="section">
   <div class="container">
     <h2 class="title" data-i18n="locationTitle">Our Location</h2>
-    <!-- 提示：把下面的 src 链接替换为您在 Google Maps 复制出来的 Embed HTML 里面的 src 地址即可 -->
     <iframe
       class="map-box"
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.332822767098!2d101.5746816!3d3.3172088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc424075199999%3A0x6fb878b31a1b1b1b!2sJalan%20Bandar%20Rawang%202!5e0!3m2!1sen!2smy!4v1626000000000"
@@ -968,7 +952,6 @@ body.dark-mode .approval-text{color:#ff8a65!important;} body.dark-mode .feedback
   </div>
 </section>
   
-<!-- ================= FOOTER ================= -->
 <footer class="footer">
   <div class="footer-inner">
     <div>
@@ -993,7 +976,6 @@ body.dark-mode .approval-text{color:#ff8a65!important;} body.dark-mode .feedback
   <div class="copyright" data-i18n="copyright">© 2026 MEWAH SAUJANA ENTERPRISE. All Rights Reserved.</div>
 </footer>
 
-<!-- ================= FLOATING BUTTONS ================= -->
 <div class="float-buttons">
   <button type="button" class="float-moon" title="Theme" onclick="toggleThemeMenu()"><i class="fa-solid fa-moon"></i></button>
   <div class="theme-menu" id="themeMenu">
@@ -1021,7 +1003,6 @@ function formatDOBForWhatsApp(value){
   return `${parts[2]}/${parts[1]}/${parts[0]}`;
 }
 
-// 修复点击外部关闭菜单的系统逻辑
 document.addEventListener('click', function(e){
   const tm=document.getElementById('themeMenu');
   const lm=document.getElementById('langMenu');
@@ -1054,7 +1035,7 @@ const translations = {
     repaymentTitle:'Repayment Method', repaymentText:'Repayment is made when customer has received EPF withdrawal.', repaymentEm:'Repayment amount is the same as the original agreement made when loan was agreed by both parties.',
     applicationTitle:'Online Application', appIntro:'Simple Documents, Immediate Approval, Fast Process, And Easy', eligibilityTitle:'Application Eligibility:', eligibility1:'<i class="fa-solid fa-user-check"></i> Eligible To Apply For Ages 53,54,55 & 58,59,60', eligibility2:'<i class="fa-solid fa-piggy-bank"></i> Have EPF Account 1 Or EMAS Account Savings (Minimum Savings RM30K)', eligibility3:'<i class="fa-solid fa-list-check"></i> Blacklist / CTOS / Bankruptcy / AKPK Eligible', eligibility4:'<i class="fa-solid fa-briefcase"></i> Working / Not Working Eligible', eligibility5:'<i class="fa-solid fa-location-dot"></i> Throughout Peninsular Malaysia (Except Sabah, Sarawak)',
     formTitle:'Loan Application Form', labelName:'Name:', phName:'Enter your full name', labelPhone:'Phone Number:', helpPhone:'<i class="fa-solid fa-circle-info"></i> Only enter phone number without +6 (example 0163061623)', labelState:'State:', optionState:'Please select state', labelDob:'Date Of Birth:', labelEpf:'EPF Savings Amount (RM):', phEpf:'Example: 35000', helpEpf:'* Minimum savings RM30,000 required', labelNotes:'Additional Notes (Optional):', phNotes:'Please specify any special requirements or additional inquiries', submitBtn:'<i class="fa-solid fa-paper-plane"></i> Submit Application', submitNote:'* Data will be saved to our system and sent to WhatsApp',
-    feedbackTitle:'Customer Feedback', fb1Text:'"Can apply even if not working. This is very helpful for people like me."', fb1Name:'- Mr. Khairul, 53 years old', fb2Text:'"Simple and uncomplicated loan process. Staff very friendly and helpful."', fb2Name:'- Ms. Lau, 54 years old', fb3Text:'"Very satisfied with MEWAH's service. Fast process and staff very helpful."', fb3Name:'- Mr. Wan, 53 years old', fb4Text:'"No hidden charges as promised. Honest and transparent company."', fb4Name:'- Mr. Kamaruddin, 58 years old', fb5Text:'"Very grateful to MEWAH. Helped me solve debt problems."', fb5Name:'- Mr. Mahfooz, 53 years old', fb6Text:'"Funds received within 3 days after application. Very efficient and professional."', fb6Name:'- Mr. Badrul, 53 years old', fb7Text:'"Even though in bankruptcy list, my application was still approved. Thank you MEWAH!"', fb7Name:'- Ms. Nornikmah, 54 years old', moreTestimonials:'More Testimonials', moreTestimonialsText:'We have hundreds of positive testimonials from satisfied customers.', viewTestimonials:'<i class="fa-brands fa-whatsapp"></i> View Testimonials on WhatsApp', approvalTitle:'99.9% Approval Rate', approvalText:'Almost all applications approved with high rate.', approvalStrong:'99.9% LULUS', waNoteText:'We attach customer testimonials in WhatsApp',
+    feedbackTitle:'Customer Feedback', fb1Text:'"Can apply even if not working. This is very helpful for people like me."', fb1Name:'- Mr. Khairul, 53 years old', fb2Text:'"Simple and uncomplicated loan process. Staff very friendly and helpful."', fb2Name:'- Ms. Lau, 54 years old', fb3Text:'"Very satisfied with MEWAH\'s service. Fast process and staff very helpful."', fb3Name:'- Mr. Wan, 53 years old', fb4Text:'"No hidden charges as promised. Honest and transparent company."', fb4Name:'- Mr. Kamaruddin, 58 years old', fb5Text:'"Very grateful to MEWAH. Helped me solve debt problems."', fb5Name:'- Mr. Mahfooz, 53 years old', fb6Text:'"Funds received within 3 days after application. Very efficient and professional."', fb6Name:'- Mr. Badrul, 53 years old', fb7Text:'"Even though in bankruptcy list, my application was still approved. Thank you MEWAH!"', fb7Name: "- Ms. Nornikmah, 54 years old", moreTestimonials:'More Testimonials', moreTestimonialsText:'We have hundreds of positive testimonials from satisfied customers.', viewTestimonials:'<i class="fa-brands fa-whatsapp"></i> View Testimonials on WhatsApp', approvalTitle:'99.9% Approval Rate', approvalText:'Almost all applications approved with high rate.', approvalStrong:'99.9% LULUS', waNoteText:'We attach customer testimonials in WhatsApp',
     locationTitle:'Our Location', footerContact:'Contact Us', footerHours:'Operating Hours', hours1:'Monday - Friday: 9:30 AM - 5:30 PM', hours2:'Saturday: 9:30 AM - 2:00 PM', hours3:'Sunday & Public Holidays: Closed', copyright:'© 2026 MEWAH SAUJANA ENTERPRISE. All Rights Reserved.',
     alertRequired:'Please fill in Name, Phone Number, State, Date of Birth and EPF Savings Amount.', waHeader:'Loan Application', waName:'Name', waPhone:'Phone', waState:'State', waDob:'Date of Birth', waEpf:'EPF Savings', waNotes:'Notes'
   },
@@ -1066,7 +1047,7 @@ const translations = {
     repaymentTitle:'Kaedah Pembayaran Semula', repaymentText:'Pembayaran semula dibuat apabila pelanggan sudah menerima pengeluaran KWSP.', repaymentEm:'Jumlah pembayaran semula adalah sama seperti perjanjian asal dibuat sewaktu pinjaman dipersetujui oleh kedua-dua pihak.',
     applicationTitle:'Permohonan Atas Talian', appIntro:'Dokumen Ringkas, Kelulusan Segera, Proses Cepat, Dan Mudah', eligibilityTitle:'Kelayakan Permohonan:', eligibility1:'<i class="fa-solid fa-user-check"></i> Layak memohon kepada umur 53,54,55 & 58,59,60', eligibility2:'<i class="fa-solid fa-piggy-bank"></i> Mempunyai simpanan KWSP Akaun 1 atau Akaun Emas (Simpanan minimum RM30K)', eligibility3:'<i class="fa-solid fa-list-check"></i> Blacklist / CTOS / Bankruptcy / AKPK Layak', eligibility4:'<i class="fa-solid fa-briefcase"></i> Bekerja / Tidak bekerja layak', eligibility5:'<i class="fa-solid fa-location-dot"></i> Seluruh Semenanjung Malaysia (Kecuali Sabah, Sarawak)',
     formTitle:'Borang Permohonan Pinjaman', labelName:'Nama:', phName:'Masukkan nama penuh anda', labelPhone:'No Telefon:', helpPhone:'<i class="fa-solid fa-circle-info"></i> Hanya masukkan nombor telefon tanpa +6 (contoh 0163061623)', labelState:'Negeri:', optionState:'Sila pilih negeri', labelDob:'Tarikh Lahir:', labelEpf:'Jumlah Simpanan KWSP (RM):', phEpf:'Contoh: 35000', helpEpf:'* Simpanan minimum RM30,000 diperlukan', labelNotes:'Catatan Tambahan (Optional):', phNotes:'Sila nyatakan jika ada keperluan khas atau pertanyaan tambahan', submitBtn:'<i class="fa-solid fa-paper-plane"></i> Hantar Permohonan', submitNote:'* Data akan disimpan ke sistem kami dan dihantar ke WhatsApp',
-    feedbackTitle:'Feedback Pelanggan', fb1Text:'"Boleh mohon walaupun tidak bekerja. Ini sangat membantu untuk orang seperti saya."', fb1Name:'- Encik Khairul, 53 tahun', fb2Text:'"Proses pinjaman yang mudah dan tidak rumit. Staff sangat ramah and membantu."', fb2Name:'- Puan Lau, 54 tahun', fb3Text:'"Sangat berpuas hati dengan perkhidmatan MEWAH. Proses cepat dan staff sangat membantu."', fb3Name:'- Encik Wan, 53 tahun', fb4Text:'"Tiada caj tersembunyi seperti yang dijanjikan. Syarikat yang jujur dan telus."', fb4Name:'- Encik Kamaruddin, 58 tahun', fb5Text:'"Sangat berterima kasih kepada MEWAH. Membantu saya menyelesaikan masalah hutang."', fb5Name:'- Encik Mahfooz, 53 tahun', fb6Text:'"Dana diterima dalam masa 3 hari selepas permohonan. Sangat efisien dan profesional."', fb6Name:'- Encik Badrul, 53 tahun', fb7Text:'"Walaupun dalam senarai bankrap, permohonan saya masih diluluskan. Terima kasih MEWAH!"', fb7Name:'- Puan Nornikmah, 54 tahun', moreTestimonials:'Lebih Banyak Testimoni', moreTestimonialsText:'Kami mempunyai ratusan testimoni positif daripada pelanggan yang berpuas hati.', viewTestimonials:'<i class="fa-brands fa-whatsapp"></i> Lihat Testimoni di WhatsApp', approvalTitle:'Kadar Kelulusan 99.9%', approvalText:'Hampir semua permohonan diluluskan dengan kadar yang tinggi.', approvalStrong:'99.9% LULUS', waNoteText:'Kami attach testimoni pelanggan dalam WhatsApp',
+    feedbackTitle:'Feedback Pelanggan', fb1Text:'"Boleh mohon walaupun tidak bekerja. Ini sangat membantu untuk orang seperti saya."', fb1Name:'- Encik Khairul, 53 tahun', fb2Text:'"Proses pinjaman yang mudah dan tidak rumit. Staff sangat ramah and membantu."', fb2Name:'- Puan Lau, 54 tahun', fb3Text:'"Sangat berpuas hati dengan perkhidmatan MEWAH. Proses cepat dan staff sangat membantu."', fb3Name:'- Encik Wan, 53 tahun', fb4Text:'"Tiada caj tersembunyi seperti yang dijanjikan. Syarikat yang jujur dan telus."', fb4Name:'- Encik Kamaruddin, 58 years old', fb5Text:'"Sangat berterima kasih kepada MEWAH. Membantu saya menyelesaikan masalah hutang."', fb5Name:'- Encik Mahfooz, 53 tahun', fb6Text:'"Dana diterima dalam masa 3 hari selepas permohonan. Sangat efisien dan profesional."', fb6Name:'- Encik Badrul, 53 tahun', fb7Text:'"Walaupun dalam senarai bankrap, permohonan saya masih diluluskan. Terima kasih MEWAH!"', fb7Name:'- Puan Nornikmah, 54 tahun', moreTestimonials:'Lebih Banyak Testimoni', moreTestimonialsText:'Kami mempunyai ratusan testimoni positif daripada pelanggan yang berpuas hati.', viewTestimonials:'<i class="fa-brands fa-whatsapp"></i> Lihat Testimoni di WhatsApp', approvalTitle:'Kadar Kelulusan 99.9%', approvalText:'Hampir semua permohonan diluluskan dengan kadar yang tinggi.', approvalStrong:'99.9% LULUS', waNoteText:'Kami attach testimoni pelanggan dalam WhatsApp',
     locationTitle:'Lokasi Kami', footerContact:'Hubungi Kami', footerHours:'Waktu Operasi', hours1:'Isnin - Jumaat: 9:30 pagi - 5:30 petang', hours2:'Sabtu: 9:30 pagi - 2:00 petang', hours3:'Ahad & Cuti Umum: Tutup', copyright:'© 2026 MEWAH SAUJANA ENTERPRISE. Hak Cipta Terpelihara.',
     alertRequired:'Sila isi Nama, No Telefon, Negeri, Tarikh Lahir dan Jumlah Simpanan KWSP.', waHeader:'Permohonan Pinjaman', waName:'Nama', waPhone:'No Telefon', waState:'Negeri', waDob:'Tarikh Lahir', waEpf:'Jumlah Simpanan KWSP', waNotes:'Catatan'
   },
@@ -1100,17 +1081,17 @@ function setLanguage(lang){
 }
 setLanguage(currentLang);
 
-/* ================= 核心重写：6名专属顾问阵容 + 动态口号介绍卡 ================= */
+/* ================= 6人组专属通道（号码已完美隔离） ================= */
 const consultants = [
   { name: "Rossa", img: "StaffFoto1.jpg", phone: "60163061623", bio: '"Mudah, Cepat Dan Teratur Dengan Skim Pinjaman KWSP."' },
-  { name: "Wani", img: "StaffFoto2.jpg", phone: "60163061623", bio: '"Proses telus, selamat dan mesra. Saya sedia membantu perancangan kewangan anda."' },
-  { name: "Siti", img: "StaffFoto3.jpg", phone: "60163061623", bio: '"Kelulusan pantas dalam 1 jam, tiada sebarang bayaran pendahuluan dikenakan."' },
-  { name: "Amira", img: "StaffFoto4.jpg", phone: "60163061623", bio: '"Perundingan profesional khas terhad untuk warga emas usia 53, 55, 58 & 60 tahun."' },
-  { name: "Farah", img: "StaffFoto5.jpg", phone: "60163061623", bio: '"Moratorium fleksibel sehingga 24 bulan tanpa komitmen bulanan yang membebankan."' },
-  { name: "Linda", img: "StaffFoto6.jpg", phone: "60163061623", bio: '"Senarai hitam CTOS / AKPK / Bankrupt layak memohon, hubungi saya semak kelayakan."' }
+  { name: "Wani", img: "StaffFoto2.jpg", phone: "601122222222", bio: '"Proses telus, selamat dan mesra. Saya sedia membantu perancangan kewangan anda."' },
+  { name: "Siti", img: "StaffFoto3.jpg", phone: "601133333333", bio: '"Kelulusan pantas dalam 1 jam, tiada sebarang bayaran pendahuluan dikenakan."' },
+  { name: "Amira", img: "StaffFoto4.jpg", phone: "601144444444", bio: '"Perundingan profesional khas terhad untuk warga emas usia 53, 55, 58 & 60 tahun."' },
+  { name: "Farah", img: "StaffFoto5.jpg", phone: "601155555555", bio: '"Moratorium fleksibel sehingga 24 bulan tanpa komitmen bulanan yang membebankan."' },
+  { name: "Linda", img: "StaffFoto6.jpg", phone: "601166666666", bio: '"Senarai hitam CTOS / AKPK / Bankrupt layak memohon, hubungi saya semak kelayakan."' }
 ];
 let currentConsultantIdx = 0;
-let consultantTimer = null;
+let consultantTimer = null; // 重新初始化自动计时器
 
 function updateConsultantDOM() {
   const c = consultants[currentConsultantIdx];
@@ -1118,14 +1099,13 @@ function updateConsultantDOM() {
   document.getElementById('consultant-img').src = c.img;
   document.getElementById('badge-text').textContent = `Hubungi ${c.name} (WhatsApp)`;
   
-  // 联动更新 CASH AIM 风格的独立介绍卡片内容
   document.getElementById('consultant-bio').textContent = c.bio;
   document.getElementById('consultant-bio-author').textContent = `— Oleh ${c.name}`;
   
+  // 号码自动深度分配：自动或手动更新时，绑定的接收连结绝对独立切换
   const msgText = encodeURIComponent(`Hello ${c.name}, saya nak tanya tentang perundingan pengeluaran KWSP.`);
   document.getElementById('consultant-wa-badge').href = `https://wa.me/${c.phone}?text=${msgText}`;
   
-  // 刷新6个点的位置状态
   document.querySelectorAll('.c-dot').forEach((dot, idx) => {
     dot.classList.toggle('active', idx === currentConsultantIdx);
   });
@@ -1134,7 +1114,7 @@ function updateConsultantDOM() {
 function changeConsultant(direction) {
   currentConsultantIdx = (currentConsultantIdx + direction + consultants.length) % consultants.length;
   updateConsultantDOM();
-  restartConsultantTimer();
+  restartConsultantTimer(); // 触发手动点击时，重置定时器
 }
 
 function setConsultant(idx) {
@@ -1143,10 +1123,13 @@ function setConsultant(idx) {
   restartConsultantTimer();
 }
 
+/* 核心接回：上层滑块 4 秒全自动循环轮播机制 */
 function startConsultantTimer() {
   consultantTimer = setInterval(() => {
-    changeConsultant(1);
-  }, 4000);
+    // 强制向右跑一个位置
+    currentConsultantIdx = (currentConsultantIdx + 1) % consultants.length;
+    updateConsultantDOM();
+  }, 4000); 
 }
 
 function restartConsultantTimer() {
@@ -1205,8 +1188,10 @@ function initFeedbackSwipe(){
 }
 
 document.addEventListener('DOMContentLoaded', function(){
+  // 完美复位：加载网页时，同时开启两组滑块的自动轮播
   updateConsultantDOM();
-  startConsultantTimer();
+  startConsultantTimer(); 
+  
   showFeedbackSlide(feedbackIndex);
   initFeedbackSwipe();
   startFeedbackAutoSlide();
