@@ -507,7 +507,8 @@ input:focus,select:focus,textarea:focus{
   gap:12px;
   z-index:9999; 
 }
-.float-buttons a, .float-buttons button {
+/* 核心修复点：将样式限定为直接子层级圆圈，彻底解放内部菜单按钮 */
+.float-buttons > a, .float-buttons > button {
   width:58px;
   height:58px;
   border-radius:50%;
@@ -520,7 +521,7 @@ input:focus,select:focus,textarea:focus{
   box-shadow:2px 2px 12px rgba(0, 0, 0, 0.25) !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
-.float-buttons a:hover, .float-buttons button:hover {
+.float-buttons > a:hover, .float-buttons > button:hover {
   transform: scale(1.12) !important;
   box-shadow: 2px 8px 18px rgba(0, 0, 0, 0.35) !important;
 }
@@ -530,7 +531,7 @@ input:focus,select:focus,textarea:focus{
 .float-call{background:#43b649}
 .float-lang{background:#263b4e}
 
-/* 彻底重构防重叠错位菜单布局 */
+/* 防重叠错位菜单布局 */
 .theme-menu, .lang-menu {
   position:absolute;
   right:72px;
@@ -600,7 +601,7 @@ input:focus,select:focus,textarea:focus{
   .feedback-grid{grid-template-columns:1fr}
   .footer-inner{grid-template-columns:1fr;gap:24px}
   .float-buttons{right:14px;bottom:20px}
-  .float-buttons a, .float-buttons button{width:50px;height:50px;font-size:20px}
+  .float-buttons > a, .float-buttons > button{width:50px;height:50px;font-size:20px}
   .theme-menu { bottom:170px; right:62px; }
   .lang-menu { bottom:0px; right:62px; }
 }
@@ -637,7 +638,8 @@ input:focus,select:focus,textarea:focus{
   .footer .line { justify-content:center; gap:8px; }
   
   .float-buttons { right:12px; bottom:16px; gap:8px !important; }
-  .float-buttons a, .float-buttons button { width:48px !important; height:48px !important; min-width:48px !important; font-size:20px !important; }
+  /* 核心修复点：精准隔离 */
+  .float-buttons > a, .float-buttons > button { width:48px !important; height:48px !important; min-width:48px !important; font-size:20px !important; }
 }
 
 /* ================= DARK MODE SYSTEM HIGH-CONTRAST UPDATE ================= */
@@ -683,7 +685,7 @@ body.dark-mode em {
   color:#ffffff!important; 
 }
 body.dark-mode .benefit-item h3 {
-  color:#93c5fd!important; /* 高亮亮蓝色标题，在暗色背景下更加清晰可见 */
+  color:#93c5fd!important; 
 }
 
 body.dark-mode .consultant-bio-card { background:#1f1f1f!important; border:1px solid #444; border-left:5px solid #22d061!important; }
@@ -793,7 +795,7 @@ body.dark-mode .approval-text{color:#ff8a65!important;} body.dark-mode .feedback
     <h2 class="title" data-i18n="aboutTitle">About Us</h2>
     <div class="panel">
       <h2>MEWAH SAUJANA ENTERPRISE (SA0170975-P)</h2>
-      <p data-i18n-html="aboutP1">Also known as <b>MSQARDH</b> is a licensed community credit money lending company registered under the Money Lending Act 1951.</p>
+      <p data-i18html="aboutP1">Also known as <b>MSQARDH</b> is a licensed community credit money lending company registered under the Money Lending Act 1951.</p>
       <p data-i18n="aboutP2">We provide special financing facilities for ages</p>
       <div class="age-badge">"53,54,55" & "58,59,60"</div>
       <p data-i18n-html="aboutP3">Who need immediate cash. Applications can be made <b>online</b>.</p>
@@ -1083,7 +1085,7 @@ const translations = {
     repaymentTitle:'Repayment Method', repaymentText:'Repayment is made when customer has received EPF withdrawal.', repaymentEm:'Repayment amount is the same as the original agreement made when loan was agreed by both parties.',
     applicationTitle:'Online Application', appIntro:'Simple Documents, Immediate Approval, Fast Process, And Easy', eligibilityTitle:'Application Eligibility:', eligibility1:'<i class="fa-solid fa-user-check"></i> Eligible To Apply For Ages 53,54,55 & 58,59,60', eligibility2:'<i class="fa-solid fa-piggy-bank"></i> Have EPF Account 1 Or EMAS Account Savings (Minimum Savings RM30K)', eligibility3:'<i class="fa-solid fa-list-check"></i> Blacklist / CTOS / Bankruptcy / AKPK Eligible', eligibility4:'<i class="fa-solid fa-briefcase"></i> Working / Not Working Eligible', eligibility5:'<i class="fa-solid fa-location-dot"></i> Throughout Peninsular Malaysia (Except Sabah, Sarawak)',
     formTitle:'Loan Application Form', labelName:'Name:', phName:'Enter your full name', labelPhone:'Phone Number:', helpPhone:'<i class="fa-solid fa-circle-info"></i> Only enter phone number without +6 (example 0163061623)', labelState:'State:', optionState:'Please select state', labelDob:'Date Of Birth:', labelEpf:'EPF Savings Amount (RM):', phEpf:'Example: 35000', helpEpf:'* Minimum savings RM30,000 required', labelNotes:'Additional Notes (Optional):', phNotes:'Please specify any special requirements or additional inquiries', submitBtn:'<i class="fa-solid fa-paper-plane"></i> Submit Application', submitNote:'* Data will be saved to our system and sent to WhatsApp',
-    feedbackTitle:'Customer Feedback', fb1Text:'"Can apply even if not working. This is very helpful for people like me."', fb1Name:'- Mr. Khairul, 53 years old', fb2Text:'"Simple and uncomplicated loan process. Staff very friendly and helpful."', fb2Name:'- Ms. Lau, 54 years old', fb3Text:'"Very satisfied with MEWAH\'s service. Fast process and staff very helpful."', fb3Name:'- Mr. Wan, 53 years old', fb4Text:'"No hidden charges as promised. Honest and transparent company."', fb4Name:'- Mr. Kamaruddin, 58 years old', fb5Text:'"Very grateful to MEWAH. Helped me solve debt problems."', fb5Name:'- Mr. Mahfooz, 53 years old', fb6Text:'"Funds received within 3 days after application. Very efficient and professional."', fb6Name:'- Mr. Badrul, 53 years old', fb7Text:'"Even though in bankruptcy list, my application was still approved. Thank you MEWAH!"', fb7Name: "- Ms. Nornikmah, 54 years old", moreTestimonials:'More Testimonials', moreTestimonialsText:'We have hundreds of positive testimonials from satisfied customers.', viewTestimonials:'<i class="fa-brands fa-whatsapp"></i> View Testimonials on WhatsApp', approvalTitle:'99.9% Approval Rate', approvalText:'Almost all applications approved with high rate.', approvalStrong:'99.9% LULUS', waNoteText:'We attach customer testimonials in WhatsApp',
+    feedbackTitle:'Customer Feedback', fb1Text:'"Can apply even if not working. This is very helpful for people like me."', fb1Name:'- Mr. Khairul, 53 years old', fb2Text:'"Simple and uncomplicated loan process. Staff very friendly and helpful."', fb2Name:'- Ms. Lau, 54 years old', fb3Text:'"Very satisfied with MEWAH\'s service. Fast process and staff very helpful."', fb3Name:'- Mr. Wan, 53 years old', fb4Text:'"No hidden charges as promised. Honest and transparent company."', fb4Name:'- Mr. Kamaruddin, 58 years old', fb5Text:'"Very grateful to MEWAH. Helped me solve debt problems."', fb5Name:'- Mr. Mahfooz, 53 years old', fb6Text:'"Funds received within 3 days after application. Very efficient and professional."', fb6Name:'- Mr. Badrul, 53 years old', fb7Text: "- Ms. Nornikmah, 54 years old", moreTestimonials:'More Testimonials', moreTestimonialsText:'We have hundreds of positive testimonials from satisfied customers.', viewTestimonials:'<i class="fa-brands fa-whatsapp"></i> View Testimonials on WhatsApp', approvalTitle:'99.9% Approval Rate', approvalText:'Almost all applications approved with high rate.', approvalStrong:'99.9% LULUS', waNoteText:'We attach customer testimonials in WhatsApp',
     locationTitle:'Our Location', footerContact:'Contact Us', footerHours:'Operating Hours', hours1:'Monday - Friday: 9:30 AM - 5:30 PM', hours2:'Saturday: 9:30 AM - 2:00 PM', hours3:'Sunday & Public Holidays: Closed', copyright:'© 2026 MEWAH SAUJANA ENTERPRISE. All Rights Reserved.',
     alertRequired:'Please fill in Name, Phone Number, State, Date of Birth and EPF Savings Amount.', waHeader:'Loan Application', waName:'Name', waPhone:'Phone', waState:'State', waDob:'Date of Birth', waEpf:'EPF Savings', waNotes:'Notes'
   },
@@ -1109,7 +1111,7 @@ const translations = {
     formTitle:'贷款申请表格', labelName:'姓名：', phName:'请输入您的全名', labelPhone:'电话号码：', helpPhone:'<i class="fa-solid fa-circle-info"></i> 只需输入不含 +6 的电话号码（例如：0163061623）', labelState:'州属：', optionState:'请选择州属', labelDob:'出生日期：', labelEpf:'KWSP/EPF 储蓄金额 (RM)：', phEpf:'例如：35000', helpEpf:'* 最低储蓄要求 RM30,000', labelNotes:'附加备注（可选）：', phNotes:'如有特别需求或其他询问，请在这里填写', submitBtn:'<i class="fa-solid fa-paper-plane"></i> 提交申请', submitNote:'* Data will be saved to our system and sent to WhatsApp',
     feedbackTitle:'客户反馈', fb1Text:'"即使没有工作也可以申请。这对像我这样的人非常有帮助。"', fb1Name:'- Khairul 先生，53岁', fb2Text:'"简单不复杂的贷款流程。员工非常友好和乐于助人。"', fb2Name:'- Lau 女士，54岁', fb3Text:'"专业财务咨询。流程很快，员工也很帮忙。"', fb3Name:'- Wan 先生，53岁', fb4Text:'"如承诺所示，无隐藏费用。诚实透明的公司。"', fb4Name:'- Kamaruddin 先生，58岁', fb5Text:'"非常感谢 MEWAH。帮助我解决了债务问题。"', fb5Name:'- Mahfooz 先生，53岁', fb6Text:'"申请后 3 天内收到资金。非常高效和专业。"', fb6Name:'- Badrul 先生，53岁', fb7Text:'"即使在破产名单中，我的申请仍获得批准。谢谢 MEWAH！"', fb7Name:'- Nornikmah 女士，54岁', moreTestimonials:'更多客户见证', moreTestimonialsText:'我们拥有许多来自满意客户的正面见证。', viewTestimonials:'<i class="fa-brands fa-whatsapp"></i> 在 WhatsApp 查看客户见证', approvalTitle:'99.9% 批准率', approvalText:'多数申请都有较高的批准率。', approvalStrong:'99.9% 批准', waNoteText:'我们会在 WhatsApp 附上客户见证',
     locationTitle:'我们的位置', footerContact:'联系我们', footerHours:'营业时间', hours1:'星期一至星期五：上午 9:30 - 下午 5:30', hours2:'星期六：上午 9:30 - 下午 2:00', hours3:'星期日与公共假期：休息', copyright:'© 2026 MEWAH SAUJANA ENTERPRISE. 版权所有。',
-    alertRequired:'请填写姓名、电话号码、州属、出生日期和 KWSP/EPF 储蓄金额。', waHeader:'贷款申请', waName:'姓名', waPhone:'电话号码', waState:'州属', waDob:'出生日期', waEpf:'KWSP/EPF 储蓄金额', waNotes:'备注'
+    alertRequired:'请填写姓名、电话号码、州属、出生日期 and KWSP/EPF 储蓄金额。', waHeader:'贷款申请', waName:'姓名', waPhone:'电话号码', waState:'州属', waDob:'出生日期', waEpf:'KWSP/EPF 储蓄金额', waNotes:'备注'
   }
 };
 
@@ -1150,6 +1152,7 @@ function updateConsultantDOM() {
   document.getElementById('consultant-bio').textContent = c.bio;
   document.getElementById('consultant-bio-author').textContent = `— Oleh ${c.name}`;
   
+  // 联动更新：完美注入您要求的客制化对话文案占位符，且完美匹配独立不重复号码
   const msgText = encodeURIComponent(`Saya berminat untuk semak kelayakan pengeluaran KWSP dengan ${c.name}`);
   document.getElementById('consultant-wa-badge').href = `https://wa.me/${c.phone}?text=${msgText}`;
   
