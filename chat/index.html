@@ -4,20 +4,51 @@
     <meta charset="UTF-8">
     <title>Connecting to Agent...</title>
     <script>
-        // 5 位專員的 WhatsApp 連結 (帶預設訊息)
+        // 1. 填入你的 Telegram Token 與 ID
+        const TELEGRAM_BOT_TOKEN = "8648763722:AAHRLyROmFjgrWtbj_Ce-lrN95L-DIFRkDk";
+        const TELEGRAM_CHAT_ID = "5097138355";
+
         const agents = [
-            "https://wa.me/60143188345?text=Saya%20berminat%20untuk%20semak%20kelayakan%20pengeluaran%20KWSP",
-            "https://wa.me/60102149466?text=Saya%20berminat%20untuk%20semak%20kelayakan%20pengeluaran%20KWSP",
-            "https://wa.me/60129288553?text=Saya%20berminat%20untuk%20semak%20kelayakan%20pengeluaran%20KWSP",
-            "https://wa.me/60126616216?text=Saya%20berminat%20untuk%20semak%20kelayakan%20pengeluaran%20KWSP",
-            "https://wa.me/601114366890?text=Saya%20berminat%20untuk%20semak%20kelayakan%20pengeluaran%20KWSP"
+            { name: "Zaza", url: "https://wa.me/60143188345?text=Saya%20berminat%20untuk%20semak%20kelayakan%20pengeluaran%20KWSP" },
+            { name: "Que", url: "https://wa.me/60102149466?text=Saya%20berminat%20untuk%20semak%20kelayakan%20pengeluaran%20KWSP" },
+            { name: "Dyra", url: "https://wa.me/60129288553?text=Saya%20berminat%20untuk%20semak%20kelayakan%20pengeluaran%20KWSP" },
+            { name: "Lily", url: "https://wa.me/60126616216?text=Saya%20berminat%20untuk%20semak%20kelayakan%20pengeluaran%20KWSP" },
+            { name: "Tasha", url: "https://wa.me/601114366890?text=Saya%20berminat%20untuk%20semak%20kelayakan%20pengeluaran%20KWSP" }
         ];
 
-        // 隨機抽取一位專員 (各 20% 平均機率)
-        const selectedAgent = agents[Math.floor(Math.random() * agents.length)];
+        // 2. 檢查 24 小時重複點擊記憶
+        const savedAgent = localStorage.getItem('assigned_agent');
+        const savedTime = localStorage.getItem('assigned_time');
+        const now = new Date().getTime();
+        const ONE_DAY = 24 * 60 * 60 * 1000;
 
-        // 秒跳轉至專員 WhatsApp
-        window.location.href = selectedAgent;
+        if (savedAgent && savedTime && (now - savedTime < ONE_DAY)) {
+            // 重複點擊的顧客：不計數、不發通知，直接導向同一位專員
+            window.location.href = savedAgent;
+        } else {
+            // 新顧客：進行嚴格輪播排隊
+            fetch('https://api.counterapi.dev/v1/mewah_saujana_rw/agent_turn/up')
+                .then(response => response.json())
+                .then(data => {
+                    const index = data.count % agents.length;
+                    const selected = agents[index];
+
+                    localStorage.setItem('assigned_agent', selected.url);
+                    localStorage.setItem('assigned_time', now);
+
+                    // 背景自動發送 Telegram 通知給老闆
+                    const msg = encodeURIComponent(`📢 新廣告顧客點擊！\n👤 分配專員：${selected.name}\n⏰ 時間：${new Date().toLocaleTimeString()}`);
+                    fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&text=${msg}`)
+                        .finally(() => {
+                            window.location.href = selected.url;
+                        });
+                })
+                .catch(error => {
+                    // 備用降級機制
+                    const randomIndex = Math.floor(Math.random() * agents.length);
+                    window.location.href = agents[randomIndex].url;
+                });
+        }
     </script>
 </head>
 <body>
