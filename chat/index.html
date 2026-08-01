@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <title>Connecting to Agent...</title>
+    <script>
+        // 5 位專員的 WhatsApp 連結 (帶預設訊息)
+        const agents = [
+            "https://wa.me/60143188345?text=Saya%20berminat%20untuk%20semak%20kelayakan%20pengeluaran%20KWSP",
+            "https://wa.me/60102149466?text=Saya%20berminat%20untuk%20semak%20kelayakan%20pengeluaran%20KWSP",
+            "https://wa.me/60129288553?text=Saya%20berminat%20untuk%20semak%20kelayakan%20pengeluaran%20KWSP",
+            "https://wa.me/60126616216?text=Saya%20berminat%20untuk%20semak%20kelayakan%20pengeluaran%20KWSP",
+            "https://wa.me/601114366890?text=Saya%20berminat%20untuk%20semak%20kelayakan%20pengeluaran%20KWSP"
+        ];
+
+        // 隨機抽取一位專員 (各 20% 平均機率)
+        const selectedAgent = agents[Math.floor(Math.random() * agents.length)];
+
+        // 秒跳轉至專員 WhatsApp
+        window.location.href = selectedAgent;
+    </script>
+</head>
+<body>
+    <p>Sila tunggu, sedang menghubungkan ke WhatsApp Pegawai kami...</p>
+</body>
+</html>
